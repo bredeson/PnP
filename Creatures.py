@@ -5,15 +5,14 @@ class Creatures:
         self.name = name
         self.hp = hp
         self.attack = attack
-    def name(self):
-        name = zebrafish
-    def health(self):
-        health = 5
-    def attack(self):
-        attack = 2
         
 class Goblin(Creatures):
 	def __init__(self, name = "goblin", hp = 20, attack = 5):
 		self.name = name
 		self.hp = hp
 		self.attack = attack
+		
+creatures_list = open('sample_creatures_list', 'r')
+for line in creatures_list:
+	split = line.split('\t')
+	
