@@ -2,12 +2,13 @@
 
 import random
 
-def sample_sass(sass):
-    index=random.randrange(len(sass))
-    return(sass[index])
+def sample_sass():
+    sassy_retorts=["You've entered an invalid response, you sassy dog.", "Stop avoiding decisions.", "Don't you backtalk me."]
+    index=random.randrange(len(sassy_retorts))
+    return(sassy_retorts[index])
 
-sassy_retorts=["You've entered an invalid response, you sassy dog.", "Stop avoiding decisions.", "Don't you backtalk me."]
+#sassy_retorts=["You've entered an invalid response, you sassy dog.", "Stop avoiding decisions.", "Don't you backtalk me."]
 
-sassy_retort=sample_sass(sassy_retorts)
+#sassy_retort=sample_sass(sassy_retorts)
 
-print(sassy_retort)
+#print(sassy_retort)
