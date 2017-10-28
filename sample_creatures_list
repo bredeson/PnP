@@ -1,11 +1,11 @@
-Goblin	goblin,20
-Troll	troll,30
-Ogre	orge,18
-PrisonGuard_Easy	prison guard,7
-PrisonGuard_Hard	prison guard,10
-Simon	Simon the Python,40
-White-Faced Capuchin	capuchin,4
-Red-Shouldered Soapberry	soap,1
-C57BL/6	mouse,3
-Zebrafish	zebrafish,5
-Sheep	sheep,8
+Goblin	goblin,20,7
+Troll	troll,30,8
+Ogre	orge,18,4
+PrisonGuard_Easy	prison guard,7,3
+PrisonGuard_Hard	prison guard,10,9
+Simon	Simon the Python,40,12
+White-Faced Capuchin	capuchin,4,6
+Red-Shouldered Soapberry	soap,1,3
+C57BL/6	mouse,3,6
+Zebrafish	zebrafish,5,2
+Sheep	sheep,8,6
