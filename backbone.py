@@ -44,18 +44,20 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             decision_counter=1
             while decision_counter==1:
                 second_query=input("As your eyes begin to adjust to the low lighting, you notice a single guard slouched in a drunken stupor against a nearby wall. Do you [wake him up] or [attempt to creep] past him?")
-                if second_query=="no":
-                    decision_counter=first_encounter.first_combat(player)
-                elif first_query=="yes":
+                if second_query=="attempt to creep":
+                    decision_counter=second_encounter.second_combat(player)
+                elif first_query=="wake him up":
+                    opponent=creatures.Creatures(name='sleepy guard', hp=10, attack=4)
+                    player.combat(opponent)
                     decision_counter=0
                 else:
                     print(sass.sample_sass(), '\n')
             if player.hp<=0:
-                print("Why did you try to fight that hulking guard, you plonker? You're so dead.")
+                print("Seriously? He was half asleep. You die in shame.")
                 break
             else:
                 if decision_counter==0:
-                    print("You start creeping down the stairs. Moving as quietly as you can, you peer through the darkness.\n")
+                    print("You  creep into a puzzle scenario.\n")
                 elif decision_counter==2:
                     print("Wow, you actually beat that hulking guard. Impressive! You take his fancy dagger.\n")
                     player.setAttack(5)
