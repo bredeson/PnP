@@ -44,7 +44,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             decision_counter=1
             while decision_counter==1:
                 second_query=input("As your eyes begin to adjust to the low lighting, you notice a single guard slouched in a drunken stupor against a nearby wall. Do you [wake him up] or [attempt to creep] past him?")
-                if second_query=="no":
+                if second_query=="attempt to creep":
                     decision_counter=first_encounter.first_combat(player)
                 elif first_query=="yes":
                     decision_counter=0
