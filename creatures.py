@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import re, sys, time, random
 from random import randrange
 
@@ -19,17 +21,22 @@ class Creatures:
 	# HP
 	# Attack (Damage)
 	## ALWAYS IN THAT ORDER ##
+	
+def create_dict():
+	creatures_list = open('sample_creatures_list', 'r')
+	creature_dict = {}
+	for line in creatures_list:
+		split = line.strip().split('\t')
+		creature_dict[split[0]] = split[1]	
+	for key, value in creature_dict.items():
+		creature_dict[key] = value.split(',')
 
-creatures_list = open('sample_creatures_list', 'r')
-creature_dict = {}
-for line in creatures_list:
-	split = line.strip().split('\t')
-	creature_dict[split[0]] = split[1]	
-for key, value in creature_dict.items():
-	creature_dict[key] = value.split(',')
+	if __name__ == '__main__':
+	  main()
 
 # Random selection of creatures for each call of the class - needs to be acknowledged in backbone.
-random_creature = random.choice(list(creature_dict))
+def create_rand():
+	random_creature = random.choice(list(creature_dict))
 
 class Random(Creatures):
 	def __init__(self, name = creature_dict[str(random_creature)][0], 
