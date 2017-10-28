@@ -3,7 +3,7 @@
 # Main user charactrer class and methods
 
 import random, time
-import Creatures
+import creatures
 
 class Prisoner(object):
 	
