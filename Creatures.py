@@ -1,10 +1,10 @@
-import re, sys, time, rand
+import re, sys, time
 
 class Creatures:
-    def __init__(self, name, attack, health):
+    def __init__(self, name = "zebrafish", hp = 5, attack = 2):
         self.name = name
+        self.hp = hp
         self.attack = attack
-        self.health = health
     def name(self):
         name = zebrafish
     def health(self):
@@ -12,10 +12,8 @@ class Creatures:
     def attack(self):
         attack = 2
         
-class Dog(Creatures):
-    def name(self):
-        name = dog
-    def health(self):
-        health = 3
-    def attack(self):
-        attack = 1
+class Goblin(Creatures):
+	def __init__(self, name = "goblin", hp = 20, attack = 5):
+		self.name = name
+		self.hp = hp
+		self.attack = attack
