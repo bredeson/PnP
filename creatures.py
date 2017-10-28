@@ -8,13 +8,7 @@ class Creatures:
         self.name = name
         self.hp = hp
         self.attack = attack
-        
-# class Goblin(Creatures):
-# 	def __init__(self, name = "goblin", hp = 20, attack = 5):
-# 		self.name = name
-# 		self.hp = hp
-# 		self.attack = attack
-		
+	
 # Generating a creatures dictionary from a provided text file - prevents manual coding of \
 # individual creatures to make things easier and expansion straightforward.
 
@@ -34,19 +28,14 @@ for line in creatures_list:
 for key, value in creature_dict.items():
 	creature_dict[key] = value.split(',')
 
-class PrisonGuard_Easy(Creatures):
-	def __init__(self, name = creature_dict['PrisonGuard_Easy'][0], 
-	hp = int(creature_dict['PrisonGuard_Easy'][1]), attack = randrange(0,4)):
-		self.name = name
-		self.hp = hp
-		self.attack = attack
+# Random selection of creatures for each call of the class - needs to be acknowledged in backbone.
+random_creature = random.choice(list(creature_dict))
 
-# Sandbox: 
-	
-attack_vals = list(range(0,7))
-random.shuffle(attack_vals)
+class Random(Creatures):
+	def __init__(self, name = creature_dict[str(random_creature)][0], 
+		hp = int(creature_dict[str(random_creature)][1]), attack = int(creature_dict[str(random_creature)][2])):
+			self.name = name
+			self.hp = hp
+			self.attack = attack
 
-HP_counter = int()
-HP_counter = prisonguard1.hp
-
-# How can I go about getting a new random number for attack each turn? 
+# Drew has taken care of the random attack value selection - excellent.
