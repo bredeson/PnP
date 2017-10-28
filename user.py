@@ -21,10 +21,12 @@ class Prisoner(object):
 
 # Attack function generates random attack damage between 1 and 6 and adusts users hp from creatures attack value
 
-	def attack(self):
-		self.hp -= creatures.Creatures.attack
+	def attack(self,  monster = None):
+		self.hp -= monster.attack
 		strike = random.randrange(1,6)
 		return strike
+
+# Functions to set self variables
 
 	def setHP(self, new_hp = None):
 		self.hp = new_hp
