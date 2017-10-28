@@ -3,9 +3,9 @@
 # Main user charactrer class and methods
 
 import random
-import creatures
+import Creatures
 
-class Prisoner(object)
+class Prisoner(object):
 	
 	def __init__(self, name = 'Unknown', hp = 20, escapeStatus = False, difficulty = 'medium'):
 		self.name = name
@@ -19,3 +19,7 @@ class Prisoner(object)
 		self.hp -= creature.Creature.attack
 		strike = random.randrange(1,6)
 		return strike
+
+	def setHP(new_hp = None):
+		self.hp = new_hp
+
