@@ -18,6 +18,14 @@ class Creatures:
 # Generating a creatures dictionary from a provided text file - prevents manual coding of \
 # individual creatures to make things easier and expansion straightforward.
 
+# Entries in dictionary file must be:
+# Tab-delimited
+# Value will have two values and an optional third:
+	# Name
+	# HP
+	# Attack (Damage)
+	## ALWAYS IN THAT ORDER ##
+
 creatures_list = open('sample_creatures_list', 'r')
 creature_dict = {}
 for line in creatures_list:
