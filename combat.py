@@ -11,7 +11,6 @@ prisoner = 40
 attack = 5
 
 while goblin > 0:
-	#time.sleep(2)
 	if prisoner < 1:
 		print('you have died; you little bitch')
 		break
@@ -29,18 +28,15 @@ while goblin > 0:
 		print('You strike at the goblin dealing',attack,'damage')
 		time.sleep(3)
 		goblin = goblin-attack
-		print('The goblin is almost dead. It has', goblin, 'health remaining')
-		time.sleep(3)
-		prisoner = prisoner-gobatk
-		continue
-		if goblin >0:
+		if goblin > 0:
+			print('The goblin is almost dead. It has', goblin, 'health remaining')
+			time.sleep(3)
 			print('The goblin hit you for', gobatk, 'damage; your health is now',prisoner)
 			time.sleep(3)
-			continue
+			prisoner = prisoner-gobatk
 		else:
+			print('the goblin is dead')
 			break
 	else:
-		print('The goblin is dead')		
 		break
 
-print(goblin)
