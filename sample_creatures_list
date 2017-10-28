@@ -1,5 +1,6 @@
-Goblin	goblin,20,5
-Troll	troll,30,4
-Ogre	orge,18,6
-PrisonGuard	prison guard,10,7
-Simon	simon,40,9
+Goblin	goblin,20
+Troll	troll,30
+Ogre	orge,18
+PrisonGuard_Easy	prison guard,7
+PrisonGuard_Hard	prison guard,10
+Simon	Simon the Python,40
