@@ -2,10 +2,7 @@
 
 
 #import modules
-import user
-import os
-
-
+import user, os
 
 #initialize global variables
 
@@ -22,12 +19,11 @@ while game_play=='active':# the player enters the loop. they cannot escape the l
         #sample a location when we get to that
             first_query=input("You walk down the hallway and see a set of stairs leading down into the dark. Do you go down the stairs, [yes] or [no]? ")
 
-            if first_query=="yes":
+            if first_query=="no":
                 print("It's dark down here, too bad we don't have items enabled yet.")
 
-            elif first_query=="no":
-                #the first encounter
-                print("You hear a massive group of prison gaurds running up behind you.")
+            elif first_query=="yes":
+                print("You creep down the stairs.")
 
             else:
                 print("sass")
