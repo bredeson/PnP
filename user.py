@@ -53,6 +53,6 @@ class Prisoner(object):
 	def setescapeStatus(self, escapeStatus = False):
 		self.escapeStatus = escapeStatus
 
-	def setAttack(self, attack_inc = 0)
+	def setAttack(self, attack_inc = 0):
 		self.attack += attack_inc
 		print('Your attack damage has increased to',self.attack)
