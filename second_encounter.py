@@ -2,8 +2,26 @@
 
 import creatures, random
 
+art = '''
+                    z
+                             z
+                              Z
+                    .--.  Z Z
+                   / _(c\   .-.     __
+                  | / /  '-;   \'-'`  `\______
+                  \_\/'/ __/ )  /  )   |      \--,
+                  | \`""`__-/ .'--/   /--------\  \
+                   \\`  ///-\/   /   /---;-.    '-'
+                                (________\  \
+                                          '-'
+
+'''
+
+
 def second_combat(player):
-    
+
+    print(art)
+        
     d_10 = random.randint(1,10)
     
 
