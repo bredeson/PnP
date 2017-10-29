@@ -47,7 +47,7 @@ class Prisoner(object):
 
 	@property
 	def level(self):
-		if self._level < 1
+		if self._level < 1:
 			self._level = 1
 		return self._level
 
