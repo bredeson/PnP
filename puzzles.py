@@ -82,8 +82,8 @@ class Puzzles(object):
 #		my_puzzle.do_puzzle(player)
 #========================================================
 							
-	def do_puzzle(self, user_input = None): #user = None):
-		try_counter = 3
+	def do_puzzle(self, user_input = None, user = None):
+		try_counter = user.intelligence
 		user_input = input('Time for a puzzle. Are you up to the task? [yes] or [no]\n\n')
 		while user_input not in ['yes', 'no']:
 			user_input = input('invalid. try again.\n\n') 
