@@ -26,8 +26,10 @@ def printHealthBar (current_hp, starting_hp, decimals = 1, length = 50, fill = '
 def input_s(text, user, color = ''):
 	if not color == '':
 		color_code = color_dict[color]
-	query= input(color_code + text)
-	query = textwrap.fill(query)
+		query= input(color_code + text + color_dict['end'])
+	else:
+		query= input(text)
+		query = textwrap.fill(query)
 	while query=="status":
 		color_code = color_dict['green']
 		print(color_code + "\nName: {}\nHealth Points: {}\nDifficulty: {}\nAttack: {}\n".format(user.name, printHealthBar(user.hp, user._hp), user.difficulty, user.attack) + color_dict['end'])
