@@ -1,10 +1,22 @@
 #!/usr/bin/env python3
 
+#=============================
 #Puzzles and side-quests class
+# By Shasta Webb
+# 28 October 2017
+# filename = puzzles.py
+#=============================
+
+#=================
+#Required modules:
+# 1) random
+# 2) os
+# 3) sass
+#=================
 
 import re
 import random 
-#import user
+#import sass
 import os
 
 #=====================================
@@ -52,14 +64,15 @@ class Puzzles(object):
 	def do_puzzle(self, user_input = None):
 		try_counter = 3
 		user_input = input('Would you like to do a puzzle? If you say [no], you will lose only X hp. If you say [yes], you could strike it rich, but if you fail, it could mean danger!\n\n')
-		
+		while user_input not in ['yes', 'no']:
+			user_input = input('invalid. try again.\n\n') 
 
 		if user_input == 'yes':
 			print(master_puzzles[self.puzzle_question]['Question:']) 
 			
 			while try_counter > 0:
 				user_answer = input('What is your answer?\n')
-			
+		
 				if user_answer == master_puzzles[self.puzzle_question]['Answer:']:
 					print('\n{} is correct! You may proceed.'.format(master_puzzles[self.puzzle_question]['Answer:']))
 					self.completed = True
@@ -73,12 +86,10 @@ class Puzzles(object):
 						print('You have {} tries left. Guess what? You\'re fucked.'.format(try_counter))
 						self.completed = False
 						return
-		
-		elif user_input == 'no':
-			print('\nPerhaps a wise choice! However, you are going to be penalized for your cowardice!')
-			return
 
-
+#=============
+#End of module
+#=============
 		 
 
 		
