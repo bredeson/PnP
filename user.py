@@ -60,7 +60,7 @@ class Prisoner(object):
 
 				if combat_query == 'risky':
 					chance = random.randint(1,20)
-					min_damage = 0.5*self.attack
+					min_damage = int(0.5*self.attack)
 					max_damage = 2*self.attack
 					new_user_attack = random.randint(min_damage,max_damage)
 					new_mon_attack = random.randint(1,monster.attack)
@@ -78,7 +78,7 @@ class Prisoner(object):
 							print_s('The ' + monster.name + ' is dead.')
 							break
 					else:
-						print_s('You missed!', color = 'purple')
+						print_s(combatResponses.missResponse(), color = 'purple')
 						time.sleep(3)
 						print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' +  monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')
 						self.hp -= new_mon_attack
@@ -87,7 +87,7 @@ class Prisoner(object):
 					if self.mana > 0:
 						new_user_attack = self.attack
 						new_mon_attack = random.randint(1,monster.attack)
-						print_s('You do magic stuff for ' + str(new_user_attack) + ' damage.', color = 'red')
+						print_s(combatResponses.magicResponse() + str(new_user_attack) + ' damage.', color = 'red')
 						monster.hp -= new_user_attack
 						self.mana -= 1
 						print_s('You have ' + str(self.mana) + ' mana left.')
