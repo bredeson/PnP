@@ -49,7 +49,7 @@ master_puzzles = {
 		},
 		'Puzzle 5': {
 				'Question:':'What was the world’s highest mountain before the discovery of Everest?',
-				'Answer:'  :'Everest',
+				'Answer:'  :'everest',
 				'Hint:'    :'Can heights of mountains change?'
 		}
 }		
@@ -97,13 +97,13 @@ class Puzzles(object):
 			while try_counter > 0:
 				user_answer = input_s('What is your answer?\n', user)
 		
-				if user_answer == master_puzzles[self.puzzle_question]['Answer:']:
+				if user_answer.lower() == master_puzzles[self.puzzle_question]['Answer:']:
 					print_s('\n {} is correct! You may proceed.'.format(master_puzzles[self.puzzle_question]['Answer:']), color = 'green')
 					del master_puzzles[self.puzzle_question]
 					self.completed = True
 					return(self.completed)
 
-				elif user_answer != master_puzzles[self.puzzle_question]['Answer:']:
+				elif user_answer.lower() != master_puzzles[self.puzzle_question]['Answer:']:
 					try_counter -= 1
 					print_s('{} is incorrect! You have {} more tries.'.format(user_answer, try_counter), color = 'red') 
 
