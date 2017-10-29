@@ -12,12 +12,15 @@
 # 1) random
 # 2) os
 # 3) sass
+# 4) user
+# 3) textFormat
 #=================
 
 import user
 import random 
 import sass
 import os
+from textFormat import print_s, input_s
 
 #=====================================
 #Creating nested dictionary of puzzles
@@ -25,29 +28,29 @@ import os
 
 master_puzzles = {
 		'Puzzle 1': {
-				'Question:':'What is the latin name for white-faced capuchin monkey?',
-				'Answer:'  :'Cebus capucinus imitator',
-				'Hint:'	   :'Genus = Cebus'	
+				'Question:':'What is harder to catch the faster you run?',
+				'Answer:'  :'breath',
+				'Hint:'	   :'Inhale, exhale, inhale.'	
 		},
 		'Puzzle 2': {
-				'Question:':'What is 4 + 3?',
-				'Answer:'  :'7',
-				'Hint:'    :'Try addition.'
+				'Question:':'When was the latest year that is the same upside down?',
+				'Answer:'  :'1961',
+				'Hint:'    :'Try writing it out.'
 		},
 		'Puzzle 3': {
-				'Question:':'What is 1 + 1?',
-				'Answer:'  :'2',
-				'Hint:'    :'Try addition.'
+				'Question:':'A thief enters a shop and threatens the clerk, forcing him to open the safe. The clerk says, "The code for the safe is different every day, and if you hurt me you\'ll never get the code". But the thief manages to guess the code on his own. What is the code?',
+				'Answer:'  :'different',
+				'Hint:'    :'Think about the WORDS.'
 		},
 		'Puzzle 4': {
-				'Question:':'What country is north of the United States?',
-				'Answer:'  :'Canada',
-				'Hint:'    :'Try looking at a map.'
+				'Question:':'What word becomes shorter when you add two words to it?',
+				'Answer:'  :'shorter',
+				'Hint:'    :'len(short) >= len(shorter)?.'
 		},
 		'Puzzle 5': {
-				'Question:':'What continent is Drew from?',
-				'Answer:'  :'Africa',
-				'Hint:'    :'Ask Drew.'
+				'Question:':'What was the world’s highest mountain before the discovery of Everest?',
+				'Answer:'  :'Everest',
+				'Hint:'    :'Can heights of mountains change?'
 		}
 }		
 
@@ -84,39 +87,44 @@ class Puzzles(object):
 							
 	def do_puzzle(self, user_input = None, user = None):
 		try_counter = user.intelligence
-		user_input = input('Time for a puzzle. Are you up to the task? [yes] or [no]\n\n')
+		user_input = input_s('Time for a puzzle! Are you up to the task? [yes] or [no]\n\n', user)
 		while user_input not in ['yes', 'no']:
-			user_input = input('invalid. try again.\n\n') 
+			user_input = input_s('Invalid response. Enter [yes] or [no]\n\n', color = 'purple') 
 
 		if user_input == 'yes':
-			print(master_puzzles[self.puzzle_question]['Question:']) 
+			print_s(master_puzzles[self.puzzle_question]['Question:']) 
 			
 			while try_counter > 0:
-				user_answer = input('What is your answer?\n')
+				user_answer = input_s('What is your answer?\n', user)
 		
 				if user_answer == master_puzzles[self.puzzle_question]['Answer:']:
-					print('\n{} is correct! You may proceed.'.format(master_puzzles[self.puzzle_question]['Answer:']))
+					print_s('\n {} is correct! You may proceed.'.format(master_puzzles[self.puzzle_question]['Answer:']), color = 'green')
 					del master_puzzles[self.puzzle_question]
 					self.completed = True
 					return(self.completed)
 
 				elif user_answer != master_puzzles[self.puzzle_question]['Answer:']:
 					try_counter -= 1
-					print('{} is incorrect! You have {} more tries.'.format(user_answer, try_counter)) 
+					print_s('{} is incorrect! You have {} more tries.'.format(user_answer, try_counter), color = 'red') 
 
 					if try_counter > 0:
-						user_hint = input('You seem to be wasted or maybe a little bit dumb. Would you like a hint? [yes] or [no]')
-					
+						user_hint = input_s('Are you maybe a little bit dumb? Perhaps you drank a little too much Farmer Nick\'s Ancient Grain Sorghum Whiskey? Would you like a hint? [yes] or [no]', user)
+
 						while user_hint not in ['yes', 'no']:
-							user_hint = input('invalid. try again.\n\n')
+							user_hint = input_s('Invalid response. Enter [yes] or [no].\n\n', user, color = 'purple')
 				
 						if user_hint == 'yes':
-							print(master_puzzles[self.puzzle_question]['Hint:'])
+							print_s(master_puzzles[self.puzzle_question]['Hint:'])
 						
 					if try_counter == 0:
-						print('You have {} tries left. Guess what? You\'re fucked.'.format(try_counter))
+						print_s('Guess what? You failed. You\'re fucked.', color = 'red')
 						self.completed = False
 						return(self.completed)
+
+		elif user_input == 'no':
+			print_s('That was probably a mistake. Best of luck, though.', color = 'red')
+			return(self.completed)
+
 
 #=============
 #End of module
