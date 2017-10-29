@@ -3,6 +3,9 @@ import sys
 import time
 import random
 
+a = ['strike at the', 'stab at the', 'land a heavy blow against the','slice the', 'swing ferociuosly at the', ]
+b = ['takes a beating', 'screams in horror', 'yelps in pain', 'shrieks loudly', 'bleeds heavily', 'laughs at your attack', 'grunts heavily']
+
 import Creatures
 
 Goblin = Creatures.Goblin()
