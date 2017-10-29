@@ -35,7 +35,15 @@ master_puzzles = {
 		'Puzzle 3': {
 				'Question:':'What day is it?',
 				'Answer:'  :'Saturday'
-		}
+		},
+		'Puzzle 4': {
+				'Question:':'q'
+				'Answer:'  :'t'
+		},
+		'Puzzle 5': {
+				'Question:':'a'
+				'Answer:'  :'b'
+		},
 }		
 
 #========================
@@ -75,6 +83,7 @@ class Puzzles(object):
 		
 				if user_answer == master_puzzles[self.puzzle_question]['Answer:']:
 					print('\n{} is correct! You may proceed.'.format(master_puzzles[self.puzzle_question]['Answer:']))
+					del master_puzzles[self.puzzle_question]
 					self.completed = True
 					return
 
