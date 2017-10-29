@@ -38,7 +38,7 @@ def first_combat(player):
         decision_counter=0
     elif first_combat_query=="stay and fight":
 
-        print_s(art)
+        print(art)
         opponent=creatures.Creatures(name="hulking guard", hp=30, attack=8) #initializing creature. Might need to update if creatures updates.
 
         player.combat(opponent)
