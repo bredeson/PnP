@@ -43,8 +43,8 @@ master_puzzles = {
 				'Hint:'    :'Think about the WORDS.'
 		},
 		'Puzzle 4': {
-				'Question:':'What word becomes shorter when you add two words to it?',
-				'Answer:'  :'shorter',
+				'Question:':'What word becomes shorter when you add two letters to it?',
+				'Answer:'  :'short',
 				'Hint:'    :'len(short) >= len(shorter)?.'
 		},
 		'Puzzle 5': {
