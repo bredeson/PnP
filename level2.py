@@ -8,6 +8,7 @@ from textFormat import input_s, print_s
 from sass import sample_sass
 from beer_encounter import beer_encounter
 from attempt_climb import attempt_climb
+from zookeeper_encounter import zookeeper_encounter
 
 #initialize global variables                                                                               
 
@@ -61,13 +62,15 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                         easter_query=input_s(sample_sass(), player)
                     if easter_query=="yes":
                         print_s("enter drew's encounter here")
-                    
+                    elif easter_query=="no":
+                        print_s("You continue down the hallway")
             elif entry_query=="enter the door":
                 print("you go in the door")
                 #have a hallway encounter
-            
+            zookeeper_encounter(player)
             print_s("enter Mitchell's encounter here")
-
+            print_s("Add a segue here to get into Shasta's encounter")
+            print_s("Shasta's encounter")
             player.level=3
         player.hp=0
     print_s("Game over", "red")
