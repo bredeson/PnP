@@ -8,8 +8,8 @@ def zookeeper_encounter(player):
 	zookeeper_query=input_s("As you enter the upstairs hallway, you see a managerie of wild animals. A figure dressed in a ringmaster outfit hears you approach and turns around. \
 As he faces you, you realize it's a bipedal lion! He growls at you and demands to know what you are doing here.\
  How do you respond? [Say nothing], [run away], [tell the truth], [lie], or make a lion [pun]\n")
-while str(zookeeper_query) not in ["say nothing", "Say nothing", "run away", "tell the truth", "pun", 'lie']:
-	zookeeper_query=input_s(sample_sass(), player)
+	while str(zookeeper_query) not in ["say nothing", "Say nothing", "run away", "tell the truth", "pun", 'lie']:
+		zookeeper_query=input_s(sample_sass(), player)
 
 	if zookeeper_query=="say nothing" or zookeeper_query== "Say nothing" or zookeeper_query== "run away" or zookeeper_query== "tell the truth":
 		monster = creatures.Animals()
@@ -27,6 +27,6 @@ while str(zookeeper_query) not in ["say nothing", "Say nothing", "run away", "te
 			print_s('The lions stares angrily at you, clearly not appreciating your pun. He walks away and unlocks a dark cage revealing...a'+ monster.name)
 	elif zookeeper_query == 'lie':
 		monster = creatures.Animals()
-		print_s("You 'lion' to me? You do not belong here! He walks away and unlocks a dark cage...revealing a" + monster.name))
+		print_s("You 'lion' to me? You do not belong here! He walks away and unlocks a dark cage...revealing a" + monster.name)
 	else:
 		print_s('edit me')
