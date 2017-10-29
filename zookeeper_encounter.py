@@ -13,7 +13,7 @@ while str(zookeeper_query) not in ["say nothing", "Say nothing", "run", "tell th
 
 	if zookeeper_query=="say nothing" or zookeeper_query== "Say nothing" or zookeeper_query== "run" or zookeeper_query== "tell the truth":
 		monster = creatures.Animals()
-		print_s("The lion tells you that you do not belong here. He walks away and unlocks a dark cage...revealing a"+ monster.name)
+		print_s("The lion tells you that you do not belong here. He walks away and unlocks a dark cage...revealing a "+ monster.name)
 	elif zookeeper_query== "pun":
 		print_s("You tell the lion that the wizard is your 'mane' man.")
 		time.sleep(5)
@@ -25,9 +25,9 @@ while str(zookeeper_query) not in ["say nothing", "Say nothing", "run", "tell th
 			player.attack +=2
 		else:
 			monster = creatures.Animals()
-			print_s('The lions stares angrily at you, clearly not appreciating your pun. He walks away and unlocks a covered cage...revealing a'+ monster.name)
+			print_s('The lions stares angrily at you, clearly not appreciating your pun. He walks away and unlocks a covered cage...revealing a '+ monster.name)
 	elif zookeeper_query == 'lie':
 		monster = creatures.Animals()
-		print_s("You 'lion' to me? You do not belong here! He walks away and unlocks a dark cage...revealing a" + monster.name))
+		print_s("You 'lion' to me? You do not belong here! He walks away and unlocks a dark cage...revealing a " + monster.name))
 	else:
 		print_s('edit me')
