@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 
-# Main user charactrer class and methods
+#================================================
+# Define main user charactrer class and methods
+#================================================
 
 import random, time
 import creatures
+import combatResponses
 
 class Prisoner(object):
 	
@@ -20,7 +23,7 @@ class Prisoner(object):
 		self.difficulty = difficulty
 		self.attack = attack
 
-# Combat function for creature encounters
+# Combat function for creature encounters --- calls combatResponses for sassy comments during battle
 
 	def combat(self,  monster = None):
 		while monster.hp > 0:
@@ -30,14 +33,14 @@ class Prisoner(object):
 			elif monster.hp > 0:
 				new_user_attack = random.randint(1,self.attack)
 				new_mon_attack = random.randint(1,monster.attack)
-				print('You strike at the',monster.name,'dealing',new_user_attack,'damage')
+				print(combatResponses.combatResponse_player(self.attack, new_user_attack),'You deal',new_user_attack,'damage','to',monster.name)
 				time.sleep(3)
 				monster.hp -= new_user_attack
 				if monster.hp > 0:
-					print('The',monster.name, 'takes a beating. It has', monster.hp, 'health remaining')
+					print('The',monster.name, 'has', monster.hp, 'health remaining')
 					time.sleep(3)
 					self.hp -= new_mon_attack
-					print('The', monster.name, 'hits you for', new_mon_attack, 'damage; your health is now',self.hp)
+					print(combatResponses.combatResponse_monster(monster.attack, new_mon_attack), monster.name, 'does', new_mon_attack, 'damage. Your health is now', self.hp)
 					time.sleep(3)
 				else:
 					print('The', monster.name, 'is dead')
@@ -55,4 +58,4 @@ class Prisoner(object):
 
 	def setAttack(self, attack_inc = 0):
 		self.attack += attack_inc
-		print('Your attack damage has increased to',self.attack)
+		print('Your attack damage has increased to ',self.attack,'.\n', sep = '')
