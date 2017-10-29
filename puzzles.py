@@ -35,6 +35,14 @@ master_puzzles = {
 		'Puzzle 3': {
 				'Question:':'What day is it?',
 				'Answer:'  :'Saturday'
+		},
+		'Puzzle 4': {
+				'Question:':'q'
+				'Answer:'  :'t'
+		},
+		'Puzzle 5': {
+				'Question:':'a'
+				'Answer:'  :'b'
 		}
 }		
 
@@ -75,8 +83,9 @@ class Puzzles(object):
 		
 				if user_answer == master_puzzles[self.puzzle_question]['Answer:']:
 					print('\n{} is correct! You may proceed.'.format(master_puzzles[self.puzzle_question]['Answer:']))
+					del master_puzzles[self.puzzle_question]
 					self.completed = True
-					return
+					return(self.completed)
 
 				elif user_answer != master_puzzles[self.puzzle_question]['Answer:']:
 					try_counter -= 1
@@ -85,7 +94,7 @@ class Puzzles(object):
 					if try_counter == 0:
 						print('You have {} tries left. Guess what? You\'re fucked.'.format(try_counter))
 						self.completed = False
-						return
+						return(self.completed)
 
 #=============
 #End of module
