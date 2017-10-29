@@ -43,7 +43,7 @@ master_puzzles = {
 		'Puzzle 5': {
 				'Question:':'a'
 				'Answer:'  :'b'
-		},
+		}
 }		
 
 #========================
