@@ -4,6 +4,9 @@ import re, sys, time, random
 from random import randrange
 
 creature_dict = {}
+level1_dict = {}
+level2_dict = {}
+
 # random_creature = None
 
 # Generates a generic class "Creatures" with three attributes with defaults:
