@@ -28,6 +28,7 @@ def input_s(text, user, color = ''):
 		color_code = color_dict[color]
 		query= input(color_code + text + color_dict['end'])
 	else:
+		query= input(text)
 		query = textwrap.fill(query)
 	while query=="status":
 		color_code = color_dict['green']
