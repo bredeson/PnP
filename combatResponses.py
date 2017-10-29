@@ -10,7 +10,7 @@ actions_monster_good = ['This guy is gonna kick your ass.','Ouch!',"That's gonna
 actions_monster_bad = ['You can take this guy.','Terrible effort, what a chump.',"If you don't win, I'll be disappointed.","Today's your lucky day"]
 
 def combatResponse_player(user_attack, new_user_attack):
-	if user_attack / new_user_attack >= 0.5:
+	if new_user_attack / user_attack >= 0.6:
 		message = random.choice(actions_player_good)
 		return message
 	else:
@@ -18,7 +18,7 @@ def combatResponse_player(user_attack, new_user_attack):
 		return message
 
 def combatResponse_monster(monster_attack, new_monster_attack):
-	if monster_attack / new_monster_attack >= 0.5:
+	if new_monster_attack / monster_attack >= 0.6:
 		message = random.choice(actions_monster_good)
 		return message
 	else:
