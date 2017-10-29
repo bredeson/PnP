@@ -285,6 +285,29 @@ class Capuchin(Creatures):
  '-- "--'  '--'
 '''
 
+class Clown(Creatures):
+	def __init__(self):
+		Creatures.__init__(self, name = 'Clown', hp = 25, attack = 18)
+	def art(self):
+		return '''
+       ,            _..._            ,									
+      {'.         .'     '.         .'}											
+     { ~ '.      _|=    __|_      .'  ~}									
+    { ~  ~ '-._ (___________) _.-'~  ~  }									
+   {~  ~  ~   ~.'           '. ~    ~    }										
+  {  ~   ~  ~ /   /\     /\   \   ~    ~  }									
+  {   ~   ~  /    __     __    \ ~   ~    }									
+   {   ~  /\/  -<( o)   ( o)>-  \/\ ~   ~}									
+    { ~   ;(      \/ .-. \/      );   ~ }									
+     { ~ ~\_  ()  ^ (   ) ^  ()  _/ ~  }									
+      '-._~ \   (`-._'-'_.-')   / ~_.-'									
+          '--\   `'._'"'_.'`   /--'											
+              \     \`-'/     /  											
+               `\    '-'    /'   										
+                 `\       /'    									
+                   '-...-'												
+'''
+
 class Oyster(Creatures):
 	def __init__(self):
 		Creatures.__init__(self, name = 'Oyster', hp = 30, attack = 3)
