@@ -18,6 +18,7 @@ def attempt_climb(user, climb_query):
         print_s("You really should have tried the door.")
     elif climb_query=="rope":
         print_s("You deftly swing the rope over a gargoyle flanking the window and scamper up the wall like a white-faced capuchin.")
+        success=1
     return(success)
     
             
