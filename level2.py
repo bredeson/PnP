@@ -35,9 +35,19 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     print_s("You have fallen to your death.")
                     break
                 elif success==1:
-                    print_s("You are in the spa.")
+                    print_s("Light-footed as a jazzercize instructor, you leap through the window. You find yourself in a warm steamy room smelling of roses - what a relief after that sewer! You look around and see a sorceress perusing a perl manual at a nearby table.")
+                    sorc_approach=input_s("Do you approach the sorceress?[yes] or [no]", player)
+                    while sorc_approach not in ["yes", "no"]:
+                        sorc_approach=input_s(sampl_sass(),player)
+                    if sorc_approach=="yes":
+                    
+
+                    
             elif entry_query=="enter the door":
                 print("you go in the door")
+                #have a hallway encounter
+
+
             print_s("You made it out of the ifs")
             player.level=3
         player.hp=0
