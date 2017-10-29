@@ -105,9 +105,11 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                         print_s("To your relief the key fits the lock and the trapdoor opens with a little effort and you cautiously descend into the depths below.\n") 
             
             mitchell_encounter.oyster_encounter(player)
-
+            fake_query=input_s("", player)
             print_s("You continue down this dark, dank tunnel ignoring the fact you're wading knee deep through a prison sewer, you're pretty gross!\nYou can hear something splashing in the water, and can hear demented giggling in the darkness...")
+            fake_query=input_s("", player)
             print_s("With the little light avaliable at the end of the tunnel you spot some freak dressed as a funky ass clown emerging from behind a shopping trolley full of rope and trash")
+            fake_query=input_s("", player)
             print_s("Without saying a word the clown throws some dice against the wall... it bekons at you and points at the dice...")
             
             dice_querey = input_s("You wonder if this pennywise wannabe is packing some heat and will finish you off right here, right now, if you don't entertain it. Do you want to [roll] the dice and see what happens, or bust past him and make a [run] for it", player)
@@ -118,9 +120,10 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 print_s("Well done" + player + "here take this [rope], I'm certain it'll come in handy\n")
             elif dice_querey == "run":
                 print_s("You push that son of a gun face down into the hotdog flavoured water and run for you life before it gets up.\n")
-                
+                fake_query=input_s("", player)
             print_s("You sigh heavily after that encounter, and wonder what the hell you did to get into this situation. You can now hear another unusual noise further ahead. ")
-
+            fake_query=input_s("", player)
+            
     print_s("Game Over.")#print_s when you escape the second while loop.
     game_play=0 #gets you out of the outermost while loop.
 
