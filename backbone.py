@@ -9,15 +9,29 @@ from sass import sample_sass
 from beer_encounter import beer_encounter
 
 #initialize global variables
+art = '''                                         
+  @@@@@@@        @@@@@         @@@@@@@   
+  @@@@@@@@      @@@@@@@        @@@@@@@@  
+  @@!  @@@     @@!   @@@       @@!  @@@  
+  !@!  @!@      !@  @!@        !@!  @!@  
+  @!@@!@!        @!@!@         @!@@!@!   
+  !!@!!!         !!!@  !!!     !!@!!!    
+  !!:           !!:!!:!!:      !!:       
+  :!:          :!:  !:!:       :!:       
+   ::          ::: ::::::       ::       
+   :            ::: :: :::      :  
+
+           Prisons & Pythons      
+ '''                                        
 
 game_play=1
-
+print(art)
 while game_play==1:# the player enters the loop. they cannot escape the loop until game_play is called not active.
     pre_query1=input("What's your name? ")
     pre_query2=input("How hard do you want this to be? [easy], [medium], or [hard] ")
     player=user.Prisoner(name=pre_query1, difficulty=pre_query2) 
     print_s("Your name is "+ player.name+", you have "+ str(player.hp)+ " health points. \n")
-    print_s("INSTRUCTIONS \n")
+    print_s("INSTRUCTIONS\n Your various attacks are: [attack] which is the basic move, [risky] which has a bigger imapct but can miss the target or [magic] which has a big impact but the number of uses are limited\n commands are in [square brackets]\n If there is a wait, hit enter  \n")
     read_statement=input_s("Press enter to begin.\n", player)
 
     fake_query=input_s("Your eyelids flutter open. You look up to see a dank, mossy ceiling and stone walls with one bleak, barred window. You sit up and look around. You see an open door in front you, candlelight flickering behind it. You stumble blearily to your feet and walk through the door.\n", player)
@@ -25,6 +39,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
 #game begins
     while player.hp>0:
         while player.level==1:
+            #Level one
             decision_counter=1
             while decision_counter==1:
                 first_query=input_s("You walk down the hallway and see a set of stairs leading down into the dark. Do you go down the stairs, [yes] or [no]?\n ", player)
@@ -85,7 +100,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                
 
                  if puzzle_success==True:
-                    print_s("BoratK sinks slowly back into the darkness, leaving the trapdoor open behind him. You cautiously descend into the depths below.\n")
+                    print_s("BoratK sinks slowly back into the darkness, leaving the trapdoor open behind him. You cautiously descend into the depths below.\n\n")
                  else:
                     print_s("BoratK slams the trapdoor closed at your feet.\n")
                     fake_query=input_s("", player)
@@ -93,7 +108,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     print_s("This beast doesn't care if you're ready or not, it's coming.\n")
                     fake_query=input_s("", player)
                     opponent=creatures.Random()
-                    print_s("A vicious", opponent.name, "leaps down the stairs and attacks!\n")
+                    print_s("A vicious " + opponent.name + " leaps down the stairs and attacks!\n")
                     fake_query=input_s("", player)
                     player.combat(opponent)
                     if player.hp<=0:
@@ -106,25 +121,64 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             
             mitchell_encounter.oyster_encounter(player)
             fake_query=input_s("", player)
-            print_s("You continue down this dark, dank tunnel ignoring the fact you're wading knee deep through a prison sewer, you're pretty gross!\nYou can hear something splashing in the water, and can hear demented giggling in the darkness...")
+            print_s("You continue down this dark, dank tunnel ignoring the fact you're wading knee deep through a prison sewer, you're pretty gross!\nYou can hear something splashing in the water, and can hear demented giggling in the darkness...\n")
             fake_query=input_s("", player)
-            print_s("With the little light avaliable at the end of the tunnel you spot some freak dressed as a funky ass clown emerging from behind a shopping trolley full of rope and trash")
+            print_s("With the little light avaliable at the end of the tunnel you spot some freak dressed as a funky ass clown emerging from behind a shopping trolley full of rope and trash\n")
             fake_query=input_s("", player)
-            print_s("Without saying a word the clown throws some dice against the wall... it bekons at you and points at the dice...")
+            print_s("Without saying a word the clown throws some dice against the wall... it bekons at you and points at the dice...\n")
             
-            dice_querey = input_s("You wonder if this pennywise wannabe is packing some heat and will finish you off right here, right now, if you don't entertain it. Do you want to [roll] the dice and see what happens, or bust past him and make a [run] for it", player)
+            dice_querey = input_s("You wonder if this pennywise wannabe is packing some heat and will finish you off right here, right now, if you don't entertain it. Do you want to [roll] the dice and see what happens, or bust past him and make a [run] for it\n", player)
             while str(dice_querey) not in ["roll","run"]:
                 dice_querey=input_s(sample_sass(), player)
             if dice_querey == "roll":
                 dice_encounter.dice_game(player)
-                print_s("Well done" + player + "here take this [rope], I'm certain it'll come in handy\n")
+                fake_query=input_s("", player)           
             elif dice_querey == "run":
                 print_s("You push that son of a gun face down into the hotdog flavoured water and run for you life before it gets up.\n")
                 fake_query=input_s("", player)
-            print_s("You sigh heavily after that encounter, and wonder what the hell you did to get into this situation. You can now hear another unusual noise further ahead. ")
+            
+            print_s("You sigh heavily after that encounter, and wonder what the hell you did to get into this situation. You can now hear another unusual noise further ahead. Its a gutteral hiss that could only be on thing!\n")
             fake_query=input_s("", player)
             
-    print_s("Game Over.")#print_s when you escape the second while loop.
+            print_s("There is a huge python blocking your $PATH,\n it lunges at you, pinning you in a corner, you have to fight!\n What is your first move?\n\n")
+            decision_counter=1
+            opponent=creatures.Python()
+            player.combat(opponent)
+            if player.hp<=0:
+                print_s("Sweet lord Monty is one tough python!\n")
+                break
+            elif decision_counter==2:
+                print_s("Hell yeeeah! I nailed that mofo. Maybe I was some bad ass Navy Seal or part of the SAS?\n")
+                player.setAttack(2)
+            fake_query=input_s("", player)
+            print_s("Battered and bruised you slowly walk away from the twisted, bloody pile of python. You continue further into the tunnel and come to a bend, as you turn the corner you can see daylight shining brightly at the end.\n")
+            
+            #level two
+            art2= '''
+
+    _                    _   _                 
+   | |                  | | | |                
+   | |     _____   _____| | | |___      _____  
+   | |    / _ \ \ / / _ | | | __\ \ /\ / / _ \ 
+   | |___|  __/\ V |  __| | | |_ \ V  V | (_) |
+   \_____/\___| \_/ \___|_|  \__| \_/\_/ \___/ 
+                                              
+'''
+            print(art2)   
+
+
+
+    gameover='''
+
+    ▄▀  ██   █▀▄▀█ ▄███▄       ████▄     ▄   ▄███▄   █▄▄▄▄ 
+  ▄▀    █ █  █ █ █ █▀   ▀      █   █      █  █▀   ▀  █  ▄▀ 
+  █ ▀▄  █▄▄█ █ ▄ █ ██▄▄        █   █ █     █ ██▄▄    █▀▀▌  
+  █   █ █  █ █   █ █▄   ▄▀     ▀████  █    █ █▄   ▄▀ █  █  
+   ███     █    █  ▀███▀               █  █  ▀███▀     █   
+          █    ▀                        █▐            ▀    
+         ▀                              ▐                  
+    '''
+    print_s(gameover, coclor="red")#print_s when you escape the second while loop.
     game_play=0 #gets you out of the outermost while loop.
 
 
