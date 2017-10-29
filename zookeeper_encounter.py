@@ -30,5 +30,6 @@ As he faces you, you realize it's a bipedal lion! He growls at you and demands t
 	elif zookeeper_query == 'lie':
 		monster = creatures.Animals()
 		print_s("You 'lion' to me? You do not belong here! He walks away and unlocks a dark cage...revealing a" + monster.name)
+		player.combat(monster)
 	else:
 		print_s('edit me')

@@ -36,7 +36,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     print_s("You have fallen to your death.")
                     break
                 elif success==1:
-                    input_s("Light-footed as a jazzercize instructor, you leap through the window. You find yourself in a cozy room smelling of roses - what a relief after that sewer! You look around and see a sorceress perusing a perl manual at a nearby table.", player)
+                    input_s("Light-footed as a prancercize instructor, you alight on the floor of a cozy room smelling of roses - what a relief after that sewer! You look around and see a sorceress perusing a perl manual at a nearby table.", player)
                     sorc_approach=input_s("Do you approach the sorceress?[yes] or [no]\n", player)
                     while sorc_approach not in ["yes", "no"]:
                         sorc_approach=input_s(sampl_sass(),player)
@@ -57,7 +57,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     elif spa_query=="no":
                         print_s("You walk right past the enticing hottub you so stubbornly rejected.")
                     print_s("You exit into a sumptuously decorated hallway. Your feet sinking into the plush carpet, you notice a door cracked to your left.")
-                    easter_query=input_s("Do you open the door? [yes] or [no]", player)
+                    easter_query=input_s("Do you open the door? [yes] or [no]\n", player)
                     while easter_query not in ["yes", "no"]:
                         easter_query=input_s(sample_sass(), player)
                     if easter_query=="yes":
@@ -65,10 +65,13 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     elif easter_query=="no":
                         print_s("You continue down the hallway")
             elif entry_query=="enter the door":
-                print("you go in the door")
+                opponent=creatures.Magic()
+                print_s("You strut confidently through the main castle door. You enter an impressively portioned entrance hall lit by sunlight streaming through the tall mullioned windows. You briefly admire the marble statues and tapestries lining the walls before you see a " + opponent + " taking a fighting stance ten meters in front of you.")
+                print_s(opponent.art())
+                player.combat(opponent)
+                print_s("story")
                 #have a hallway encounter
             zookeeper_encounter(player)
-            print_s("enter Mitchell's encounter here")
             print_s("Add a segue here to get into Shasta's encounter")
             print_s("Shasta's encounter")
             player.level=3
