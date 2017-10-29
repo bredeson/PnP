@@ -6,6 +6,7 @@ from random import randrange
 master_dict = {}
 level1_dict = {}
 level2_dict = {}
+animals_dict = {}
 
 # random_creature = None
 
@@ -456,6 +457,12 @@ level2_dict['goblin'] = Goblin
 level2_dict['troll'] = Troll
 level2_dict['harry'] = Harry
 
+animals_dict['capuchin'] = Capuchin
+animals_dict['sheep'] = Sheep
+animals_dict['soapberry'] = Soapberry
+animals_dict['mouse'] = C57BL6
+animals_dict['zebrafish'] = Creatures
+
 ## What power levels should the creatures have based on level? That would make things easier all around.
 
 # creatures_list = open('sample_creatures_list', 'r')
@@ -473,6 +480,11 @@ def Random():
 	random_creature_constructor = master_dict[random_creature]
 	return random_creature_constructor()
 
+def Animals():
+	animal_creature = random.choice(list(animals_dict))
+	animal_creature_constructor = animals_dict[animal_creature]
+	return animal_creature_constructor()
+	
 def Magic():
 	magic_creature = random.choice(list(level2_dict))
 	magic_creature_constructor = level2_dict[magic_creature]
