@@ -14,9 +14,9 @@
 # 3) sass
 #=================
 
-import re
+import user
 import random 
-#import sass
+import sass
 import os
 
 #=====================================
@@ -26,23 +26,28 @@ import os
 master_puzzles = {
 		'Puzzle 1': {
 				'Question:':'What is the latin name for white-faced capuchin monkey?',
-				'Answer:'  :'Cebus capucinus imitator'
+				'Answer:'  :'Cebus capucinus imitator',
+				'Hint:'	   :'Genus = Cebus'	
 		},
 		'Puzzle 2': {
 				'Question:':'What is 4 + 3?',
-				'Answer:'  :'7'
+				'Answer:'  :'7',
+				'Hint:'    :'Try addition.'
 		},
 		'Puzzle 3': {
-				'Question:':'What day is it?',
-				'Answer:'  :'Saturday'
+				'Question:':'What is 1 + 1?',
+				'Answer:'  :'2',
+				'Hint:'    :'Try addition.'
 		},
 		'Puzzle 4': {
-				'Question:':'q',
-				'Answer:'  :'t'
+				'Question:':'What country is north of the United States?',
+				'Answer:'  :'Canada',
+				'Hint:'    :'Try looking at a map.'
 		},
 		'Puzzle 5': {
-				'Question:':'a',
-				'Answer:'  :'b'
+				'Question:':'What continent is Drew from?',
+				'Answer:'  :'Africa',
+				'Hint:'    :'Ask Drew.'
 		}
 }		
 
@@ -68,10 +73,18 @@ class Puzzles(object):
 #	puzzle_question = generated within function, no 
 #						input from command line necessary
 #========================================================
+
+#========================================================
+#To use puzzles in the backbone script, you need to:
+# 1) intitialize a puzzle object
+#		my_puzzle = puzzle.Puzzle()
+# 2) call do_puzzle function with player as input
+#		my_puzzle.do_puzzle(player)
+#========================================================
 							
-	def do_puzzle(self, user_input = None):
+	def do_puzzle(self, user_input = None): #user = None):
 		try_counter = 3
-		user_input = input('Would you like to do a puzzle? If you say [no], you will lose only X hp. If you say [yes], you could strike it rich, but if you fail, it could mean danger!\n\n')
+		user_input = input('Time for a puzzle. Are you up to the task? [yes] or [no]\n\n')
 		while user_input not in ['yes', 'no']:
 			user_input = input('invalid. try again.\n\n') 
 
@@ -90,7 +103,16 @@ class Puzzles(object):
 				elif user_answer != master_puzzles[self.puzzle_question]['Answer:']:
 					try_counter -= 1
 					print('{} is incorrect! You have {} more tries.'.format(user_answer, try_counter)) 
+
+					if try_counter > 0:
+						user_hint = input('You seem to be wasted or maybe a little bit dumb. Would you like a hint? [yes] or [no]')
 					
+						while user_hint not in ['yes', 'no']:
+							user_hint = input('invalid. try again.\n\n')
+				
+						if user_hint == 'yes':
+							print(master_puzzles[self.puzzle_question]['Hint:'])
+						
 					if try_counter == 0:
 						print('You have {} tries left. Guess what? You\'re fucked.'.format(try_counter))
 						self.completed = False
