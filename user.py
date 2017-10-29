@@ -10,7 +10,7 @@ import combatResponses
 
 class Prisoner(object):
 	
-	def __init__(self, name = 'Unknown', hp = 20, level = 1, difficulty = 'medium', attack = 6, intelligence = 2, location = 'Prison'):
+	def __init__(self, name = 'Unknown', hp = 20, _hp = 20,level = 1, difficulty = 'medium', attack = 6, intelligence = 2, location = 'Prison'):
 		self.name = name
 		if difficulty.upper() == 'easy'.upper():
 			hp = 40
@@ -24,6 +24,7 @@ class Prisoner(object):
 		self.intelligence = intelligence
 		self.level = level
 		self.hp = hp
+		self._hp = hp
 		self.difficulty = difficulty
 		self.attack = attack
 		self.location = location
