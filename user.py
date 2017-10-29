@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-# Main user charactrer class and methods
+#================================================
+# Define main user charactrer class and methods
+#================================================
 
 import random, time
 import creatures
@@ -21,7 +23,7 @@ class Prisoner(object):
 		self.difficulty = difficulty
 		self.attack = attack
 
-# Combat function for creature encounters
+# Combat function for creature encounters --- calls combatResponses for sassy comments during battle
 
 	def combat(self,  monster = None):
 		while monster.hp > 0:
