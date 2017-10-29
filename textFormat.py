@@ -31,7 +31,7 @@ def input_s(text, user, color = ''):
 		query= input(textwrap.fill(text, replace_whitespace = False, drop_whitespace = False))
 	while query=="status":
 		color_code = color_dict['green']
-		print(color_code + "\nName: {}\nHealth Points: {}\nDifficulty: {}\nAttack: {}\n".format(user.name, printHealthBar(user.hp, user._hp), user.difficulty, user.attack) + color_dict['end'])
+		print(color_code + "\nName: {}\nHealth Points: {}\nDifficulty: {}\nAttack: {}\n".format(user.name, printHealthBar(user.hp, user._hpmax), user.difficulty, user.attack) + color_dict['end'])
 		query=input(text)
 	return(query)
 
