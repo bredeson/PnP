@@ -11,7 +11,7 @@ from textFormat import print_s
 
 class Prisoner(object):
 	
-	def __init__(self, name = 'Unknown', hp = None, _hp = None,level = 1, difficulty = 'medium', attack = 6, intelligence = 2, location = 'Prison', mana = 3):
+	def __init__(self, name = 'Unknown', hp = 20 ,level = 1, difficulty = 'medium', attack = 6, intelligence = 2, location = 'Prison', mana = 3):
 		self.name = name
 		if difficulty.upper() == 'easy'.upper():
 			hp = 40
@@ -22,14 +22,46 @@ class Prisoner(object):
 		else:
 			hp = 10
 			intelligence = 1
-		self.intelligence = intelligence
-		self.level = level
-		self.hp = hp
+		self._intelligence = intelligence
+		self._level = level
 		self._hp = hp
+		self._hpmax = hp
 		self.difficulty = difficulty
-		self.attack = attack
+		self._attack = attack
 		self.location = location
-		self.mana = mana
+		self._mana = mana
+
+#Properties to check self variables that should not equal 0 and return hidden attr and pass to unhidden versions
+
+	@property	
+	def hp(self):
+		if self._hp  < 0:
+			self._hp = 0
+		return self._hp
+
+	@property
+	def intelligence(self):
+		if self._intelligence < 0:
+			self._intelligence
+		return self._intelligence
+
+	@property
+	def level(self):
+		if self._level < 1
+			self._level = 1
+		return self._level
+
+	@property
+	def attack(self):
+		if self._attack < 0:
+			self._attack = 0
+		return self._attack
+
+	@property
+	def mana(self):
+		if self._mana < 0:
+			self.mana = 0
+		return self._mana
 
 # Combat function for creature encounters --- calls combatResponses for sassy comments during battle
 
@@ -39,9 +71,9 @@ class Prisoner(object):
 				print_s('You have died to a ' + monster.name, color = 'red')
 				break
 			elif monster.hp > 0:
-				combat_query=input('[attack], [risky] attack, or [magic]?\n')
+				combat_query=input('[a]ttack, [r]isky attack, or [m]agic?\n')
 				
-				if combat_query == 'attack':
+				if combat_query == 'a':
 					new_user_attack = random.randint(1,self.attack)
 					new_mon_attack = random.randint(1,monster.attack)
 					print_s(combatResponses.combatResponse_player(self.attack, new_user_attack) + ' ' + 'You deal ' + str(new_user_attack) + ' damage to ' + monster.name, color = 'red')
@@ -51,14 +83,14 @@ class Prisoner(object):
 						print_s('The ' + monster.name + ' has ' + str(monster.hp) + ' health remaining.')
 						time.sleep(3)
 						self.hp -= new_mon_attack
-						print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. You health is now ' + str(self.hp), color = 'red')
+						print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')
 						time.sleep(3)
 					else:
 						print_s('The ' + monster.name + ' is dead.')
 						break
 
 
-				if combat_query == 'risky':
+				if combat_query == 'r':
 					chance = random.randint(1,20)
 					min_damage = int(0.5*self.attack)
 					max_damage = 2*self.attack
@@ -80,10 +112,10 @@ class Prisoner(object):
 					else:
 						print_s(combatResponses.missResponse(), color = 'purple')
 						time.sleep(3)
-						print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' +  monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')
 						self.hp -= new_mon_attack
+						print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' +  monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')	
 
-				if combat_query == 'magic':
+				if combat_query == 'm':
 					if self.mana > 0:
 						new_user_attack = self.attack
 						new_mon_attack = random.randint(1,monster.attack)
@@ -104,7 +136,8 @@ class Prisoner(object):
 						print_s('You have no mana left!', color = 'blue')
 			else:
 				break
-# Functions to set self variables
+
+# Methods to set self variables
 
 	def setHP(self, new_hp = None):
 		self.hp = new_hp
