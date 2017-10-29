@@ -3,7 +3,6 @@
 def input_s(text, user):
     query=input(text)
     while query=="status":
-        print("\nName\thp\tdifficulty")
-        print("{}\t{}\t{}\n".format(user.name, user.hp, user.difficulty))
+        print("\nName:{}\nhp:{}\ndifficulty:{}\nattack:{}\n".format(user.name, user.hp, user.difficulty, user.attack))
         query=input(text)
     return(query)
