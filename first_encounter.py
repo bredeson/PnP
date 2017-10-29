@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import creatures
+import creatures, sass
 
 art = '''
 
@@ -30,8 +30,8 @@ art = '''
 '''
 
 def first_combat(player):
-    first_combat_query=input("You hear the heavy footfalls of an approaching hulking guard.\
- The only way to avoid confronting it is to go down the stairs. Do you [stay and fight] or [go down the stairs]?\n")
+    first_combat_query=input_s("You hear the heavy footfalls of an approaching hulking guard.\
+ The only way to avoid confronting it is to go down the stairs. Do you [stay and fight] or [go down the stairs]?\n", player)
     if first_combat_query=="go down the stairs":
         print("Darwin would be proud.\n")
         decision_counter=0
