@@ -37,11 +37,11 @@ master_puzzles = {
 				'Answer:'  :'Saturday'
 		},
 		'Puzzle 4': {
-				'Question:':'q'
+				'Question:':'q',
 				'Answer:'  :'t'
 		},
 		'Puzzle 5': {
-				'Question:':'a'
+				'Question:':'a',
 				'Answer:'  :'b'
 		}
 }		
