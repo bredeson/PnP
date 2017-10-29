@@ -10,18 +10,23 @@ import combatResponses
 
 class Prisoner(object):
 	
-	def __init__(self, name = 'Unknown', hp = 20, escapeStatus = False, difficulty = 'medium', attack = 6):
+	def __init__(self, name = 'Unknown', hp = 20, level = 1, difficulty = 'medium', attack = 6, intelligence = 2, location = 'Prison'):
 		self.name = name
 		if difficulty.upper() == 'easy'.upper():
 			hp = 40
+			intelligence = 3
 		elif difficulty.upper() == 'medium'.upper():
 			hp = 20
+			intelligence = 2
 		else:
 			hp = 10
+			intelligence = 1
+		self.intelligence = intelligence
+		self.level = level
 		self.hp = hp
-		self.escapeStatus = escapeStatus
 		self.difficulty = difficulty
 		self.attack = attack
+		self.location = location
 
 # Combat function for creature encounters --- calls combatResponses for sassy comments during battle
 
