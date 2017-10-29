@@ -2,9 +2,9 @@
 
 
 #import modules
-import user, os, sass, first_encounter, random, time, creatures, second_encounter, puzzles, mitchell_encounter, textFormat
+import user, os, sass, first_encounter, random, time, creatures, second_encounter, puzzles, mitchell_encounter, dice_encounter
 
-from input_w_stats import input_s
+from textFormat import input_s, print_s
 from sass import sample_sass
 from beer_encounter import beer_encounter
 
@@ -16,7 +16,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
     pre_query1=input("What's your name? ")
     pre_query2=input("How hard do you want this to be? [easy], [medium], or [hard] ")
     player=user.Prisoner(name=pre_query1, difficulty=pre_query2) 
-    print_s("Your name is ", player.name,", you have ", player.hp, " health points. \n", sep='')
+    print_s("Your name is "+ player.name+", you have "+ str(player.hp)+ " health points. \n")
     print_s("INSTRUCTIONS \n")
     read_statement=input_s("Press enter to begin.\n", player)
 
@@ -33,7 +33,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 elif first_query=="yes":
                     decision_counter=0
                 else:
-                    print_s(sample_sass(), '\n')
+                    print_s(sample_sass())
             if player.hp<=0:
                 print_s("Why did you try to fight that hulking guard, you plonker? You're so dead.\n")
                 break
@@ -114,10 +114,11 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             while str(dice_querey) not in ["roll","run"]:
                 dice_querey=input_s(sample_sass(), player)
             if dice_querey == "roll":
-                hermit_encounter.dice_game(player)
+                dice_encounter.dice_game(player)
+                print_s("Well done" + player + "here take this [rope], I'm certain it'll come in handy\n")
             elif dice_querey == "run":
                 print_s("You push that son of a gun face down into the hotdog flavoured water and run for you life before it gets up.\n")
-            
+                
             print_s("You sigh heavily after that encounter, and wonder what the hell you did to get into this situation. You can now hear another unusual noise further ahead. ")
 
     print_s("Game Over.")#print_s when you escape the second while loop.
