@@ -157,6 +157,7 @@ class Prisoner(object):
 						new_user_attack = self.attack
 						new_mon_attack = random.randint(1,monster.attack)
 						print_s(combatResponses.magicResponse() + str(new_user_attack) + ' damage.', color = 'red')
+						time.sleep(3)
 						monster.hp -= new_user_attack
 						self.mana -= 1
 						print_s('You have ' + str(self.mana) + ' mana left.')
