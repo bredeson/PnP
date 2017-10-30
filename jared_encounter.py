@@ -11,7 +11,7 @@ shark = creatures.Shark()
 
 def shark_game(player):
 	dice = random.randint(1,10)
-	print_s("As you run up the stairs toward the elusive Wizard and onto the balcony, you encounter an escaped 'mythical' creature from the menagerie - the famous talking LandShark.")
+	input_s("As you run up the stairs toward the elusive Wizard and onto the balcony, you encounter an escaped 'mythical' creature from the menagerie - the famous talking LandShark.", player)
 	print(shark.art())
 	time.sleep(2)
 	input_s("The *clever* LandShark, having been on land for so long, has grown lungs and developed consumption (in addition to liver cirrhosis, for other reasons).", player)
@@ -30,21 +30,16 @@ def shark_game(player):
 			player.hp += 2
 		
 	elif decision == "go the long way":
-		print_s("Someone knows what they're doing! Good job!", player)
+		input_s("Someone knows what they're doing! Good job!", player)
 		player.intelligence += 3
-		input_s("Now you have to double back to the stairs to find an alternative route and encounter the legendary, award winning Milwaukee's Best (Monster)", player)
+		input_s("Now you have to double back to the stairs to find an alternative route and encounter the legendary, award winning Milwaukee's Best (Monster).", player)
 		print_s("To get past this monster, you must fight one of his (somewhat drunken) creatures")
 		time.sleep(2)
 		animal = creatures.Animals()
 		input_s("A wobbly " + animal.name + " stumbles down the stairs and attacks!\n", player)
 		print(animal.art())
 		player.combat(animal)
-	
-		if player.hp<=0:
-			print_s("Really? You lost to a drunken " + animal.name + "\n")
-			break
-			
-		else:
+		if player.hp>0:
 			input_s("I hope you're proud of your self, defeating a drunken " + animal.name + ". But you get to pass on to your greatest challenge yet. \n", player)
 	elif decision == "riddle me":
 		print_s("Congrats! *coughs violently* You have uncovered my hidden riddle!")
