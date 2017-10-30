@@ -19,7 +19,7 @@ def first_combat(player):
         decision_counter=2
         
     else:
-        print_s(sass.sample_sass())
-        
+        print_s(sass.sample_sass(), color='purple')
+
     return(decision_counter)
     
