@@ -34,8 +34,8 @@ def combatStatus (user = None):
 	print(color_code + "Health Points: {}\nMana: {}\n".format(printHealthBar(user.hp, user.hpmax), user.mana) + color_dict['end'])
 
 
-def print_s(text,color = '', cleanup=False):
-	text = textwrap.fill(text, replace_whitespace = False, drop_whitespace = cleanup, width = 95)
+def print_s(text,color = '', cleanup=False, width = 95):
+	text = textwrap.fill(text, replace_whitespace = False, drop_whitespace = cleanup, width = width)
 	if not color == '':
 		color_code = color_dict[color]
 		print(color_code + text + color_dict['end'])
