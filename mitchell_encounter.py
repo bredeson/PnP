@@ -21,6 +21,5 @@ def oyster_encounter(player):
 		else:
 			print_s("\nThe oyster was foul, and your stomach lurches. You lose "+ str(abs(oyster))+ ' hp. Your total hp is '+ str(player.hp))
 	
-	
 	elif oyster_query=="keep moving":
         	print_s("\nYou continue onward, ignoring the pang of hunger. Better not to risk it.")
