@@ -8,25 +8,26 @@ import random, time
 import creatures
 import combatResponses
 from textFormat import print_s, input_s, printHealthBar, combatStatus
+
 class Prisoner(object):
 	
-	def __init__(self, name = 'Unknown', hp = 20, hpmax = 20 ,level = 1, difficulty = 'medium', attack = 6, intelligence = 2, location = 'Prison', mana = 3):
+	def __init__(self, name = 'Unknown', hp = 50, hpmax = 50 ,level = 1, difficulty = 'medium', attack = 8, intelligence = 2, location = 'Prison', mana = 3):
 		self.name = name
 		if difficulty.upper() == 'easy'.upper():
-			hp = 40
-			hpmax = 40
+			hp = 80
+			hpmax = 80
 			intelligence = 3
 		elif difficulty.upper() == 'medium'.upper():
-			hp = 20
-			hpmax = 20
+			hp = 50
+			hpmax = 50
 			intelligence = 2
 		elif difficulty.upper() == 'hard'.upper():
-			hp = 10
-			hpmax = 10
+			hp = 30
+			hpmax = 30
 			intelligence = 1
 		else:
-			hp = 20
-			hpmax = 20
+			hp = 50
+			hpmax = 50
 			intelligence = 2
 			difficulty = 'medium'
 		self._intelligence = intelligence
@@ -40,16 +41,6 @@ class Prisoner(object):
 
 #Properties to check self variables that should not equal 0 and return hidden attr and pass to unhidden versions
 
-	@property	
-	def hp(self):
-		if self._hp  < 0:
-			self._hp = 0
-		return self._hp
-
-	@hp.setter
-	def hp(self, value):
-		self._hp = value
-
 	@property
 	def hpmax(self):
 		if self._hpmax < 10:
@@ -59,6 +50,18 @@ class Prisoner(object):
 	@hpmax.setter
 	def hpmax(self,value):
 		self._hpmax = value
+
+	@property	
+	def hp(self):
+		if self._hp  < 0:
+			self._hp = 0
+		return self._hp
+
+	@hp.setter
+	def hp(self, value):
+		self._hp = value
+		if self._hp / self._hpmax > 1:
+			self._hp = self._hpmax
 
 	@property
 	def intelligence(self):

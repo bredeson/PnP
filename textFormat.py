@@ -15,7 +15,8 @@ color_dict = {'purple' : '\033[95m',
 			  'bold' : '\033[1m',
 			  'underline' : '\033[4m',
 			  'blink' : '\033[5m',
-			  'dim' : '\033[2m'}
+			  'dim' : '\033[2m',
+			  }
 
 def printHealthBar (current_hp, starting_hp, decimals = 1, length = 50, fill = '█'):
     percent = ("{0:." + str(decimals) + "f}").format(100 * (current_hp / starting_hp))
