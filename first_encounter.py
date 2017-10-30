@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-import creatures, sass
+import creatures
 from textFormat import print_s, input_s
+from sass import sample_sass
 
 opponent = creatures.HulkingGuard()
 
