@@ -33,6 +33,6 @@ el and watch it dry. " ]
                 print_s(passive_actions[index])
                 time.sleep(5)
                 stair_query=input_s("Do you go up the staircase yet?[yes] or [no]\n", player)
-            brownie_encounter(player)
+        brownie_encounter(player)
         input_s("At the top of the stairs you enter a sumptuously decorated hallway. The thick carpet muffles th\
 e sound of your footsteps. You pass several creepy old paintings and notice a door cracked to your left.", player)
