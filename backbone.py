@@ -26,7 +26,7 @@ art = '''
 
 game_play=1
 print(art)
-print("INSTRUCTIONS\n Commands are in [square brackets]\n Your various attacks are:\n [a]ttack which is the basic move,\n [r]isky which has a bigger imapct but can miss the target\n or [m]agic which has a big impact but the number of uses are limited\n If there is a wait, hit <enter>\n You can call up your [status] at any time  \n")
+print("INSTRUCTIONS\n Actions are in [square brackets]\n Your various attacks are:\n [a]ttack which is the basic move,\n [r]isky which can have a bigger imapct but can miss the target\n or [m]agic always does max damage but the number of uses are limited\n If there is a wait, hit <enter>\n You can call up your [status] at any time  \n")
 print("CREDITS\n ")
 while game_play==1:# the player enters the loop. they cannot escape the loop until game_play is called not active.
     pre_query1=input("What's your name? ")
@@ -97,7 +97,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                  if decision_counter==0:
                     print_s("Being careful to step around the guard, you quietly look around the room.\n")
                  elif decision_counter==2:
-                    input_s("With an astounding display of physical prowess, you destroyed that sleepy guard. You take their pocket knife. \n")
+                    input_s("With an astounding display of physical prowess, you destroyed that sleepy guard. You take their pocket knife. \n", player)
                     player.setAttack(2)
             #you move forward and find a new room with a cask of whiskey hiding a trapdoor
                  beer_query=input_s("You notice a trapdoor under a wooden cask in the corner. Looks like there's still some sorghum whiskey in it. Do you drink the whiskey? [yes] or [no]\n", player)
