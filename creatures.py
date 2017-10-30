@@ -13,7 +13,7 @@ animals_dict = {}
 # Generates a generic class "Creatures" with three attributes with defaults:
 # Name, HP (health), and Attack (as a stat/property - treat as noun).
 class Creatures:
-    def __init__(self, name = "zebrafish", hp = 5, attack = 8, stage = 'level1'):
+    def __init__(self, name = "zebrafish", hp = 12, attack = 7, stage = 'level1'):
         self.name = name
         self.hp = hp
         self.attack = attack
@@ -51,7 +51,7 @@ class Creatures:
 	
 class Goblin(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = "Goblin", hp = 10, attack = 6)
+		Creatures.__init__(self, name = "Goblin", hp = 25, attack = 6)
 	def art(self):
 		return """
                      ,      ,						
@@ -69,36 +69,36 @@ class Goblin(Creatures):
 	
 class HulkingGuard(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Hulking Guard', hp = 12, attack = 8)
+		Creatures.__init__(self, name = 'Hulking Guard', hp = 20, attack = 8)
 	def art(self):
 		return '''
-	    
-                                 _A_						
-                                / | \						
-                               |.-=-.|						
-                               )\_|_/(						
-                            .==’\   /`==.						
-                          .’\   (`:’)   /`.						
-                        _/_ |_.-’ : `-._|__\_					
-                       <___>‘\    :   / `<___>					
-                       /  /   >=======<  /  /						
-                     _/ .’   /  ,-:-.  \/=,’						
-                    / _/    |__/v^v^v\__) \						
-                    \(\)     |V^V^V^V^V|\_/						
-                     (\\     \`---|---’/						
-                       \\     \-._|_,-/							
-                        \\     |__|__|							
-                         \\   <___X___>							
-                          \\   \..|../							
-                           \\   \ | /							
-                            \\  /V|V\									
-                             \|/  |  \								
-                              ‘--’ `--`   								
-		'''
+        
+                                 _A_                        
+                                / | \                       
+                               |.-=-.|                      
+                               )\_|_/(                      
+                            .==’\   /`==.                       
+                          .’\   (`:’)   /`.                     
+                        _/_ |_.-’ : `-._|__\_                   
+                       <___>‘\    :   / `<___>                  
+                       /  /   >=======<  /  /                       
+                     _/ .’   /  ,-:-.  \/=,’                        
+                    / _/    |__/v^v^v\__) \                     
+                    \(\)     |V^V^V^V^V|\_/                     
+                     (\\     \`---|---’/                        
+                       \\     \-._|_,-/                         
+                        \\     |__|__|                          
+                         \\   <___X___>                         
+                          \\   \..|../                          
+                           \\   \ | /                           
+                            \\  /V|V\                                   
+                             \|/  |  \                              
+                              ‘--’ `--`                                 
+        '''
 
 class NobleGuard(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Noble Guard', hp = 12, attack = 8)
+		Creatures.__init__(self, name = 'Noble Guard', hp = 15, attack = 7)
 	def art(self):
 		return '''
   ,^.
@@ -118,7 +118,7 @@ class NobleGuard(Creatures):
 
 class SleepingGuard(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Sleeping Guard', hp = 4, attack = 3)
+		Creatures.__init__(self, name = 'Sleeping Guard', hp = 8, attack = 5)
 	def art(self):
 		return ''' 
                 z  												
@@ -136,7 +136,7 @@ class SleepingGuard(Creatures):
 
 class Ogre(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Ogre', hp = 15, attack = 8)
+		Creatures.__init__(self, name = 'Ogre', hp = 30, attack = 6)
 	def art(self):
 		return '''
                   o        __,='`````'=/__									
@@ -177,7 +177,7 @@ class Ogre(Creatures):
 
 class C57BL6(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Mouse', hp = 7, attack = 3)
+		Creatures.__init__(self, name = 'Mouse', hp = 11, attack = 5)
 	def art(self):
 		return '''
                      .--,       .--,							
@@ -196,7 +196,7 @@ class C57BL6(Creatures):
 
 class Mage(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Mage', hp = 20, attack = 15)
+		Creatures.__init__(self, name = 'Mage', hp = 15, attack = 15)
 	def art(self):
 		return '''   
                     ____								
@@ -225,7 +225,7 @@ class Mage(Creatures):
 
 class Soapberry(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Red-Shouldered Soapberry Bug', hp = 4, attack = 2)
+		Creatures.__init__(self, name = 'Red-Shouldered Soapberry Bug', hp = 6, attack = 12)
 	def art(self):
 		return '''
                             :                                
@@ -271,7 +271,7 @@ class Soapberry(Creatures):
 
 class Sheep(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Sheep', hp = 12, attack = 2)
+		Creatures.__init__(self, name = 'Sheep', hp = 14, attack = 4)
 	def art(self):
 		return '''
            __  _
@@ -288,7 +288,7 @@ class Sheep(Creatures):
 
 class Capuchin(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'White-Faced Capuchin', hp = 8, attack = 8)
+		Creatures.__init__(self, name = 'White-Faced Capuchin', hp = 20, attack = 10)
 	def art(self):
 		return '''
        .="=.
@@ -464,7 +464,7 @@ class Sorceress(Creatures):
                   `'((;);   )(.');`:
                    |.' );)`   ); ;`.)
                    |  |(   ) (  ;);:
-                *  \  \ \WWWwWWW/;`'
+                *  \  \ \ SOFIA/;`'
                     \  \ ) .X. (
                  )   \  /  .X.  \   )
                 ( (  )`/   /^\   | ( (
@@ -482,7 +482,7 @@ class Sorceress(Creatures):
 		
 class Troll(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Troll', hp = 25, attack = 10)
+		Creatures.__init__(self, name = 'Troll', hp = 30, attack = 5)
 	def art(self):
 		return '''
 ░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░
