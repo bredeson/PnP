@@ -10,7 +10,7 @@ def attempt_climb(user, climb_query):
         success_rate=random.randrange(0,10)
         if success_rate<6:
             user.hp-=2
-            climb_query=input_s("You were unsuccessful scaling the wall and your health points are reduced to "+ str(user.hp) + ". Do you want to [attempt the climb] again?\n", user)
+            climb_query=input_s("You were unsuccessful scaling the wall and your health points are reduced to "+ str(user.hp) + ". Do you want to attempt the [climb] again?\n", user)
         else:
             success=1
             print_s("You've successfully climbed through the window!")
