@@ -51,7 +51,7 @@ class Creatures:
 	
 class Goblin(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = "Goblin", hp = 10, attack = 6)
+		Creatures.__init__(self, name = "a Goblin", hp = 10, attack = 6)
 	def art(self):
 		return """
                      ,      ,						
@@ -69,7 +69,7 @@ class Goblin(Creatures):
 	
 class HulkingGuard(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Hulking Guard', hp = 7, attack = 5)
+		Creatures.__init__(self, name = 'the Hulking Guard', hp = 12, attack = 8)
 	def art(self):
 		return '''
 	    
@@ -98,7 +98,7 @@ class HulkingGuard(Creatures):
 
 class SleepingGuard(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Sleeping Guard', hp = 4, attack = 3)
+		Creatures.__init__(self, name = 'the Sleeping Guard', hp = 4, attack = 3)
 	def art(self):
 		return ''' 
                 z  												
@@ -116,7 +116,7 @@ class SleepingGuard(Creatures):
 
 class Ogre(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Ogre', hp = 15, attack = 8)
+		Creatures.__init__(self, name = 'an Ogre', hp = 15, attack = 8)
 	def art(self):
 		return '''
                   o        __,='`````'=/__									
@@ -157,7 +157,7 @@ class Ogre(Creatures):
 
 class C57BL6(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Mouse', hp = 7, attack = 3)
+		Creatures.__init__(self, name = 'a Mouse', hp = 7, attack = 3)
 	def art(self):
 		return '''
                      .--,       .--,							
@@ -176,7 +176,7 @@ class C57BL6(Creatures):
 
 class Mage(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Mage', hp = 20, attack = 15)
+		Creatures.__init__(self, name = 'the Mage', hp = 20, attack = 15)
 	def art(self):
 		return '''   
                     ____								
@@ -205,7 +205,7 @@ class Mage(Creatures):
 
 class Soapberry(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Red-Shouldered Soapberry Bug', hp = 4, attack = 2)
+		Creatures.__init__(self, name = 'a Red-Shouldered Soapberry Bug', hp = 4, attack = 2)
 	def art(self):
 		return '''
                             :                                
@@ -251,7 +251,7 @@ class Soapberry(Creatures):
 
 class Sheep(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Sheep', hp = 12, attack = 2)
+		Creatures.__init__(self, name = 'a Sheep', hp = 12, attack = 2)
 	def art(self):
 		return '''
            __  _
@@ -268,7 +268,7 @@ class Sheep(Creatures):
 
 class Capuchin(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'White-Faced Capuchin', hp = 8, attack = 8)
+		Creatures.__init__(self, name = 'a White-Faced Capuchin', hp = 8, attack = 8)
 	def art(self):
 		return '''
        .="=.
@@ -287,7 +287,7 @@ class Capuchin(Creatures):
 
 class Clown(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Clown', hp = 25, attack = 18)
+		Creatures.__init__(self, name = 'the Clown', hp = 25, attack = 18)
 	def art(self):
 		return '''
        ,            _..._            ,									
@@ -310,7 +310,7 @@ class Clown(Creatures):
 
 class Oyster(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Oyster', hp = 30, attack = 3)
+		Creatures.__init__(self, name = 'the Oyster', hp = 30, attack = 3)
 	def art(self):
 		return '''
            _.---._
@@ -392,7 +392,7 @@ class Harry(Creatures):
 
 class Wizard(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Wizard', hp = 25, attack = 10)
+		Creatures.__init__(self, name = 'the Wizard', hp = 25, attack = 10)
 	def art(self):
 		return '''
               o												
@@ -429,7 +429,7 @@ class Wizard(Creatures):
 		
 class Sorceress(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Sorceress', hp = 25, attack = 10)
+		Creatures.__init__(self, name = 'the Sorceress', hp = 25, attack = 10)
 	def art(self):
 		return '''
 
@@ -462,7 +462,7 @@ class Sorceress(Creatures):
 		
 class Troll(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Troll', hp = 25, attack = 10)
+		Creatures.__init__(self, name = 'a Troll', hp = 25, attack = 10)
 	def art(self):
 		return '''
 ░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░
@@ -484,7 +484,7 @@ class Troll(Creatures):
 
 class Shark(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = "Renegade Shark", hp = 100, attack = 50)
+		Creatures.__init__(self, name = "the Renegade Shark", hp = 100, attack = 50)
 	def art(self):
 		return'''
  _________         .    .

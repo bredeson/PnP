@@ -36,15 +36,18 @@ def print_s(text,color = ''):
 	else:
 		print(text)
 
-def input_s(text, user=None, color = ''):
+def input_s(text, user=None, color = '', recurse = False):
+	if recurse is False:
+		text += '\n> '
 	if not color == '':
 		color_code = color_dict[color]
-		query= input(textwrap.fill(color_code + text + color_dict['end'], replace_whitespace = False, drop_whitespace = False))
+		query= input(textwrap.fill(color_code + text + color_dict['end'], replace_whitespace = False, drop_whitespace = True))
 	else:
-		query= input(textwrap.fill(text, replace_whitespace = False, drop_whitespace = False))
+		query= input(textwrap.fill(text, replace_whitespace = False, drop_whitespace = True))
 	while query=="status":
 		color_code = color_dict['green']
-		print_s(color_code + "\nName: {}\nLevel: {}\nHealth Points: {}\nDifficulty: {}\nAttack: {}\n".format(user.name, user.level, printHealthBar(user.hp, user.hpmax), user.difficulty, user.attack) + color_dict['end'])
-		query=input(text)
+		print(color_code + "\nName: {}\nLevel: {}\nHealth Points: {}\nDifficulty: {}\nAttack: {}\nMana: {}\nIntelligence: {}\n".format(user.name, user.level, printHealthBar(user.hp, user.hpmax), user.difficulty, user.attack, user.mana, user.intelligence) + color_dict['end'])
+		query=input_s(text, user, color = color, recurse = True)
+
 	return(query)
 
