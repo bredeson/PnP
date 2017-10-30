@@ -26,6 +26,7 @@ art = '''
 
 game_play=1
 print(art)
+print("Optimal Terminal window size = 100x75")
 print("INSTRUCTIONS\n Actions are in [square brackets]\n Your various attacks are:\n [a]ttack which is the basic move,\n [r]isky which can have a bigger imapct but can miss the target\n or [m]agic always does max damage but the number of uses are limited\n If there is a wait, hit <enter>\n You can call up your [status] at any time  \n")
 print("CREDITS\n ")
 while game_play==1:# the player enters the loop. they cannot escape the loop until game_play is called not active.
@@ -157,7 +158,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 print_s("You push that son of a gun face down into the hotdog flavoured water and run for you life before it gets up.\n")
                 fake_query=input_s("", player)
             
-            print_s("You sigh heavily after that encounter, and wonder what the hell you did to get into this situation. You can now hear another unusual noise further ahead. Its a gutteral hiss that could only be on thing!\n")
+            print_s("You sigh heavily after that encounter, and wonder what the hell just happened. You continue down the tunnel wondering how you got into ths situation... What's that? you hear another unusual noise further ahead. Its a gutteral hiss that could only be one thing!\n")
             fake_query=input_s("", player)
             
             print_s("There is a huge python blocking your $PATH,\n it lunges at you, pinning you in a corner, you have to fight!\n What is your first move?\n\n")
