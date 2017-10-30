@@ -18,7 +18,7 @@ def shark_game(player):
 	decision = input_s("Do you [jump over the shark] and risk infection or [go the long way] on your quest to the wizard?\n", user = player)
 
 	while str(decision) not in ['jump over the shark', 'go the long way', 'riddle me']:
-		decision = input_s(sass.sample_sass(), user = player)
+		decision = input_s(text=sass.sample_sass(), user = player, color="purple")
 
 	if decision == "jump over the shark":
 		if dice > 3:
