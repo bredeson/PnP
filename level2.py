@@ -2,7 +2,7 @@
 
 
 #import modules                                                                                            
-import user, os, sass, first_encounter, random, time, creatures, second_encounter, puzzles
+import user, os, sass, first_encounter, random, time, creatures, second_encounter, puzzles, wizard_encounter
 
 from textFormat import input_s, print_s
 from sass import sample_sass
@@ -12,6 +12,7 @@ from zookeeper_encounter import zookeeper_encounter
 from brownie_encounter import brownie_encounter
 from jared_encounter import shark_game
 from easter_egg import easter_egg
+
 
 #initialize global variables                                                                               
 
@@ -97,7 +98,9 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 print_s("Really? You lost to a drunken " + animal.name + "\n")
                 break
             input_s("Slightly dazed from your latest encounter, you return to the spiral stairs and proceed cautiously upward. You look out of a window and realize you are approaching the top of the highest tower. Seeing the prison in the distance, your smoldering desire to confront the wizard bursts into flames.", player)
-            
+            wiz_puzzle=wizard_encounter.Wizard_encounter()
+            wizard_result=wiz_puzzle.boss_battle(user=player)
+            print_s( "You have either won or lost, add text here after wizardry")
             player.level=3
         player.hp=0
     print_s("Game over", "red")
