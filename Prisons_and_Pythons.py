@@ -205,6 +205,35 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             #print(status)
         while player.level==2:
             input_s("As the daylight hits your face, you feel the warmth sink into your soul and your health points increase to " + str(player.hp) + ". You have a sudden flash of memory: the details are hazy, but you recall that you were imprisoned by a powerful wizard. Looking around you, you realize you are in a vaguely familiar courtyard - the courtyard of the wizard's castle! This is your chance to find the wizard and solve the mystery of your imprisonment - and take your revenge!\n", player)
+            
+            castle = '''
+
+       .         .      /\      .:  *       .          .              .      
+                 *    .'  `.      .     .     *      .                  .    
+  :             .    /      \  _ .________________  .                    .   
+       |            `.+-~~-+.'/.' `.^^^^^^^^\~~~~~\.                      .  
+ .    -*-   . .       |u--.|  /     \~~~~~~~|~~~~~|                          
+       |              |   u|.'       `." "  |" " "|                        . 
+    :            .    |.u-./ _..---.._ \  " | " " |                          
+   -*-            *   |    ~-|U U U U|-~____L_____L_                      .  
+    :         .   .   |.-u.| |..---..|"//// ////// /\       .            .   
+          .  *        |u   | |       |// /// // ///==\     / \          .    
+ .          :         |.--u| |..---..|//////~\////====\   /   \       .      
+      .               | u  | |       |~~~~/\ u|~~|++++| .`+~~~+'  .          
+                      |.-|~U~U~|---..|u u|u | |u ||||||   |  U|              
+                   /~~~~/-\---.'     |===|  |u|==|++++|   |   |              
+          aaa      |===| _ | ||.---..|u u|u | |u ||HH||U~U~U~U~|        aa@@@@
+     aaa@@@@@@aa   |===|||||_||      |===|_.|u|_.|+HH+|_/_/_/_/aa    a@@@@@@@@
+ aa@@@@@@@@@@@@@@a |~~|~~~~\---/~-.._|--.---------.~~~`.__ _.@@@@@@a    ~~~~~~
+   ~~~~~~    ~~~    \_\  \  \/~ //\  ~,~|  __   | |`.   :||  ~~~~            
+                     a\`| `   _//  | / _| || |  | `.'  ,''|     aa@@@@@@@a   
+ aaa   aaaa       a@@@@\| \  //'   |  // \`| |  `.'  .' | |  aa@@@@@@@@@@@@@a
+@@@@@a@@@@@@a      ~~~~~ \ `//| | \ \//   \`  .-'  .' | '/      ~~~~~~~  ~~  
+@          @@@@a          \// |.`  ` ' /~  :-'   .'|  '/~aa                  
+~~~~~~~ ~~~~~~         a@@@|   \  |   // .'    .'| |  |@@@@@@a               
+                    a@@@@@@@\   | `| ''.'     .' | ' /@@@@@@@@@a  
+'''
+            print(castle)
             zookeeper_encounter(player)
 
             entry_query=input_s("You exit the menagerie and look around the courtyard. The outer wall is unscalable and the portcullis is down. There is a window two floors up the castle wall and a main entrance. Do you attempt to [climb] the wall or [walk] in the door?\n",player)
