@@ -518,6 +518,32 @@ class Shark(Creatures):
       |/   \_  \|      /
              \________/
 '''
+
+class Borat(Creatures):
+	def __init__(self):
+		Creatures.__init__(self, name = "BoratK", hp = 100, attack = 50)
+	def art(self):
+		return '''
+  
+               .-----.									
+              / '. ' .\										
+              |_.__'_.|}										
+             (;  6 6  ;)										
+              ;,  >  ,; 											
+              ;;;~~~;;;													
+           ___.';;;;;'.__ 											
+            \  `\   /`  /										
+            |   |   |   | 										
+            |   |\_/|   | 											
+            |   |   |   |   										
+            |   |   |   |  											
+            |   |   |   |   										
+            |   |   |   |   									
+            |   |___|   |   									
+            |___|[_]|___|  										
+                       
+'''
+
 	
 master_dict['goblin'] = Goblin
 master_dict['oyster'] = Oyster
