@@ -77,18 +77,19 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     player.setAttack(5)
                     print_s("You continue down the corrider and slip through an open door into a dark room.\n")
             #Here you enter the sleeping guard scenario.
-            decision_counter=1
-            while decision_counter==1:
+            decision_counter = 1
+            while decision_counter == 1:
                 second_query=input_s("As your eyes begin to adjust to the low lighting, you notice a single guard slouched in a drunken stupor against a nearby wall. Do you [wake him up] or [attempt to creep] past him?\n", player)
-                if second_query=="attempt to creep":
-                    decision_counter=second_encounter.second_combat(player)
-                elif second_query=="wake him up":
+                if second_query == "attempt to creep":
+                    decision_counter = second_encounter.second_combat(player)
+                elif second_query == "wake him up":
                     opponent=creatures.SleepingGuard()
+                    print(opponent.art())
                     player.combat(opponent)
-                    decision_counter=2
+                    decision_counter = 2
                 else:
                     print_s(sample_sass())
-            if player.hp<=0:
+            if player.hp <= 0:
                 print_s("Seriously? He was half asleep. You die in shame.\n")
                 break
             else:
