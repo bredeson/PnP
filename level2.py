@@ -91,14 +91,14 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 easter_query=input_s(sample_sass(), player)
             if easter_query=="yes":
                 easter_egg(player)
-                print_s("did it work?")
-            print_s("add some storyline to segue to jared's encounter.")
+            print_s("You come to the foot of a spiral staircase that circles upwards out of sight. Testing your physical fitness, you leap up eleven steps at a time. You slip through an archway and find yourself on a balcony.")
             shark_game(player)
             if player.hp<=0:
                 print_s("Really? You lost to a drunken " + animal.name + "\n")
                 break
-            print_s("You continue down the hallway up some stairs and you add some text to transition to the wizard")
-                #have a hallway encounter
+            input_s("Slightly dazed from your latest encounter, you return to the spiral stairs and proceed cautiously upward. You look out of a window and realize you are approaching the top of the highest tower. Seeing the prison in the distance, your smoldering desire to confront the wizard bursts into flames.", player)
+
+
             print_s("Add a segue here to get into Shasta's encounter")
             print_s("Shasta's encounter")
             player.level=3
