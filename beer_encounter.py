@@ -24,4 +24,4 @@ def beer_encounter(user):
         drink_query=input_s("Do you want to keep drinking?", user)
         extra_drinks+=1
         while drink_query not in ["yes","no"]:
-            drink_query=input_s(sass.sample_sass(), user)
+            drink_query=input_s(sass.sample_sass(), user, "purple")
