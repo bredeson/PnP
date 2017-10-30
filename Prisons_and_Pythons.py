@@ -298,6 +298,22 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 print_s("A final message prints on the screen:")
                 input_s("'Your permissions have been restored.'", player, "blue")
                 input_s("Filled with gratitude, you return to your home as Baron(ess) of Hershey Manor, never to abuse sudo again.", player)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             else:
                 print_s("Simon shakes his head in disappointment.\n 'I can see you've learned nothing from this experience. I'm afraid there's only one place for sloppy coders in this universe.'")
                 player.level=1
