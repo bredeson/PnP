@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-import creatures, sass, user, time, puzzles
+import creatures, user, time, puzzles
 from textFormat import print_s, input_s
+from sass import sample_sass
 
 def easter_egg(player):
     shelf = '''
@@ -26,6 +27,7 @@ def easter_egg(player):
 ||       _(____)|===|+|[I]|DK|''|==|:x:|=|XX|  N  |=|^^^|||
 ||              `---^-^---^--^--'--^---^-^--^-===-^-^---^||
 ||-------------------------------------------------------||
+||             \033[8mChose [read] for secret room\033[8m\033[0m              ||
 ||_______________________________________________________||
 
 '''
