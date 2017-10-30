@@ -14,8 +14,7 @@ def zookeeper_encounter(player):
 		print(monster.art())
 		player.combat(monster)
 		player.attack +=2
-		print_s("After killing a ' + monster.name + ', you are able to fashion a weapon from its remains. Your attack has increased to " + player.attack + ".")
-
+		input_s("After killing a " + monster.name + ", you are able to fashion a weapon from its remains. Your attack has increased to " + str(player.attack) + ".", player)
 	elif zookeeper_query== "pun":
 		print_s("You tell the lion that the wizard is your 'mane' man.")
 		time.sleep(5)
@@ -25,21 +24,21 @@ def zookeeper_encounter(player):
 		if chance > 10:
 			print_s("The lion eventually cracks, letting out a hearty chuckle and lets you pass. As you pass he gives you a potion of lion's strength. As you drink it, you feel your muscles growing.")
 			player.attack +=2
-			print_s("Your attack has increased to " + player.attack + ".")
+			input_s("Your attack has increased to " + str(player.attack) + ".", player)
 		else:
 			monster = creatures.Animals()
 			print_s('The lions stares angrily at you, clearly not appreciating your pun. He walks away and unlocks a dark cage revealing...a '+ monster.name + ".")
 			print(monster.art())
 			player.combat(monster)
 			player.attack +=2
-			print_s("After killing a ' + monster.name + ', you are able to fashion a weapon from its remains. Your attack has increased to " + player.attack + ".")
+			input_s("After killing a ' + monster.name + ', you are able to fashion a weapon from its remains. Your attack has increased to " + str(player.attack) + ".", player)
 	elif zookeeper_query == 'lie':
 		monster = creatures.Animals()
 		print_s("You 'lion' to me? You do not belong here! He walks away and unlocks a dark cage...revealing a " + monster.name + ".")
 		print(monster.art())
 		player.combat(monster)
 		player.attack +=2
-		print_s("After killing a ' + monster.name + ', you are able to fashion a weapon from its remains. Your attack has increased to " + player.attack + ".")
+		input_s("After killing a ' + monster.name + ', you are able to fashion a weapon from its remains. Your attack has increased to " + str(player.attack) + ".", player)
 	else:
 		print_s('edit me')
 		
