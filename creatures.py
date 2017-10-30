@@ -340,7 +340,32 @@ class Oyster(Creatures):
        `. /   |   \ .'
          `-.__|__.-'
          '''
-
+         
+class Wombat(Creatures):
+	def __init__(self):
+		Creatures.__init__(self, name = 'Wombat', hp = 30, attack = 15)
+	def art(self):
+		return '''
+                               ,.--""""--.._								
+                             ."     .'      `-.									
+                            ;      ;           ;								
+                           '      ;             )								
+                          /     '             . ;								
+                         /     ;     `.        `;								
+                       ,.'     :         .     : )								
+                       ;|\'    :      `./|) \  ;/								
+                       ;| \"  -,-   "-./ |;  ).;								
+                       /\/              \/   );						
+                      :                 \    ;							
+                      :     _      _     ;   )								
+                      `.   \;\    /;/    ;  /							
+                        !    :   :     ,/  ;  								
+                         (`. : _ : ,/""   ;      							
+                          \\\`"^" ` :    ;          						
+                                   (    )            						
+                                   ////										                
+         '''
+         
 class Python(Creatures):
 	def __init__(self):
 		Creatures.__init__(self, name = 'Python (Monty)', hp = 35, attack = 8)
@@ -622,6 +647,7 @@ master_dict['mage'] = Mage
 master_dict['mouse'] = C57BL6
 master_dict['ogre'] = Ogre
 master_dict['nobleguard'] = NobleGuard
+master_dict['wombat'] = Wombat
 
 level1_dict['sleepyguard'] = SleepingGuard
 level1_dict['hulkingguard'] = HulkingGuard
@@ -642,6 +668,7 @@ animals_dict['sheep'] = Sheep
 animals_dict['soapberry'] = Soapberry
 animals_dict['mouse'] = C57BL6
 animals_dict['zebrafish'] = Creatures
+animals_dict['wombat'] = Wombat
 
 ## What power levels should the creatures have based on level? That would make things easier all around.
 
