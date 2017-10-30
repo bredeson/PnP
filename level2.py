@@ -33,7 +33,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
 
             entry_query=input_s("You exit the menagerie and look around the courtyard. The outer wall is unscalable and the portcullis is down. There is a window two floors up the castle wall and a main entrance. Do you attempt to [climb] the wall or [enter] the door?\n",player)
             while entry_query not in ["climb", "enter", "rope"]:
-                entry_query=input_s(sample_sass(),player)
+                entry_query=input_s(sample_sass(),player, "purple")
             if entry_query=="climb" or entry_query=="rope":
                 success=attempt_climb(player, entry_query)
                 if success==0:
@@ -43,7 +43,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     input_s("Light-footed as a prancercize instructor, you alight on the floor of a cozy room smelling of roses - what a relief after that sewer! You look around and see a sorceress perusing a perl manual at a nearby table.", player)
                     sorc_approach=input_s("Do you approach the sorceress?[yes] or [no]\n", player)
                     while sorc_approach not in ["yes", "no"]:
-                        sorc_approach=input_s(sample_sass(),player)
+                        sorc_approach=input_s(sample_sass(),player, "purple")
                     if sorc_approach=="yes":
                         input_s("'Hello young traveler!' she sings.\n 'My name is Sofia. Sit with me and gain some perls of wisdom.'", player)
                         player.intelligence+=2
@@ -54,7 +54,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     
                     spa_query=input_s("There is a bubbling hottub in the spa. Do you sit in it?[yes] or [no]\n", player)
                     while spa_query not in ["yes", "no"]:
-                        spa_query=input_s(sample_sass(),player)
+                        spa_query=input_s(sample_sass(),player, "purple")
                     if spa_query=="yes":
                         player.mana=3
                         input_s("You sit in the hottub and your mana is fully replenished to " + str(player.mana) + ".\n After your rejuvinating soak, you towel off and walk out the spa door and it locks behind you. Good thing you got dressed before walking out that door!", player)
@@ -76,7 +76,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 print_s("At the end of the entrance hall is a magnificent pair of staircases sweeping up to the next level. ")
                 stair_query=input_s("Do you go up the stairs?[yes] or [no]\n", player)
                 while stair_query not in ["yes", "no"]:
-                    stair_query=input_s(sample_sass(), player)
+                    stair_query=input_s(sample_sass(), player, "purple")
                 if stair_query=="no":
                     while(stair_query=="no"):
                         passive_actions=["A breeze blows gently through the windows.", "You hear the sound of birds chirping outside.", "A mouse scurrying along the wall rustles gently.", "You check your watch.", "All remains quiet in the entrance hall.", "You think about how long it must take to chisel a sculpture.", "You watch an ant crawl by on the floor.", "You contemplate what your life could have been if you hadn't gone to prison.", "You spy a new oil painting on an easel and watch it dry. " ]
@@ -88,7 +88,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 input_s("At the top of the stairs you enter a sumptuously decorated hallway. The thick carpet muffles the sound of your footsteps. You pass several creepy old paintings and notice a door cracked to your left.", player)
             easter_query=input_s("Do you open the door? [yes] or [no]\n", player)
             while easter_query not in ["yes", "no"]:
-                easter_query=input_s(sample_sass(), player)
+                easter_query=input_s(sample_sass(), player, "purple")
             if easter_query=="yes":
                 easter_egg(player)
             print_s("You come to the foot of a spiral staircase that circles upwards out of sight. Testing your physical fitness, you leap up eleven steps at a time. You slip through an archway and find yourself on a balcony.")
@@ -97,11 +97,10 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 print_s("Really? You lost to a drunken " + animal.name + "\n")
                 break
             input_s("Slightly dazed from your latest encounter, you return to the spiral stairs and proceed cautiously upward. You look out of a window and realize you are approaching the top of the highest tower. Seeing the prison in the distance, your smoldering desire to confront the wizard bursts into flames.", player)
-
-
-            print_s("Add a segue here to get into Shasta's encounter")
-            print_s("Shasta's encounter")
+            
             player.level=3
         player.hp=0
     print_s("Game over", "red")
-    game_play=0
+    play_again=input_s("Would you like to play again? [yes] or [no]")
+    if play_again=="no":
+        game_play=0
