@@ -76,12 +76,12 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 stair_query=input_s(sample_sass(), player)
             if stair_query=="no":
                 while(stair_query=="no"):
-                    passive_actions=["A breeze blows gently through the windows.", "You hear the sound of birds chirping outside.", "A mouse scurrying along the wall rustles gently.", "You check your watch.", "All remains quiet in the entrance hall."]
+                    passive_actions=["A breeze blows gently through the windows.", "You hear the sound of birds chirping outside.", "A mouse scurrying along the wall rustles gently.", "You check your watch.", "All remains quiet in the entrance hall.", "You think about how long it must take to chisel a sculpture.", "You watch an ant crawl by on the floor.", "You contemplate what your life could have been if you hadn't gone to prison." ]
                     index=random.randrange(len(passive_actions))
                     print_s(passive_actions[index])
                     time.sleep(4)
                     stair_query=input_s("Do you go up the staircase yet?[yes] or [no]\n", player)
-            
+            print_s("Add brownie encounter here")
             print_s("At the top of the stairs you enter a sumptuously decorated hallway. The thick carpet muffles the sound of your footsteps. You pass several creepy old paintings and notice a door cracked to your left.")
             easter_query=input_s("Do you open the door? [yes] or [no]\n", player)
             while easter_query not in ["yes", "no"]:
@@ -89,7 +89,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             if easter_query=="yes":
                 print_s("enter drew's encounter here")
             elif easter_query=="no":
-                print_s("You continue down the hallway")
+                print_s("You continue down the hallway to a set ")
                 #have a hallway encounter
             print_s("Add a segue here to get into Shasta's encounter")
             print_s("Shasta's encounter")
