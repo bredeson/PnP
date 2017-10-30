@@ -15,11 +15,11 @@ def oyster_encounter(player):
 		player.hp += oyster
 		
 		if oyster > 0:
-			print_s("\nThe oyster was still good! Your hunger is sated. You gain"+ str(oyster)+ 'hp. Your total hp is'+ str(player.hp))
+			print_s("\nThe oyster was still good! Your hunger is sated. You gain "+ str(oyster)+ ' hp. Your total hp is'+ str(player.hp))
 		elif oyster ==0:
 			print_s('\nThe oyster seemed to do very little, but at least nothing bad has happened...yet')
 		else:
-			print_s("\nThe oyster was foul, and your stomach lurches. You lose"+ str(oyster)+ 'hp. Your total hp is'+ str(player.hp))
+			print_s("\nThe oyster was foul, and your stomach lurches. You lose "+ str(oyster)+ ' hp. Your total hp is '+ str(player.hp))
 	
 	elif oyster_query=="keep moving":
         	print_s("\nYou continue onward, ignoring the pang of hunger. Better not to risk it.")
