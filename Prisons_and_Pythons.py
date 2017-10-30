@@ -264,9 +264,11 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             wizard_result=wiz_puzzle.boss_battle(user=player)
             if wizard_result==True:
                 input_s("You step through the door into a high-ceilinged room that looks very familiar. You approach an iMac and, your stomach fluttering, you enter the flash drive into the USB port.", player)
-                input_s("A message appears on the screen:\n'Welcome back " + player.name + "! Upload memory?",player)
+                print_s("A message appears on the screen:")
+                input_s("'Welcome back " + player.name + "! Upload memory?", player, "blue")
                 input_s("And it all comes rushing back. You recall that fateful mistake - using your superuser powers to remove recursively the home directory of Simon and Sofia's cluster of servers. The years and years of data and code you somehow managed to delete from both local and remote repositories.", player)
-                input_s("A final message prints on the screen:/n'Your permissions have been restored.'", player)
+                print_s("A final message prints on the screen:")
+                input_s("'Your permissions have been restored.'", player, "blue")
                 input_s("Filled with gratitude, you return to your home as Baron(ess) of Hershey Manor, never to abuse sudo again.", player)
             else:
                 print_s("Simon shakes his head in disappointment./n 'I can see you've learned nothing from this experience. I'm afraid there's only one place for sloppy coders in this universe.'")

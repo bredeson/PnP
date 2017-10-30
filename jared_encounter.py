@@ -18,7 +18,7 @@ def shark_game(player):
 	decision = input_s("Do you [jump over the shark] and risk infection or [go the long way] on your quest to the wizard?", user = player)
 
 	while str(decision) not in ['jump over the shark', 'go the long way', 'riddle me']:
-		decision = input_s(sass.sample_sass(), user = player)
+		decision = input_s(sass.sample_sass(), user = player, color="purple")
 
 	if decision == "jump over the shark":
 		if dice > 3:
@@ -42,11 +42,7 @@ def shark_game(player):
 		print_s("A wobbly " + animal.name + " stumbles down the stairs and attacks!\n")
 		player.combat(animal)
 	
-		if player.hp<=0:
-			print_s("Really? You lost to a drunken " + animal.name + "\n")
-			# break
-			
-		else:
+		if player.hp>0:
 			print_s("I hope you're proud of your self, defeating a drunken " + animal.name + ". But you get to pass on to your greatest challenge yet. \n")
 			fake_query=input_s("", player)
 		
