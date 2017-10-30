@@ -212,7 +212,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
         ^"~====""`       ^Y"   ^Y'                         "YP'               ""***""                      "YP'                 
                                                                                                                                 
     '''
-    print(gameover, color="red")#print_s when you escape the second while loop.
+    print(gameover)#print_s when you escape the second while loop.
     game_play=0 #gets you out of the outermost while loop.
 
 
