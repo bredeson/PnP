@@ -13,13 +13,18 @@ color_dict = {'purple' : '\033[95m',
 			  'red' : '\033[91m',
 			  'end' : '\033[0m',
 			  'bold' : '\033[1m',
-			  'underline' : '\033[4m'}
+			  'underline' : '\033[4m',
+			  'blink' : '\033[5m'}
 
 def printHealthBar (current_hp, starting_hp, decimals = 1, length = 50, fill = '█'):
     percent = ("{0:." + str(decimals) + "f}").format(100 * (current_hp / starting_hp))
     filledLength = int(length * current_hp // starting_hp)
-    bar = fill * filledLength + '-' * (length - filledLength)
-    bar_out = '{}hp|{}| {}%'.format(current_hp, bar, percent)
+    if current_hp < 5:
+    	bar = color_dict['blink'] + color_dict['red'] + fill * filledLength + color_dict['end'] + color_dict['green'] + '-' * (length - filledLength)
+    	bar_out = '{}hp|{}| {}%'.format(current_hp, bar, percent)
+    else:
+    	bar = fill * filledLength + '-' * (length - filledLength)
+    	bar_out = '{}hp|{}| {}%'.format(current_hp, bar, percent)
     return(bar_out)
 
 

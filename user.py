@@ -11,7 +11,7 @@ from textFormat import print_s
 
 class Prisoner(object):
 	
-	def __init__(self, name = 'Unknown', hp = 20 ,level = 1, difficulty = 'medium', attack = 6, intelligence = 2, location = 'Prison', mana = 3):
+	def __init__(self, name = 'Unknown', hp = 20, hpmax = 20 ,level = 1, difficulty = 'medium', attack = 6, intelligence = 2, location = 'Prison', mana = 3):
 		self.name = name
 		if difficulty.upper() == 'easy'.upper():
 			hp = 40
@@ -25,7 +25,7 @@ class Prisoner(object):
 		self._intelligence = intelligence
 		self._level = level
 		self._hp = hp
-		self._hpmax = hp
+		self._hpmax = hpmax
 		self.difficulty = difficulty
 		self._attack = attack
 		self.location = location
@@ -42,6 +42,16 @@ class Prisoner(object):
 	@hp.setter
 	def hp(self, value):
 		self._hp = value
+
+	@property
+	def hpmax(self):
+		if self._hpmax < 10:
+			self._hpmax = 10
+		return self._hpmax
+
+	@hpmax.setter
+	def hpmax(self,value):
+		self._hpmax = value
 
 	@property
 	def intelligence(self):
