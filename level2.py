@@ -10,6 +10,7 @@ from beer_encounter import beer_encounter
 from attempt_climb import attempt_climb
 from zookeeper_encounter import zookeeper_encounter
 from brownie_encounter import brownie_encounter
+from jared_encounter import shark_game
 
 #initialize global variables                                                                               
 
@@ -90,6 +91,8 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 easter_query=input_s(sample_sass(), player)
             if easter_query=="yes":
                 print_s("enter drew's encounter here")
+            print_s("add some storyline to segue to jared's encounter.")
+            shark_game(player)
 
             print_s("You continue down the hallway up some stairs and you add some text to transition to the wizard")
                 #have a hallway encounter
