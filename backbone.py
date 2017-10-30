@@ -172,7 +172,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             fake_query=input_s("", player)
             print_s("Battered and bruised you slowly walk away from the twisted, bloody pile of python. You continue further into the tunnel and come to a bend, as you turn the corner you can see daylight shining brightly at the end.\n")
             player.hp+=20
-            plahyer.hpmax+=20
+            player.hpmax+=20
             #level two
             art2= '''
         ..               _                          ..         s                                   
