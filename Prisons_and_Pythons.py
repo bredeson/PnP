@@ -106,7 +106,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                  elif decision_counter==2:
                     player.setAttack(2)
                     input_s("With an astounding display of physical prowess, you destroyed that sleepy guard. You take their pocket knife. \n", player)
-                #you move forward and find a new room with a cask of whiskey hiding a trapdoor
+
                  beer_query=input_s("You notice a trapdoor under a wooden cask in the corner. Looks like there's still some sorghum whiskey in it. Do you drink the whiskey? [yes] or [no]\n", player)
                  while str(beer_query) not in ["yes", "no"]:
                     beer_query=input_s(sample_sass(), player, color='purple')
@@ -125,7 +125,6 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                  print(boratk.art())
                  my_puzzle=puzzles.Puzzles()
                  puzzle_success=my_puzzle.do_puzzle(user=player)
-               
 
                  if puzzle_success==True:
                     print_s("BoratK sinks slowly back into the darkness, leaving the trapdoor open behind him. You cautiously descend into the depths below.\n\n")
@@ -202,7 +201,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                                                                                                                                                                                                      
 '''
             print(art2)   
-            #print(status)
+
         while player.level==2:
             input_s("As the daylight hits your face, you feel the warmth sink into your soul and your health points increase to " + str(player.hp) + ". You have a sudden flash of memory: the details are hazy, but you recall that you were imprisoned by a powerful wizard. Looking around you, you realize you are in a vaguely familiar courtyard - the courtyard of the wizard's castle! This is your chance to find the wizard and solve the mystery of your imprisonment - and take your revenge!\n", player)
             
@@ -299,8 +298,24 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 print_s("A final message prints on the screen:")
                 input_s("'Your permissions have been restored.'", player, "blue")
                 input_s("Filled with gratitude, you return to your home as Baron(ess) of Hershey Manor, never to abuse sudo again.", player)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             else:
-                print_s("Simon shakes his head in disappointment./n 'I can see you've learned nothing from this experience. I'm afraid there's only one place for sloppy coders in this universe.'")
+                print_s("Simon shakes his head in disappointment.\n 'I can see you've learned nothing from this experience. I'm afraid there's only one place for sloppy coders in this universe.'")
                 player.level=1
                 
             player.level=3
