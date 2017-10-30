@@ -41,19 +41,16 @@ wizard = creatures.Wizard()
 
 final_puzzle = {
 		'Part I':  {
-				'Question':'This is question 1.',
-				'Answer'  :'1',
-				'Hint'    :'1'
+				'Question':'Bluejeans Desks is an anagram for which three mages? List them in alphabetical order!',
+				'Answer'  :'deb jessen lukas'
 		},
 		'Part II': {
-				'Question':'This is question 2.',
-				'Answer'  :'2',
-				'Hint'    :'2'
+				'Question':'Eked Emeriti Mixing is an anagram of which three mages? List their first names, but in alphabetical order according to their last names.',
+				'Answer'  :'mike xengie demitri'
 		},
 		'Part III': {
-				'Question':'This is question 3.',
-				'Answer'  :'3',
-				'Hint'    :'3'
+				'Question':'What is the name of the man who wrote the Wizard\'s and Sorceress\' favorite programming language?',
+				'Answer'  :'larry wall'
 		}
 }
 
@@ -71,10 +68,11 @@ class Wizard_encounter(object):
 #=================================
 
 	def boss_battle(self, user_answer = None, user = None, completed = False):
-		print(wizard.art())
 		try_counter = user.intelligence
-		input_s('\n\nYou walk through the door to the highest room in the highest tower. Your stomach churns a bit from the oysters and whiskey you might have consumed. Despite the drinking, the dodgy oysters, the sewer, and other distastful experiences, you\'ve somehow made it to the end. You encounter a wizard named Simon and his band of mages. Before you can win Simon\'s respect, you have one last challenge. Press [Enter] to proceed.\n\n', user)
-	
+		print_s('\n\nYou cautiously step through the door to the highest room in the highest tower. Your stomach churns a bit from the oyster, brownie, and whiskey you may have consumed. Despite boratk\'s sewer, the jbrownie, the magic wombats, and the eleven stairs you climbed, you\'ve somehow made it to the end. You encounter a wizard named Simon, a sorceress named Sofia (who may or may not look familiar) and his band of apprentices dressed in glittering cloaks patterned with python calligraphy and twinkling perls. The wizard turns to you and asks in an English accent with a hint of San Fransciso vernacular, \'Do you wish you gain our respect and win the game?\' Realizing you have no choice, you accept the challenge!\n\n')
+		print(wizard.art())
+		input_s('Press [Enter] to proceed.', user)
+
 #====================
 # Final Puzzle Part I
 #====================	
@@ -84,7 +82,7 @@ class Wizard_encounter(object):
 		
 			if user_answer.lower() == final_puzzle['Part I']['Answer']:
 				try_counter = user.intelligence
-				proceed = input_s('\n{} is correct! You may proceed. Press [enter] to proceed.\n'.format(final_puzzle['Part I']['Answer']), user, color = 'green')
+				proceed = input_s('\n{} is correct, but you are not finished yet. Press [enter] to proceed to Part II.\n'.format(final_puzzle['Part I']['Answer']), user, color = 'green')
 				break
 
 			elif user_answer.lower() != final_puzzle['Part I']['Answer']:
@@ -92,21 +90,21 @@ class Wizard_encounter(object):
 				print_s('\n{} is incorrect! You have {} more tries.'.format(user_answer, try_counter, final_puzzle['Part I']['Question']), color = 'red')
 
 				if try_counter == 0:
-					print_s('Guess what? You failed. You\'re fucked.', color = 'red')
+					print_s('FAILURE!', color = 'red')
 					return(self.completed)
 
 #=====================
 # Final Puzzle Part II
 #=====================
 
-		print_s('You\'ve managed to make it to Part II, and you\'re that much closer to gaining Wizard Simon and Sorceress Sofia\'s respect. But you have two more challenged ahead. Good luck!')
+		print_s('You\'ve managed to make it to Part II, and you\'re that much closer to gaining Wizard Simon and Sorceress Sofia\'s respect. Good luck!')
 
 		while try_counter > 0:			
 			user_answer = input_s('\n' + final_puzzle['Part II']['Question'] + '\n\n', user)
 
 			if user_answer.lower() == final_puzzle['Part II']['Answer']:
 				try_counter = user.intelligence
-				proceed = input_s('\n{} is correct! You may proceed. Press [enter] to proceed.\n'.format(final_puzzle['Part II']['Answer']), user, color = 'green')
+				proceed = input_s('\n{} is correct! One challenge remains between you and earning the respect of the cloaked crew. Press [enter] to proceed.\n'.format(final_puzzle['Part II']['Answer']), user, color = 'green')
 				break
 
 			elif user_answer.lower() != final_puzzle['Part II']['Answer']:
@@ -114,7 +112,7 @@ class Wizard_encounter(object):
 				print_s('\n{} is incorrect! You have {} more tries.\n'.format(user_answer, try_counter), color = 'red')
 
 				if try_counter == 0:
-					print_s('Guess what? You failed. You\'re fucked.\n', color = 'red')
+					print_s('FAILURE!\n', color = 'red')
 					return(self.completed)
 
 #======================
@@ -135,10 +133,9 @@ class Wizard_encounter(object):
 			elif user_answer.lower() != final_puzzle['Part III']['Answer']:
 				try_counter -= 1
 				print_s('{} is incorrect! You have {} more tries.'.format(user_answer, try_counter), color = 'red')
-				#user_answer = input_s(final_puzzle['Part III']['Question'], user)
 
 				if try_counter == 0:
-					print_s('Guess what? You failed. You\'re fucked.', color = 'red')
+					print_s('FAILURE!\n', color = 'red')
 					return(self.completed)
 
 	
