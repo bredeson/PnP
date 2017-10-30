@@ -10,7 +10,7 @@ def brownie_encounter(player):
 		brownie_query=input_s(sample_sass(), player)
 	brownie=random.randrange(1,5)
 	if brownie_query=="eat":
-		print_s("The brownie was still good! Your hunger is sated. You gain"+ str(brownie)+ 'hp. Your total hp is'+ str(player.hp))
+		print_s("The brownie was still good! Your hunger is sated. You gain "+ str(brownie)+ ' hp. Your total hp is '+ str(player.hp)+ ".")
 		player.hp+=brownie
 				
 	elif brownie_query=="keep moving":

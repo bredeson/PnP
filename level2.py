@@ -26,7 +26,8 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
 #game begins                                                                                               
     while player.hp>0:
         while player.level==2:
-            input_s("As the daylight hits your face, you have a sudden flash of memory. The details are hazy, but you recall that you were imprisoned by a powerful wizard. Looking around you, you realize you are in a vaguely familiar courtyard - the courtyard of the wizard's castle! This is your chance to find the wizard and solve the mystery of your imprisonment - and take your revenge!\n", player)
+            player.hp+=10
+            input_s("As the daylight hits your face, you feel the warmth sink into your soul and your health points increase to" + str(player.hp) + ". You have a sudden flash of memory: the details are hazy, but you recall that you were imprisoned by a powerful wizard. Looking around you, you realize you are in a vaguely familiar courtyard - the courtyard of the wizard's castle! This is your chance to find the wizard and solve the mystery of your imprisonment - and take your revenge!\n", player)
             zookeeper_encounter(player)
 
             entry_query=input_s("You exit the menagerie and look around the courtyard. The outer wall is unscalable and the portcullis is down. There is a window two floors up the castle wall and a main entrance. Do you attempt to [climb] the wall or [enter] the door?\n",player)
@@ -59,7 +60,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     elif spa_query=="no":
                         input_s("You walk right past the enticing hottub you so stubbornly rejected.", player)
                     print_s("You exit into a sumptuously decorated hallway. Your feet sinking into the plush carpet, you notice a door cracked to your left.")
-            elif entry_query=="enter the door":
+            elif entry_query=="enter":
                 opponent=creatures.Magic()
                 print_s("You strut confidently through the main castle door. You enter an impressively portioned entrance hall lit by sunlight streaming through the tall mullioned windows. You briefly admire the marble statues and tapestries lining the walls.") 
                 input_s("You see a " + opponent.name + " taking a fighting stance ten meters in front of you.", player)
