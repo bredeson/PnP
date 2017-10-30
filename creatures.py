@@ -96,6 +96,26 @@ class HulkingGuard(Creatures):
                               ‘--’ `--`   								
 		'''
 
+class NobleGuard(Creatures):
+	def __init__(self):
+		Creatures.__init__(self, name = 'the Noble Guard', hp = 12, attack = 8)
+	def art(self):
+		return '''
+  ,^.
+  |||
+  |||       _T_
+  |||   .-.[:|:].-.
+  ===_ /\|  “‘“  |/
+   E]_|\/ \--|-|’’’’|
+   O  `’  ‘=[:]| A  |
+          /””””|  P |
+         /”””””`.__.’
+        []”/”””\”[]
+        | \     / |
+        | |     | |
+      <\\\)     (///>
+'''
+
 class SleepingGuard(Creatures):
 	def __init__(self):
 		Creatures.__init__(self, name = 'the Sleeping Guard', hp = 4, attack = 3)
@@ -500,8 +520,6 @@ class Shark(Creatures):
 '''
 	
 master_dict['goblin'] = Goblin
-master_dict['sleepyguard'] = SleepingGuard
-master_dict['hulkingguard'] = HulkingGuard
 master_dict['oyster'] = Oyster
 master_dict['capuchin'] = Capuchin
 master_dict['sheep'] = Sheep
@@ -509,6 +527,7 @@ master_dict['soapberry'] = Soapberry
 master_dict['mage'] = Mage
 master_dict['mouse'] = C57BL6
 master_dict['ogre'] = Ogre
+master_dict['nobleguard'] = NobleGuard
 
 level1_dict['sleepyguard'] = SleepingGuard
 level1_dict['hulkingguard'] = HulkingGuard
@@ -518,7 +537,7 @@ level1_dict['soapberry'] = Soapberry
 level1_dict['python'] = Python
 
 level2_dict['mage'] = Mage
-level2_dict['sorceress'] = Sorceress
+# level2_dict['sorceress'] = Sorceress
 level2_dict['ogre'] = Ogre
 level2_dict['goblin'] = Goblin
 level2_dict['troll'] = Troll
