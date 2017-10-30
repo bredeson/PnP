@@ -14,7 +14,7 @@ def zookeeper_encounter(player):
 		print_s(monster.art())
 		player.combat(monster)
 		player.attack +=2
-		print_s("Your attack has increased to " + player.attack + ".")
+		print_s("Your attack has increased to " + str(player.attack) + ".")
 
 	elif zookeeper_query== "pun":
 		print_s("You tell the lion that the wizard is your 'mane' man.")
@@ -25,7 +25,7 @@ def zookeeper_encounter(player):
 		if chance > 10:
 			print_s("The lion eventually cracks, letting out a hearty chuckle and lets you pass. As you pass he gives you a potion of lion's strength. As you drink it you feel your muscles growing.")
 			player.attack +=2
-			print_s("Your attack has increased to " + player.attack + ".")
+			print_s("Your attack has increased to " + str(player.attack) + ".")
 		else:
 			monster = creatures.Animals()
 			print_s('The lions stares angrily at you, clearly not appreciating your pun. He walks away and unlocks a dark cage revealing...a '+ monster.name + ".")
