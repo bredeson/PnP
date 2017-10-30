@@ -31,14 +31,14 @@ def zookeeper_encounter(player):
 			print(monster.art())
 			player.combat(monster)
 			player.attack +=2
-			input_s("After killing a ' + monster.name + ', you are able to fashion a weapon from its remains. Your attack has increased to " + str(player.attack) + ".", player)
+			input_s("After killing a " + monster.name + ", you are able to fashion a weapon from its remains. Your attack has increased to " + str(player.attack) + ".", player)
 	elif zookeeper_query == 'lie':
 		monster = creatures.Animals()
 		print_s("You 'lion' to me? You do not belong here! He walks away and unlocks a dark cage...revealing a " + monster.name + ".")
 		print(monster.art())
 		player.combat(monster)
 		player.attack +=2
-		input_s("After killing a ' + monster.name + ', you are able to fashion a weapon from its remains. Your attack has increased to " + str(player.attack) + ".", player)
+		input_s("After killing a " + monster.name + ", you are able to fashion a weapon from its remains. Your attack has increased to " + str(player.attack) + ".", player)
 	else:
 		print_s('edit me')
 		
