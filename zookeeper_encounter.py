@@ -8,12 +8,12 @@ def zookeeper_encounter(player):
 	zookeeper_query=input_s("As you walk around the courtyard, you notice a managerie of wild animals trapped in cages. A figure dressed in a ringmaster outfit hears you approach and turns around.\ 
 As he faces you, you realize it's a bipedal lion! He growls at you and demands to know what you are doing in his zoo.\
  How do you respond? [Say nothing], [run] towards the castle, [tell the truth], [lie], or make a lion [pun]")
-while str(zookeeper_query) not in ["say nothing", "Say nothing", "run", "tell the truth", "pun", 'lie']:
-	zookeeper_query=input_s(sample_sass(), player)
-
+	while str(zookeeper_query) not in ["say nothing", "Say nothing", "run", "tell the truth", "pun", 'lie']:
+		zookeeper_query=input_s(sample_sass(), player)
 	if zookeeper_query=="say nothing" or zookeeper_query== "Say nothing" or zookeeper_query== "run" or zookeeper_query== "tell the truth":
 		monster = creatures.Animals()
 		print_s("The lion tells you that you do not belong here. He walks away and unlocks a dark cage...revealing a "+ monster.name)
+		player.combat(monster)
 	elif zookeeper_query== "pun":
 		print_s("You tell the lion that the wizard is your 'mane' man.")
 		time.sleep(5)
@@ -21,13 +21,16 @@ while str(zookeeper_query) not in ["say nothing", "Say nothing", "run", "tell th
 		time.sleep(5)
 		chance = random.randint(1,20)
 		if chance > 10:
-			print_s('The lion eventually cracks, letting out a hearty chuckle and lets you pass. As you pass he gives you a potion of lion's strength. As you drink it you feel your muscles growing.')
+			print_s("The lion eventually cracks, letting out a hearty chuckle and lets you pass. As you pass he gives you a potion of lion's strength. As you drink it you feel your muscles growing.")
 			player.attack +=2
 		else:
 			monster = creatures.Animals()
-			print_s('The lions stares angrily at you, clearly not appreciating your pun. He walks away and unlocks a covered cage...revealing a '+ monster.name)
+			print_s('The lions stares angrily at you, clearly not appreciating your pun. He walks away and unlocks a dark cage revealing...a '+ monster.name)
+			player.combat(monster)
 	elif zookeeper_query == 'lie':
 		monster = creatures.Animals()
-		print_s("You 'lion' to me? You do not belong here! He walks away and unlocks a dark cage...revealing a " + monster.name))
+		print_s("You 'lion' to me? You do not belong here! He walks away and unlocks a dark cage...revealing a " + monster.name)
+		player.combat(monster)
 	else:
 		print_s('edit me')
+		
