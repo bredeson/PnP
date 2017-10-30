@@ -26,7 +26,7 @@ art = '''
 
 game_play=1
 print(art)
-print("Optimal Terminal window size = 100x75")
+print("Optimal Terminal window size = 130x75")
 print("INSTRUCTIONS\n Actions are in [square brackets]\n Your various attacks are:\n [a]ttack which is the basic move,\n [r]isky which can have a bigger imapct but can miss the target\n or [m]agic always does max damage but the number of uses are limited\n If there is a wait, hit <enter>\n You can call up your [status] at any time  \n")
 print("CREDITS\n ")
 while game_play==1:# the player enters the loop. they cannot escape the loop until game_play is called not active.
