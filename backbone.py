@@ -97,9 +97,9 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                  if decision_counter==0:
                     print_s("Being careful to step around the guard, you quietly look around the room.\n")
                  elif decision_counter==2:
-                    input_s("With an astounding display of physical prowess, you destroyed that sleepy guard. You take their pocket knife. \n", player)
                     player.setAttack(2)
-            #you move forward and find a new room with a cask of whiskey hiding a trapdoor
+                    input_s("With an astounding display of physical prowess, you destroyed that sleepy guard. You take their pocket knife. \n", player)
+                #you move forward and find a new room with a cask of whiskey hiding a trapdoor
                  beer_query=input_s("You notice a trapdoor under a wooden cask in the corner. Looks like there's still some sorghum whiskey in it. Do you drink the whiskey? [yes] or [no]\n", player)
                  while str(beer_query) not in ["yes", "no"]:
                     beer_query=input_s(sample_sass(), player, color='purple')
