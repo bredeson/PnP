@@ -115,6 +115,8 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                  print_s("The trapdoor creaks open.\n")
                  fake_query=input_s("", player)
                  puzzle_query=input_s("You hear an eerie voice coming out of the dark depths.\n 'There is a way out through my sewer,\n but only the intellectually astute are permitted to enter.'\n The head and torso of boratK rise out of the darkness.\n", player)
+                 boratk = creatures.Borat()
+                 print(boratk.art())
                  my_puzzle=puzzles.Puzzles()
                  puzzle_success=my_puzzle.do_puzzle(user=player)
                
