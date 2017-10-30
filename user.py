@@ -7,7 +7,7 @@
 import random, time
 import creatures
 import combatResponses
-from textFormat import print_s, input_s
+from textFormat import print_s, input_s, printHealthBar, combatStatus
 class Prisoner(object):
 	
 	def __init__(self, name = 'Unknown', hp = 20, hpmax = 20 ,level = 1, difficulty = 'medium', attack = 6, intelligence = 2, location = 'Prison', mana = 3):
@@ -123,7 +123,7 @@ class Prisoner(object):
 						print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')
 						time.sleep(3)
 					else:
-						print_s('The ' + monster.name + ' is dead.')
+						print_s('The ' + monster.name + ' is dead.\n')
 						break
 
 
@@ -144,7 +144,7 @@ class Prisoner(object):
 							print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')
 							time.sleep(3)
 						else:
-							print_s('The ' + monster.name + ' is dead.')
+							print_s('The ' + monster.name + ' is dead.\n')
 							break
 					else:
 						print_s(combatResponses.missResponse(), color = 'purple')
@@ -157,6 +157,7 @@ class Prisoner(object):
 						new_user_attack = self.attack
 						new_mon_attack = random.randint(1,monster.attack)
 						print_s(combatResponses.magicResponse() + str(new_user_attack) + ' damage.', color = 'red')
+						time.sleep(3)
 						monster.hp -= new_user_attack
 						self.mana -= 1
 						print_s('You have ' + str(self.mana) + ' mana left.')
@@ -167,13 +168,13 @@ class Prisoner(object):
 							print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')							
 							time.sleep(3)
 						else:
-							print_s('The ' + monster.name + ' is dead.')
+							print_s('The ' + monster.name + ' is dead.\n')
 							break
 					else:
 						print_s('You have no mana left!', color = 'blue')
 			else:
 				break
-
+		combatStatus(self)
 # Methods to set self variables
 
 	def setHP(self, new_hp = None):
