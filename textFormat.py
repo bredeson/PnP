@@ -48,5 +48,6 @@ def input_s(text, user=None, color = '', recurse = False):
 		color_code = color_dict['green']
 		print(color_code + "\nName: {}\nLevel: {}\nHealth Points: {}\nDifficulty: {}\nAttack: {}\nMana: {}\nIntelligence: {}\n".format(user.name, user.level, printHealthBar(user.hp, user.hpmax), user.difficulty, user.attack, user.mana, user.intelligence) + color_dict['end'])
 		query=input_s(text, user, color = color, recurse = True)
+
 	return(query)
 
