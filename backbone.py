@@ -31,8 +31,25 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
     pre_query2=input("How hard do you want this to be? [easy], [medium], or [hard] ")
     player=user.Prisoner(name=pre_query1, difficulty=pre_query2) 
     print_s("Your name is "+ player.name+", you have "+ str(player.hp)+ " health points. \n")
-    print_s("INSTRUCTIONS\n Your various attacks are: [attack] which is the basic move, [risky] which has a bigger imapct but can miss the target or [magic] which has a big impact but the number of uses are limited\n commands are in [square brackets]\n If there is a wait, hit enter  \n")
+    print_s("INSTRUCTIONS\n Your various attacks are: [attack] which is the basic move, [risky] which has a bigger imapct but can miss the target or [magic] which has a big impact but the number of uses are limited\n commands are in [square brackets]\n If there is a wait, hit enter\n You can call up your [status] at any time  \n")
     read_statement=input_s("Press enter to begin.\n", player)
+    
+    levelone='''
+        ..               _                          ..                                         
+  x .d88"               u                     x .d88"                                          
+   5888R               88Nu.   u.              5888R             u.      u.    u.              
+   '888R        .u    '88888.o888c      .u     '888R       ...ue888b   x@88k u@88c.      .u    
+    888R     ud8888.   ^8888  8888   ud8888.    888R       888R Y888r ^"8888""8888"   ud8888.  
+    888R   :888'8888.   8888  8888 :888'8888.   888R       888R I888>   8888  888R  :888'8888. 
+    888R   d888 '88%"   8888  8888 d888 '88%"   888R       888R I888>   8888  888R  d888 '88%" 
+    888R   8888.+"      8888  8888 8888.+"      888R       888R I888>   8888  888R  8888.+"    
+    888R   8888L       .8888b.888P 8888L        888R      u8888cJ888    8888  888R  8888L      
+   .888B . '8888c. .+   ^Y8888*""  '8888c. .+  .888B .     "*888*P"    "*88*" 8888" '8888c. .+ 
+   ^*888%   "88888%       `Y"       "88888%    ^*888%        'Y"         ""   'Y"    "88888%   
+     "%       "YP'                    "YP'       "%                                    "YP'    
+                                                                                                                                                                                          
+    '''
+    print(levelone)
 
     fake_query=input_s("Your eyelids flutter open. You look up to see a dank, mossy ceiling and stone walls with one bleak, barred window. You sit up and look around. You see an open door in front you, candlelight flickering behind it. You stumble blearily to your feet and walk through the door.\n", player)
     
@@ -108,6 +125,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     print_s("This beast doesn't care if you're ready or not, it's coming.\n")
                     fake_query=input_s("", player)
                     opponent=creatures.Random()
+                    print_s(opponent.art())
                     print_s("A vicious " + opponent.name + " leaps down the stairs and attacks!\n")
                     fake_query=input_s("", player)
                     player.combat(opponent)
@@ -143,6 +161,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             print_s("There is a huge python blocking your $PATH,\n it lunges at you, pinning you in a corner, you have to fight!\n What is your first move?\n\n")
             decision_counter=1
             opponent=creatures.Python()
+            print_s(opponent.art())
             player.combat(opponent)
             if player.hp<=0:
                 print_s("Sweet lord Monty is one tough python!\n")
@@ -155,30 +174,42 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             
             #level two
             art2= '''
-
-    _                    _   _                 
-   | |                  | | | |                
-   | |     _____   _____| | | |___      _____  
-   | |    / _ \ \ / / _ | | | __\ \ /\ / / _ \ 
-   | |___|  __/\ V |  __| | | |_ \ V  V | (_) |
-   \_____/\___| \_/ \___|_|  \__| \_/\_/ \___/ 
-                                              
+        ..               _                          ..         s                                   
+  x .d88"               u                     x .d88"         :8      x=~                          
+   5888R               88Nu.   u.              5888R         .88     88x.   .e.   .e.         u.   
+   '888R        .u    '88888.o888c      .u     '888R        :888ooo '8888X.x888:.x888   ...ue888b  
+    888R     ud8888.   ^8888  8888   ud8888.    888R      -*8888888  `8888  888X '888k  888R Y888r 
+    888R   :888'8888.   8888  8888 :888'8888.   888R        8888      X888  888X  888X  888R I888> 
+    888R   d888 '88%"   8888  8888 d888 '88%"   888R        8888      X888  888X  888X  888R I888> 
+    888R   8888.+"      8888  8888 8888.+"      888R        8888      X888  888X  888X  888R I888> 
+    888R   8888L       .8888b.888P 8888L        888R       .8888Lu=  .X888  888X. 888~ u8888cJ888  
+   .888B . '8888c. .+   ^Y8888*""  '8888c. .+  .888B .     ^%888*    `'88%``"*888Y"     "*888*P"   
+   ^*888%   "88888%       `Y"       "88888%    ^*888%        'Y"       `~     `"          'Y"      
+     "%       "YP'                    "YP'       "%                                                
+                                                                                                   
+                                                                                                                                                                                                     
 '''
             print(art2)   
-
+            #print(status)
 
 
     gameover='''
 
-    ▄▀  ██   █▀▄▀█ ▄███▄       ████▄     ▄   ▄███▄   █▄▄▄▄ 
-  ▄▀    █ █  █ █ █ █▀   ▀      █   █      █  █▀   ▀  █  ▄▀ 
-  █ ▀▄  █▄▄█ █ ▄ █ ██▄▄        █   █ █     █ ██▄▄    █▀▀▌  
-  █   █ █  █ █   █ █▄   ▄▀     ▀████  █    █ █▄   ▄▀ █  █  
-   ███     █    █  ▀███▀               █  █  ▀███▀     █   
-          █    ▀                        █▐            ▀    
-         ▀                              ▐                  
+        ....        .                                                         ....            _                                 
+     .x88" `^x~  xH(`                                                     .x~X88888Hx.       u                                  
+    X888   x8 ` 8888h                  ..    .     :                     H8X 888888888h.    88Nu.   u.                .u    .   
+   88888  888.  %8888         u      .888: x888  x888.       .u         8888:`*888888888:  '88888.o888c      .u     .d88B :@8c  
+  <8888X X8888   X8?       us888u.  ~`8888~'888X`?888f`   ud8888.       88888:        `%8   ^8888  8888   ud8888.  ="8888f8888r 
+  X8888> 488888>"8888x  .@88 "8888"   X888  888X '888>  :888'8888.    . `88888          ?>   8888  8888 :888'8888.   4888>'88"  
+  X8888>  888888 '8888L 9888  9888    X888  888X '888>  d888 '88%"    `. ?888%           X   8888  8888 d888 '88%"   4888> '    
+  ?8888X   ?8888>'8888X 9888  9888    X888  888X '888>  8888.+"         ~*??.            >   8888  8888 8888.+"      4888>      
+   8888X h  8888 '8888~ 9888  9888    X888  888X '888>  8888L          .x88888h.        <   .8888b.888P 8888L       .d888L .+   
+    ?888  -:8*"  <888"  9888  9888   "*88%""*88" '888!` '8888c. .+    :"""8888888x..  .x     ^Y8888*""  '8888c. .+  ^"8888*"    
+     `*88.      :88%    "888*""888"    `~    "    `"`    "88888%      `    `*888888888"        `Y"       "88888%       "Y"      
+        ^"~====""`       ^Y"   ^Y'                         "YP'               ""***""                      "YP'                 
+                                                                                                                                
     '''
-    print_s(gameover, coclor="red")#print_s when you escape the second while loop.
+    print_s(gameover, color="red")#print_s when you escape the second while loop.
     game_play=0 #gets you out of the outermost while loop.
 
 
