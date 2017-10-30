@@ -18,7 +18,7 @@
 
 import user
 import random 
-import sass
+from sass import sample_sass
 import os
 from textFormat import print_s, input_s
 
@@ -89,7 +89,7 @@ class Puzzles(object):
 		try_counter = user.intelligence
 		user_input = input_s('Time for a puzzle! Are you up to the task? [yes] or [no]\n\n', user)
 		while user_input not in ['yes', 'no']:
-			user_input = input_s('Invalid response. Enter [yes] or [no]\n\n', color = 'purple') 
+			user_input = input_s(sample_sass() + 'Enter [yes] or [no]\n\n', user, color = 'purple') 
 
 		if user_input == 'yes':
 			print_s(master_puzzles[self.puzzle_question]['Question:']) 
@@ -111,7 +111,7 @@ class Puzzles(object):
 						user_hint = input_s('Are you maybe a little bit dumb? Perhaps you drank a little too much Farmer Nick\'s Ancient Grain Sorghum Whiskey? Would you like a hint? [yes] or [no]', user)
 
 						while user_hint not in ['yes', 'no']:
-							user_hint = input_s('Invalid response. Enter [yes] or [no].\n\n', user, color = 'purple')
+							user_hint = input_s(sample_sass() + 'Enter [yes] or [no].\n\n', user, color = 'purple')
 				
 						if user_hint == 'yes':
 							print_s(master_puzzles[self.puzzle_question]['Hint:'])
