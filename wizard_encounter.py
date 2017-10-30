@@ -90,7 +90,7 @@ class Wizard_encounter(object):
 				print_s('\n{} is incorrect! You have {} more tries.'.format(user_answer, try_counter, final_puzzle['Part I']['Question']), color = 'red')
 
 				if try_counter == 0:
-					print_s('FAILURE!', color = 'red')
+					print_s('\nYOU ARE A FAILURE!', color = 'red')
 					return(self.completed)
 
 #=====================
@@ -112,7 +112,7 @@ class Wizard_encounter(object):
 				print_s('\n{} is incorrect! You have {} more tries.\n'.format(user_answer, try_counter), color = 'red')
 
 				if try_counter == 0:
-					print_s('FAILURE!\n', color = 'red')
+					print_s('\nYOU ARE A FAILURE!\n', color = 'red')
 					return(self.completed)
 
 #======================
@@ -135,8 +135,10 @@ class Wizard_encounter(object):
 				print_s('{} is incorrect! You have {} more tries.'.format(user_answer, try_counter), color = 'red')
 
 				if try_counter == 0:
-					print_s('FAILURE!\n', color = 'red')
+					print_s('\nYOU ARE A FAILURE!\n', color = 'red')
 					return(self.completed)
 
 	
-		
+#==============
+# End of Module
+#==============		
