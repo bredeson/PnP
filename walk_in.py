@@ -1,11 +1,18 @@
 #!/usr/env/bin python3
 
-import random
-from sass import sample_sass
-from textFormat import input_s, print_s
-from brownie_encounter import brownie_encounter
+import user, os, sass, first_encounter, random, time, creatures, second_encounter, puzzles, wizard_encounter
 
-def walk_in(user):
+from textFormat import input_s, print_s
+from sass import sample_sass
+from beer_encounter import beer_encounter
+from attempt_climb import attempt_climb
+from zookeeper_encounter import zookeeper_encounter
+from brownie_encounter import brownie_encounter
+from jared_encounter import shark_game
+from easter_egg import easter_egg
+
+
+def walk_in(player):
     opponent=creatures.Magic()
     print_s("You strut confidently through the main castle door. You enter an impressively portioned entranc\
 e hall lit by sunlight streaming through the tall mullioned windows. You briefly admire the marble statues and tapestrie\
