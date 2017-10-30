@@ -83,7 +83,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 if second_query=="attempt to creep":
                     decision_counter=second_encounter.second_combat(player)
                 elif second_query=="wake him up":
-                    opponent=creatures.Creatures(name='sleepy guard', hp=10, attack=4)
+                    opponent=creatures.SleepingGuard()
                     player.combat(opponent)
                     decision_counter=2
                 else:
@@ -125,7 +125,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     print_s("This beast doesn't care if you're ready or not, it's coming.\n")
                     fake_query=input_s("", player)
                     opponent=creatures.Random()
-                    print_s(opponent.art())
+                    print(opponent.art())
                     print_s("A vicious " + opponent.name + " leaps down the stairs and attacks!\n")
                     fake_query=input_s("", player)
                     player.combat(opponent)
