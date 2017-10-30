@@ -51,7 +51,7 @@ class Creatures:
 	
 class Goblin(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = "the Goblin", hp = 10, attack = 6)
+		Creatures.__init__(self, name = "Goblin", hp = 10, attack = 6)
 	def art(self):
 		return """
                      ,      ,						
@@ -69,7 +69,7 @@ class Goblin(Creatures):
 	
 class HulkingGuard(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'the Hulking Guard', hp = 12, attack = 8)
+		Creatures.__init__(self, name = 'Hulking Guard', hp = 12, attack = 8)
 	def art(self):
 		return '''
 	    
@@ -118,7 +118,7 @@ class NobleGuard(Creatures):
 
 class SleepingGuard(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'the Sleeping Guard', hp = 4, attack = 3)
+		Creatures.__init__(self, name = 'Sleeping Guard', hp = 4, attack = 3)
 	def art(self):
 		return ''' 
                 z  												
@@ -196,7 +196,7 @@ class C57BL6(Creatures):
 
 class Mage(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'the Mage', hp = 20, attack = 15)
+		Creatures.__init__(self, name = 'Mage', hp = 20, attack = 15)
 	def art(self):
 		return '''   
                     ____								
@@ -343,7 +343,7 @@ class Oyster(Creatures):
 
 class Python(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Monty the Python', hp = 35, attack = 8)
+		Creatures.__init__(self, name = 'Python (Monty)', hp = 35, attack = 8)
 	def art(self):
 		return '''
                     uJ$$$$$$',J <$$h.                  .,J+.
@@ -504,7 +504,7 @@ class Troll(Creatures):
 
 class Shark(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = "the Renegade Shark", hp = 100, attack = 50)
+		Creatures.__init__(self, name = "Renegade Shark", hp = 100, attack = 50)
 	def art(self):
 		return'''
  _________         .    .
