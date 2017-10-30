@@ -100,7 +100,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             input_s("Slightly dazed from your latest encounter, you return to the spiral stairs and proceed cautiously upward. You look out of a window and realize you are approaching the top of the highest tower. Seeing the prison in the distance, your smoldering desire to confront the wizard bursts into flames.", player)
             wiz_puzzle=wizard_encounter.Wizard_encounter()
             wizard_result=wiz_puzzle.boss_battle(user=player)
-            print_s(wizard_result + "You have either won or lost, add text here after wizardry")
+            print_s( "You have either won or lost, add text here after wizardry")
             player.level=3
         player.hp=0
     print_s("Game over", "red")
