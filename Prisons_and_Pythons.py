@@ -33,8 +33,9 @@ art = '''
 game_play=1
 print(art)
 print("Optimal Terminal window size = 100x75")
-print("INSTRUCTIONS\n Actions are in [square brackets]\n Your various attacks are:\n [a]ttack which is the basic move,\n [r]isky which can have a bigger imapct but can miss the target\n or [m]agic always does max damage but the number of uses are limited\n If there is a wait, hit <enter>\n You can call up your [status] at any time  \n")
-print("CREDITS\n ")
+print("INSTRUCTIONS\n Actions are in [square brackets]\n Your various attacks are:\n [a]ttack which is the basic move,\n [r]isky which can have a bigger imapct but can miss the target\n or [m]agic always does max damage but the number of uses are limited\n If there is no suggested command, hit <enter>\n You can call up your [status] at any time  \n")
+print("Mana: The amount of magic attacks you have, Intelligence: The number of tries you have per puzzle, HP: Player Health, Attack: Maximum attack value, Hints: These can be requested after an incorrect guess during puzzles\n")
+print_s("CREDITS\n Operations Manager: Meredith\n GitKeeper: Jessen\n Gopher: Adam\n Combat Advisor: Mitchell\n Sys.Architects: Drew and Jared\n Puzzle Queen: Shasta\n", color="bold", width = 200)
 while game_play==1:# the player enters the loop. they cannot escape the loop until game_play is called not active.
     pre_query1=input("What's your name? ")
     pre_query2=input("How hard do you want this to be? [easy], [medium], or [hard] ")
@@ -151,7 +152,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             fake_query=input_s("", player)
             print_s("You continue down this dark, dank tunnel ignoring the fact you're wading knee deep through a prison sewer, you're pretty gross!\nYou can hear something splashing in the water, and can hear demented giggling in the darkness...\n")
             fake_query=input_s("", player)
-            print_s("With the little light avaliable at the end of the tunnel you spot some freak dressed as a funky ass clown emerging from behind a shopping trolley full of rope and trash\n")
+            print_s("With the little light available at the end of the tunnel you spot some freak dressed as a funky ass clown emerging from behind a shopping trolley full of rope and trash\n")
             fake_query=input_s("", player)
             print_s("Without saying a word the clown throws some dice against the wall... it bekons at you and points at the dice...\n")
             
@@ -180,7 +181,6 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 print_s("Hell yeeeah! I nailed that mofo. Maybe I was some bad ass Navy Seal or part of the SAS?\n")
                 player.setAttack(2)
             fake_query=input_s("", player)
-            print_s("Battered and bruised you slowly walk away from the twisted, bloody pile of python. You continue further into the tunnel and come to a bend, as you turn the corner you can see daylight shining brightly at the end.\n")
             player.hp+=20
             player.hpmax+=20
             player.level=2
@@ -203,6 +203,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             print(art2)   
 
         while player.level==2:
+            print_s("Battered and bruised you slowly walk away from the twisted, bloody pile of python. You continue further into the tunnel and come to a bend, as you turn the corner you can see daylight shining brightly at the end.\n")
             input_s("As the daylight hits your face, you feel the warmth sink into your soul and your health points increase to " + str(player.hp) + ". You have a sudden flash of memory: the details are hazy, but you recall that you were imprisoned by a powerful wizard. Looking around you, you realize you are in a vaguely familiar courtyard - the courtyard of the wizard's castle! This is your chance to find the wizard and solve the mystery of your imprisonment - and take your revenge!\n", player)
             
             castle = '''
@@ -297,20 +298,43 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 input_s("And it all comes rushing back. You recall that fateful mistake - using your superuser powers to remove recursively the home directory of Simon and Sofia's cluster of servers. The years and years of data and code you somehow managed to delete from both local and remote repositories.", player)
                 print_s("A final message prints on the screen:")
                 input_s("'Your permissions have been restored.'", player, "blue")
-                input_s("Filled with gratitude, you return to your home as Baron(ess) of Hershey Manor, never to abuse sudo again.", player)
+                
+                final_message='''
 
-
-
-
-
-
-
-
-
-
-
-
-
+ ------------------------------------------------------------------------------------        
+ ------------------------------------------------------------------------------------        
+ ---    > Welcome back, upload memory?                                            ---        
+ ---                                                                              ---        
+ ---    > sudo user = True                                                        ---        
+ ---                                                                              ---        
+ ---    > Filled with gratitude, you return to your home as Baron(ess) of         ---        
+ ---      Hershey Manor, never to abuse sudo again.                               ---        
+ ---                                                                              ---        
+ ---    pfb2017:$                                                                 ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ---                                                                              ---        
+ ------------------------------------------------------------------------------------        
+ ..................................----------------..................................        
+                                   `--------------.                                          
+                                   `--------------.                                          
+                                   .--------------.                                          
+                                 .------------------.                                       
+                               .----------------------.  
+        '''
+                print(final_message)
+                input_s("", player)
 
 
 
