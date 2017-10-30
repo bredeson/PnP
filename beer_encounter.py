@@ -8,7 +8,7 @@ def beer_encounter(user):
     drink_query="yes"
     extra_drinks=0
     while drink_query=="yes":
-        print_s(response_list[extra_drinks], '\n')
+        print_s(response_list[extra_drinks])
         user.attack-=1
         print_s("Your attack ability has been reduced to "+ str(user.attack)+".")
         if extra_drinks%2==1:
