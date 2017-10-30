@@ -140,20 +140,20 @@ class Ogre(Creatures):
                         ooOO(_)    (_)OOo 										
         '''
 
-class Simon(Creatures):
-	def __init__(self):
-		Creatures.__init__(self, name = 'Simon the Python', hp = 9, attack = 4)
-	def art(self):
-		return '''
-       __
-      {0O}
-      \__/
-      /^/
-     ( (              
-     \_\_____
-     (_______)
-    (_________()Oo
-'''
+# class Simon(Creatures):
+# 	def __init__(self):
+# 		Creatures.__init__(self, name = 'Simon the Python', hp = 9, attack = 4)
+# 	def art(self):
+# 		return '''
+#        __
+#       {0O}
+#       \__/
+#       /^/
+#      ( (              
+#      \_\_____
+#      (_______)
+#     (_________()Oo
+# '''
 
 class C57BL6(Creatures):
 	def __init__(self):
@@ -205,7 +205,7 @@ class Mage(Creatures):
 
 class Soapberry(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'Red-Shouldered Soapberry', hp = 4, attack = 2)
+		Creatures.__init__(self, name = 'Red-Shouldered Soapberry Bug', hp = 4, attack = 2)
 	def art(self):
 		return '''
                             :                                
@@ -443,7 +443,7 @@ class Sorceress(Creatures):
                   (;);.;)   ':);( ..(;
                   `'((;);   )(.');`:
                    |.' );)`   ); ;`.)
-                   |  |( , ) ( ,;);:
+                   |  |(   ) (  ;);:
                 *  \  \ \WWWwWWW/;`'
                     \  \ ) .X. (
                  )   \  /  .X.  \   )
@@ -482,6 +482,22 @@ class Troll(Creatures):
 ░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░
 '''
 
+class Shark(Creatures):
+	def __init__(self):
+		Creatures.__init__(self, name = "Renegade Shark", hp = 100, attack = 50)
+	def art(self):
+		return'''
+ _________         .    .
+(..       \_    ,  |\  /|
+ \       O  \  /|  \ \/ /
+  \______    \/ |   \  / 
+     vvvv\    \ |   /  |
+     \^^^^  ==   \_/   |
+      `\_   ===    \.  |
+      / /\_   \ /      |
+      |/   \_  \|      /
+             \________/
+'''
 	
 master_dict['goblin'] = Goblin
 master_dict['sleepyguard'] = SleepingGuard
