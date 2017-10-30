@@ -34,7 +34,7 @@ def dice_game(player):
     time.sleep(2)
     decision = input_s("[Blood] or [Power]?\n", player, color="red")
     
-    while str(decision) not in ["blood", "power"]:
+    while str(decision) not in ["blood", "power", "Blood", "Power"]:
       decision=input_s(sass.sample_sass(), player, color='purple')
 
     if decision.lower()=="blood":  
