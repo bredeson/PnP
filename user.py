@@ -15,12 +15,15 @@ class Prisoner(object):
 		self.name = name
 		if difficulty.upper() == 'easy'.upper():
 			hp = 40
+			hpmax = 40
 			intelligence = 3
 		elif difficulty.upper() == 'medium'.upper():
 			hp = 20
+			hpmax = 20
 			intelligence = 2
 		else:
 			hp = 10
+			hpmax = 10
 			intelligence = 1
 		self._intelligence = intelligence
 		self._level = level
