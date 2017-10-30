@@ -60,7 +60,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                         player.mana=3
                         input_s("You sit in the hottub and your mana is fully replenished to " + str(player.mana) + ".\n After your rejuvinating soak, you towel off and walk out the spa door and it locks behind you. Good thing you got dressed before walking out that door!", player)
                     elif spa_query=="no":
-                        input_s("You walk right past the enticing hottub you so stubbornly rejected.", player)
+                        input_s("You walk right past the enticing hottub. Really?", player)
                     print_s("You exit into a sumptuously decorated hallway. Your feet sinking into the plush carpet, you notice a door cracked to your left.")
             elif entry_query=="enter":
                 opponent=creatures.Magic()
@@ -100,7 +100,16 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             input_s("Slightly dazed from your latest encounter, you return to the spiral stairs and proceed cautiously upward. You look out of a window and realize you are approaching the top of the highest tower. Seeing the prison in the distance, your smoldering desire to confront the wizard bursts into flames.", player)
             wiz_puzzle=wizard_encounter.Wizard_encounter()
             wizard_result=wiz_puzzle.boss_battle(user=player)
-            print_s( "You have either won or lost, add text here after wizardry")
+            if wizard_result==True:
+                input_s("You step through the door into a high-ceilinged room that looks very familiar. You approach an iMac and, your stomach fluttering, you enter the flash drive into the USB port.", player)
+                input_s("A message appears on the screen:\n'Welcome back " + player.name + "! Upload memory?",player)
+                input_s("And it all comes rushing back. You recall that fateful mistake - using your superuser powers to remove recursively the home directory of Simon and Sofia's cluster of servers. The years and years of data and code you somehow managed to delete from both local and remote repositories.", player)
+                input_s("A final message prints on the screen:/n'Your permissions have been restored.'", player)
+                input_s("Filled with gratitude, you return to your home as Baron(ess) of Hershey Manor, never to abuse sudo again.", player)
+            else:
+                print_s("Simon shakes his head in disappointment./n 'I can see you've learned nothing from this experience. I'm afraid there's only one place for sloppy coders in this universe.'")
+                player.level=3
+                
             player.level=3
         player.hp=0
     print_s("Game over", "red")
