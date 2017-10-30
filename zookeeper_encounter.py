@@ -14,7 +14,7 @@ def zookeeper_encounter(player):
 		print_s(monster.art())
 		player.combat(monster)
 		player.attack +=2
-		print_s("Your attack has increased to " + player.attack + ".")
+		print_s("After killing a ' + monster.name + ', you are able to fashion a weapon from its remains. Your attack has increased to " + player.attack + ".")
 
 	elif zookeeper_query== "pun":
 		print_s("You tell the lion that the wizard is your 'mane' man.")
@@ -31,11 +31,15 @@ def zookeeper_encounter(player):
 			print_s('The lions stares angrily at you, clearly not appreciating your pun. He walks away and unlocks a dark cage revealing...a '+ monster.name + ".")
 			print_s(monster.art())
 			player.combat(monster)
+			player.attack +=2
+			print_s("After killing a ' + monster.name + ', you are able to fashion a weapon from its remains. Your attack has increased to " + player.attack + ".")
 	elif zookeeper_query == 'lie':
 		monster = creatures.Animals()
 		print_s("You 'lion' to me? You do not belong here! He walks away and unlocks a dark cage...revealing a " + monster.name + ".")
 		print_s(monster.art())
 		player.combat(monster)
+		player.attack +=2
+		print_s("After killing a ' + monster.name + ', you are able to fashion a weapon from its remains. Your attack has increased to " + player.attack + ".")
 	else:
 		print_s('edit me')
 		
