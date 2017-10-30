@@ -33,7 +33,7 @@ def shark_game(player):
 		input_s("Someone knows what they're doing! Good job!", player)
 		player.intelligence += 3
 		input_s("Now you have to double back to the stairs to find an alternative route and encounter the legendary, award winning Milwaukee's Best (Monster).", player)
-		print_s("To get past this monster, you must fight one of his (somewhat drunken) creatures")
+		print_s("To get past this monster, you must fight one of his (somewhat drunken) creatures.")
 		time.sleep(2)
 		animal = creatures.Animals()
 		input_s("A wobbly " + animal.name + " stumbles down the stairs and attacks!\n", player)

@@ -11,6 +11,7 @@ from attempt_climb import attempt_climb
 from zookeeper_encounter import zookeeper_encounter
 from brownie_encounter import brownie_encounter
 from jared_encounter import shark_game
+from easter_egg import easter_egg
 
 #initialize global variables                                                                               
 
@@ -27,8 +28,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
 #game begins                                                                                               
     while player.hp>0:
         while player.level==2:
-            player.hp+=10
-            input_s("As the daylight hits your face, you feel the warmth sink into your soul and your health points increase to" + str(player.hp) + ". You have a sudden flash of memory: the details are hazy, but you recall that you were imprisoned by a powerful wizard. Looking around you, you realize you are in a vaguely familiar courtyard - the courtyard of the wizard's castle! This is your chance to find the wizard and solve the mystery of your imprisonment - and take your revenge!\n", player)
+            input_s("As the daylight hits your face, you feel the warmth sink into your soul and your health points increase to " + str(player.hp) + ". You have a sudden flash of memory: the details are hazy, but you recall that you were imprisoned by a powerful wizard. Looking around you, you realize you are in a vaguely familiar courtyard - the courtyard of the wizard's castle! This is your chance to find the wizard and solve the mystery of your imprisonment - and take your revenge!\n", player)
             zookeeper_encounter(player)
 
             entry_query=input_s("You exit the menagerie and look around the courtyard. The outer wall is unscalable and the portcullis is down. There is a window two floors up the castle wall and a main entrance. Do you attempt to [climb] the wall or [enter] the door?\n",player)
@@ -90,10 +90,13 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             while easter_query not in ["yes", "no"]:
                 easter_query=input_s(sample_sass(), player)
             if easter_query=="yes":
-                print_s("enter drew's encounter here")
+                easter_egg(player)
+                print_s("did it work?")
             print_s("add some storyline to segue to jared's encounter.")
             shark_game(player)
-
+            if player.hp<=0:
+                print_s("Really? You lost to a drunken " + animal.name + "\n")
+                break
             print_s("You continue down the hallway up some stairs and you add some text to transition to the wizard")
                 #have a hallway encounter
             print_s("Add a segue here to get into Shasta's encounter")
