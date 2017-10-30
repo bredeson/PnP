@@ -17,8 +17,6 @@ def second_combat(player):
     
     elif d_10 <= 3:
         print_s("Oh snap, you woke him up you club footed moose. \n", color='purple')
-        opponent=creatures.Creatures(name="sleepy guard", hp=12, attack=4) #initializing creature. Might need to update if creatures updates.
-
         player.combat(opponent)
         decision_counter = 2
     
