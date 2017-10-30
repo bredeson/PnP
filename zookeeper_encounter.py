@@ -23,7 +23,7 @@ def zookeeper_encounter(player):
 		time.sleep(5)
 		chance = random.randint(1,20)
 		if chance > 10:
-			print_s("The lion eventually cracks, letting out a hearty chuckle and lets you pass. As you pass he gives you a potion of lion's strength. As you drink it you feel your muscles growing.")
+			print_s("The lion eventually cracks, letting out a hearty chuckle and lets you pass. As you pass he gives you a potion of lion's strength. As you drink it, you feel your muscles growing.")
 			player.attack +=2
 			print_s("Your attack has increased to " + player.attack + ".")
 		else:
