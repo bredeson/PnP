@@ -7,7 +7,7 @@ from textFormat import input_s, print_s
 def zookeeper_encounter(player):
 	zookeeper_query=input_s("As you walk around the courtyard, you notice a menagerie of wild animals trapped in cages. A figure dressed in a ringmaster outfit hears you approach and turns around. As he faces you, you realize it's a bipedal lion! He growls at you and demands to know what you are doing in his zoo. How do you respond? [Say nothing], [run] towards the castle, [tell the truth], [lie], or make a lion [pun]\n", player)
 	while str(zookeeper_query) not in ["say nothing", "Say nothing", "run", "tell the truth", "pun", 'lie']:
-		zookeeper_query=input_s(sample_sass(), player)
+		zookeeper_query=input_s(sample_sass(), player, "purple")
 	if zookeeper_query=="say nothing" or zookeeper_query== "Say nothing" or zookeeper_query== "run" or zookeeper_query== "tell the truth":
 		monster = creatures.Animals()
 		print_s("The lion tells you that you do not belong here. He walks away and unlocks a dark cage...revealing a "+ monster.name + ".")
