@@ -11,7 +11,7 @@ shark = creatures.Shark()
 
 def shark_game(player):
 	dice = random.randint(1,10)
-	input_s("As you run up the stairs toward the elusive Wizard and onto the balcony, you encounter an escaped 'mythical' creature from the menagerie - the famous talking LandShark.", player)
+	input_s("As you continue in your quest for the elusive Wizard and emerge onto the balcony, you encounter an escaped 'mythical' creature from the menagerie - the famous talking LandShark.", player)
 	print(shark.art())
 	time.sleep(2)
 	input_s("The *clever* LandShark, having been on land for so long, has grown lungs and developed consumption (in addition to liver cirrhosis, for other reasons).", player)
