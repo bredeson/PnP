@@ -20,7 +20,7 @@ class Prisoner(object):
 			hp = 20
 			hpmax = 20
 			intelligence = 2
-		elif difficulty.upper() == 'hard':
+		elif difficulty.upper() == 'hard'.upper():
 			hp = 10
 			hpmax = 10
 			intelligence = 1
@@ -28,6 +28,7 @@ class Prisoner(object):
 			hp = 20
 			hpmax = 20
 			intelligence = 2
+			difficulty = 'medium'
 		self._intelligence = intelligence
 		self._level = level
 		self._hp = hp
