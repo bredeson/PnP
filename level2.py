@@ -42,6 +42,8 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     break
                 elif success==1:
                     input_s("Light-footed as a prancercize instructor, you alight on the floor of a cozy room smelling of roses - what a relief after that sewer! You look around and see a sorceress perusing a perl manual at a nearby table.", player)
+                    sorceress = creatures.Sorceress()
+                    print(sorceress.art())
                     sorc_approach=input_s("Do you approach the sorceress?[yes] or [no]\n", player)
                     while sorc_approach not in ["yes", "no"]:
                         sorc_approach=input_s(sample_sass(),player, "purple")
