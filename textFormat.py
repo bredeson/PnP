@@ -28,8 +28,13 @@ def printHealthBar (current_hp, starting_hp, decimals = 1, length = 50, fill = '
     	bar_out = '{}hp|{}| {}%'.format(current_hp, bar, percent)
     return(bar_out)
 
-def print_s(text,color = ''):
-	text = textwrap.fill(text, replace_whitespace = False, drop_whitespace = False)
+def combatStatus (user = None):
+	color_code = color_dict['green']
+	print(color_code + "Health Points: {}\nMana: {}\n".format(printHealthBar(user.hp, user.hpmax), user.mana) + color_dict['end'])
+
+
+def print_s(text,color = '', cleanup=False):
+	text = textwrap.fill(text, replace_whitespace = False, drop_whitespace = cleanup, width = 95)
 	if not color == '':
 		color_code = color_dict[color]
 		print(color_code + text + color_dict['end'])
@@ -41,9 +46,9 @@ def input_s(text, user=None, color = '', recurse = False):
 		text += '\n> '
 	if not color == '':
 		color_code = color_dict[color]
-		query= input(textwrap.fill(color_code + text + color_dict['end'], replace_whitespace = False, drop_whitespace = True))
+		query= input(textwrap.fill(color_code + text + color_dict['end'], replace_whitespace = False, drop_whitespace = True, width = 95))
 	else:
-		query= input(textwrap.fill(text, replace_whitespace = False, drop_whitespace = True))
+		query= input(textwrap.fill(text, replace_whitespace = False, drop_whitespace = True, width = 95))
 	while query=="status":
 		color_code = color_dict['green']
 		print(color_code + "\nName: {}\nLevel: {}\nHealth Points: {}\nDifficulty: {}\nAttack: {}\nMana: {}\nIntelligence: {}\n".format(user.name, user.level, printHealthBar(user.hp, user.hpmax), user.difficulty, user.attack, user.mana, user.intelligence) + color_dict['end'])
