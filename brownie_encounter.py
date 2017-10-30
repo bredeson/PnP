@@ -7,9 +7,8 @@ from textFormat import input_s, print_s
 def brownie_encounter(player):
 	brownie_query=input_s("As you ascend the palatial stairway...an interesting smell looms in the air that makes your stomach rumble. A giant brownie lies to one side, but you have some concerning recent memories of a dodgy oyster. Do you [eat] the brownie or [keep moving]?\n", player)
 	while str(brownie_query) not in ["eat", "keep moving"]:
-    
 		brownie_query=input_s(sample_sass(), player, color='purple')
-  
+	brownie=random.randrange(1,5)
 	if brownie_query=="eat":
 		player.hp+=brownie
 		print_s("The brownie was still good! Your hunger is sated. You gain "+ str(brownie)+ ' hp. Your total hp is '+ str(player.hp)+ ".")
