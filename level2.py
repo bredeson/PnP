@@ -97,9 +97,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 print_s("Really? You lost to a drunken " + animal.name + "\n")
                 break
             input_s("Slightly dazed from your latest encounter, you return to the spiral stairs and proceed cautiously upward. You look out of a window and realize you are approaching the top of the highest tower. Seeing the prison in the distance, your smoldering desire to confront the wizard bursts into flames.", player)
-
-            print_s("Add a segue here to get into Shasta's encounter")
-            print_s("Shasta's encounter")
+            
             player.level=3
         player.hp=0
     print_s("Game over", "red")
