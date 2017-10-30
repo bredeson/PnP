@@ -7,8 +7,7 @@
 import random, time
 import creatures
 import combatResponses
-from textFormat import print_s
-
+from textFormat import print_s, input_s
 class Prisoner(object):
 	
 	def __init__(self, name = 'Unknown', hp = 20, hpmax = 20 ,level = 1, difficulty = 'medium', attack = 6, intelligence = 2, location = 'Prison', mana = 3):
@@ -21,7 +20,7 @@ class Prisoner(object):
 			hp = 20
 			hpmax = 20
 			intelligence = 2
-		elif difficulty.upper() == 'hard':
+		elif difficulty.upper() == 'hard'.upper():
 			hp = 10
 			hpmax = 10
 			intelligence = 1
@@ -29,6 +28,7 @@ class Prisoner(object):
 			hp = 20
 			hpmax = 20
 			intelligence = 2
+			difficulty = 'medium'
 		self._intelligence = intelligence
 		self._level = level
 		self._hp = hp
@@ -108,7 +108,7 @@ class Prisoner(object):
 				print_s('You have died to a ' + monster.name, color = 'red')
 				break
 			elif monster.hp > 0:
-				combat_query=input('[a]ttack, [r]isky attack, or [m]agic?\n')
+				combat_query=input_s('[a]ttack, [r]isky attack, or [m]agic?\n', self)
 				
 				if combat_query == 'a':
 					new_user_attack = random.randint(1,self.attack)
