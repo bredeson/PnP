@@ -13,6 +13,8 @@ def attempt_climb(user, climb_query):
         if success_rate<6:
             user.hp-=2
             climb_query=input_s("You were unsuccessful scaling the wall and your health points are reduced to "+ str(user.hp) + ". Do you want to attempt the [climb] again or [walk] in the door?\n", user)
+            while climb_query not in ["climb", "rope", "walk"]:
+                climb_query=input_s(sample_sass(),user, "purple")
         else:
             success=1
             print_s("You've successfully climbed through the window!")
