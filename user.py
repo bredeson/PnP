@@ -39,11 +39,19 @@ class Prisoner(object):
 			self._hp = 0
 		return self._hp
 
+	@hp.setter
+	def hp(self, value):
+		self._hp = value
+
 	@property
 	def intelligence(self):
 		if self._intelligence < 0:
 			self._intelligence
 		return self._intelligence
+
+	@intelligence.setter
+	def intelligence(self, value):
+		self._intelligence = value
 
 	@property
 	def level(self):
@@ -51,17 +59,29 @@ class Prisoner(object):
 			self._level = 1
 		return self._level
 
+	@level.setter
+	def level(self, value):
+		self._level = value
+
 	@property
 	def attack(self):
 		if self._attack < 0:
 			self._attack = 0
 		return self._attack
 
+	@attack.setter
+	def attack(self, value):
+		self._attack = value
+
 	@property
 	def mana(self):
 		if self._mana < 0:
 			self.mana = 0
 		return self._mana
+
+	@mana.setter
+	def mana(self, value):
+		self._mana = value
 
 # Combat function for creature encounters --- calls combatResponses for sassy comments during battle
 
