@@ -160,8 +160,8 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             
             print_s("There is a huge python blocking your $PATH,\n it lunges at you, pinning you in a corner, you have to fight!\n What is your first move?\n\n")
             decision_counter=1
-            opponent=creatures.Python()
-            print_s(opponent.art())
+            opponent = creatures.Python()
+            print(opponent.art())
             player.combat(opponent)
             if player.hp<=0:
                 print_s("Sweet lord Monty is one tough python!\n")
