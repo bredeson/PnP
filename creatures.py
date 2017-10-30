@@ -449,7 +449,7 @@ class Wizard(Creatures):
 		
 class Sorceress(Creatures):
 	def __init__(self):
-		Creatures.__init__(self, name = 'the Sorceress', hp = 25, attack = 10)
+		Creatures.__init__(self, name = 'the Duchess of Blackford Hall', hp = 25, attack = 10)
 	def art(self):
 		return '''
 
