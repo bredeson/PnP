@@ -69,7 +69,7 @@ class Wizard_encounter(object):
 
 	def boss_battle(self, user_answer = None, user = None, completed = False):
 		try_counter = user.intelligence
-		print_s('\n\nYou cautiously step through the door to the highest room in the highest tower. Your stomach churns a bit from the oyster, brownie, and whiskey you may have consumed. Despite boratk\'s sewer, the jbrownie, the magic wombats, and the eleven stairs you climbed, you\'ve somehow made it to the end. You encounter a wizard named Simon, a sorceress named Sofia (who may or may not look familiar) and his band of apprentices dressed in glittering cloaks patterned with python calligraphy and twinkling perls. The wizard turns to you and asks in an English accent with a hint of San Fransciso vernacular, \'Do you wish you gain our respect and win the game?\' Realizing you have no choice, you accept the challenge!\n\n')
+		print_s('\n\nYou cautiously step through the door to the highest room in the highest tower. Your stomach churns a bit from the oyster, brownie, and whiskey you may have consumed. Despite boratk\'s sewer, the jbrownie, the magic wombats, and the eleven stairs you climbed, you\'ve somehow made it to the end. You encounter a wizard named Simon, a sorceress named Sofia (who may or may not look familiar) and their band of apprentices dressed in glittering cloaks patterned with python calligraphy and twinkling perls. The wizard turns to you and asks in an English accent with a hint of San Fransciso vernacular, \'Do you wish you gain our respect and win the game?\' Realizing you have no choice, you accept the challenge!\n\n')
 		print(wizard.art())
 		input_s('Press [Enter] to proceed.', user)
 

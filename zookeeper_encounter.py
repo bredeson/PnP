@@ -5,7 +5,7 @@ from sass import sample_sass
 from textFormat import input_s, print_s
 
 def zookeeper_encounter(player):
-	zookeeper_query=input_s("As you walk around the courtyard, you notice a menagerie of wild animals trapped in cages. A figure dressed in a ringmaster outfit hears you approach and turns around. As he faces you, you realize it's a bipedal lion! He growls at you and demands to know what you are doing in his zoo. How do you respond? [Say nothing], [run] towards the castle, [tell the truth], [lie], or make a lion [pun]\n", player)
+	zookeeper_query=input_s("As you walk around the courtyard, you notice a menagerie of wild animals trapped in cages. A figure dressed in a ringmaster outfit hears you approach and turns around. As he faces you, you realize it's a bipedal lion! He growls at you and demands to know what you are doing in his zoo. How do you respond? [Say nothing], [run] towards the castle, [tell the truth], [lie], or make a lion [pun]?\n", player)
 	lion = creatures.Zookeeper()
 	print(lion.art())
 	while str(zookeeper_query) not in ["say nothing", "Say nothing", "run", "tell the truth", "pun", 'lie']:

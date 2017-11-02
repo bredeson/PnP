@@ -11,8 +11,8 @@ shark = creatures.Shark()
 
 def shark_game(player):
 	dice = random.randint(1,10)
+	input_s("As you run up the stairs toward the elusive Wizard and onto the balcony, you encounter an escaped 'mythical' creature from the menagerie - the famous talking LandShark.", player)
 	print(shark.art())
-	print_s("As you run up the stairs toward the elusive Wizard and onto the balcony, you encounter an escaped 'mythical' creature from the menagerie - the famous talking LandShark")
 	time.sleep(2)
 	print_s("The *clever* LandShark, having been on land for so long, has grown lungs and developed consumption (in addition to liver cirrhosis, for other reasons).")
 	decision = input_s("Do you [jump over the shark] and risk infection or [go the long way] on your quest to the wizard?", user = player)
@@ -22,7 +22,7 @@ def shark_game(player):
 
 	if decision == "jump over the shark":
 		if dice > 3:
-			print_s("Damn, you just signed up for a lifetime of pain and suffering, lose 3 HP")
+			print_s("Damn, you just signed up for a lifetime of pain and suffering, lose 3 HP.")
 			player.hp -= 3
 		elif dice <= 3:
 			print_s("You narrowly escaped, but why were you so foolish in the first place? Dumbass.")
