@@ -118,11 +118,11 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                         break
                  elif beer_query=="no":
                     input_s("\nYou heave the cask into the corner exposing the trapdoor underneath.\n", player)
-                 print_s("\nYou attempt to open the trapdoor, but you find that it is locked. But you seem to have awakened something within.\n")
+                 print_s("\nYou attempt to open the trapdoor and find that it is locked. But you seem to have awakened something within.\n")
                  fake_query=input_s("", player)
                  print_s("The trapdoor creaks open.\n")
                  fake_query=input_s("", player)
-                 print_s("You hear an eerie voice coming out of the dark depths.\n'There is a way out through my sewer, but only the intellectually astute are permitted to enter.'\n", width=200)
+                 print_s("You hear an eerie voice coming out of the dark depths:\n'There is a way out through my sewer, but only the intellectually astute are permitted to enter.'\n", width=200)
                  puzzle_query=input_s("The head and torso of boratK rise out of the darkness.\n", player)
                  boratk = creatures.Borat()
                  print(boratk.art())
@@ -130,7 +130,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                  puzzle_success=my_puzzle.do_puzzle(user=player)
 
                  if puzzle_success==True:
-                    print_s("BoratK sinks slowly back into the darkness, leaving the trapdoor open behind him. You cautiously descend into the depths below.\n\n")
+                    input_s("BoratK sinks slowly back into the darkness, leaving the trapdoor open behind him. You cautiously descend into the depths below.\n\n", player)
                  else:
                     print_s("BoratK slams the trapdoor closed at your feet.\n")
                     fake_query=input_s("", player)
