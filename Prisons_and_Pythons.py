@@ -60,12 +60,13 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
     '''
     print(levelone)
 
-    fake_query=input_s("Your eyelids flutter open. You look up to see a dank, mossy ceiling and stone walls with one bleak, barred window. You sit up and look around. You see an open door in front you, candlelight flickering behind it. You stumble blearily to your feet and walk through the door.\n", player)
-    
 #game begins
     while player.hp>0:
         while player.level==1:
             #Level one
+
+            fake_query=input_s("Your eyelids flutter open. You look up to see a dank, mossy ceiling and stone walls with one bleak, barred window. You sit up and look around. You see an open door in front you, candlelight flickering behind it. You stumble blearily to your feet and walk through the door.\n", player)
+
             decision_counter=1
             while decision_counter==1:
                 first_query=input_s("You walk down the hallway and see a set of stairs leading down into the dark. Do you go down the stairs? [yes] or [no]\n ", player)
@@ -121,7 +122,8 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                  fake_query=input_s("", player)
                  print_s("The trapdoor creaks open.\n")
                  fake_query=input_s("", player)
-                 puzzle_query=input_s("You hear an eerie voice coming out of the dark depths.\n 'There is a way out through my sewer,\n but only the intellectually astute are permitted to enter.'\n The head and torso of boratK rise out of the darkness.\n", player)
+                 print_s("You hear an eerie voice coming out of the dark depths.\n'There is a way out through my sewer, but only the intellectually astute are permitted to enter.'\n", width=200)
+                 puzzle_query=input_s("The head and torso of boratK rise out of the darkness.\n", player)
                  boratk = creatures.Borat()
                  print(boratk.art())
                  my_puzzle=puzzles.Puzzles()
@@ -150,13 +152,14 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             
             mitchell_encounter.oyster_encounter(player)
             fake_query=input_s("", player)
-            print_s("You continue down this dark, dank tunnel ignoring the fact you're wading knee deep through a prison sewer, you're pretty gross!\nYou can hear something splashing in the water, and can hear demented giggling in the darkness...\n")
+            print_s("You continue down this dark, dank tunnel ignoring the fact you're wading knee deep through a prison sewer, you're pretty gross!")
+            print_s("You can hear something splashing in the water, and can hear demented giggling in the darkness...\n")
             fake_query=input_s("", player)
-            print_s("With the little light available at the end of the tunnel you spot some freak dressed as a funky ass clown emerging from behind a shopping trolley full of rope and trash\n")
+            print_s("With the little light available at the end of the tunnel you spot some freak dressed as a funky ass clown emerging from behind a shopping trolley full of rope and trash.\n")
             fake_query=input_s("", player)
-            print_s("Without saying a word the clown throws some dice against the wall... it bekons at you and points at the dice...\n")
+            print_s("Without saying a word the clown throws some dice against the wall... it beckons at you and points at the dice...\n")
             
-            dice_querey = input_s("You wonder if this pennywise wannabe is packing some heat and will finish you off right here, right now, if you don't entertain it. Do you want to [roll] the dice and see what happens, or bust past him and make a [run] for it\n", player)
+            dice_querey = input_s("You wonder if this pennywise wannabe is packing some heat and will finish you off right here, right now, if you don't entertain it. Do you want to [roll] the dice and see what happens, or bust past him and make a [run] for it?\n", player)
             while str(dice_querey) not in ["roll","run"]:
                 dice_querey=input_s(sample_sass(), player, color='purple')
             if dice_querey == "roll":
@@ -166,10 +169,10 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 print_s("You push that son of a gun face down into the hotdog flavoured water and run for you life before it gets up.\n")
                 fake_query=input_s("", player)
             
-            print_s("You sigh heavily after that encounter, and wonder what the hell just happened. You continue down the tunnel wondering how you got into ths situation... What's that? you hear another unusual noise further ahead. Its a gutteral hiss that could only be one thing!\n")
+            print_s("You sigh heavily after that encounter, and wonder what the hell just happened. You continue down the tunnel wondering how you got into ths situation... What's that? you hear another unusual noise further ahead. It's a gutteral hiss that could only be one thing!\n")
             fake_query=input_s("", player)
             
-            print_s("There is a huge python blocking your $PATH,\n it lunges at you, pinning you in a corner, you have to fight!\n What is your first move?\n\n")
+            print_s("There is a huge python blocking your $PATH.\n It lunges at you, pinning you in a corner, you have to fight!\n What is your first move?\n\n", width=200)
             decision_counter=1
             opponent = creatures.Python()
             print(opponent.art())
@@ -183,6 +186,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             fake_query=input_s("", player)
             player.hp+=20
             player.hpmax+=20
+            input_s("Battered and bruised you slowly walk away from the twisted, bloody pile of python. You continue further into the tunnel and come to a bend, as you turn the corner you can see daylight shining brightly at the end.\n", player)
             player.level=2
             art2= '''
         ..               _                          ..         s                                   
@@ -203,7 +207,6 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             print(art2)   
 
         while player.level==2:
-            print_s("Battered and bruised you slowly walk away from the twisted, bloody pile of python. You continue further into the tunnel and come to a bend, as you turn the corner you can see daylight shining brightly at the end.\n")
             input_s("As the daylight hits your face, you feel the warmth sink into your soul and your health points increase to " + str(player.hp) + ". You have a sudden flash of memory: the details are hazy, but you recall that you were imprisoned by a powerful wizard. Looking around you, you realize you are in a vaguely familiar courtyard - the courtyard of the wizard's castle! This is your chance to find the wizard and solve the mystery of your imprisonment - and take your revenge!\n", player)
             
             castle = '''
@@ -252,9 +255,12 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     while sorc_approach not in ["yes", "no"]:
                         sorc_approach=input_s(sample_sass(),player, "purple")
                     if sorc_approach=="yes":
-                        input_s("'Hello young traveler!' she sings.\n 'My name is Sofia. Sit with me and gain some perls of wisdom.'", player)
+                        print_s("'Hello young traveler!' she sings.")
+                        input_s("'My name is Sofia. Sit with me and gain some perls of wisdom.'", player)
                         player.intelligence+=2
-                        input_s("You spend a deeply enlightening hour with Sofia. As you rise from the table, she gives you this helpful hint: \n 'To defeat the wizard, gather all the intelligence you can'\n and she increases your intelligence score to " + str(player.intelligence) + ". You walk out of the room into a steamy spa.", player)
+                        print_s("You spend a deeply enlightening hour with Sofia. As you rise from the table, she gives you this helpful hint:")
+                        print_s("'To defeat the wizard, gather all the intelligence you can'\n and she increases your intelligence score to " + str(player.intelligence) + ".", width=150)
+                        input_s("You walk out of the room into a steamy spa.", player)
                         
                     elif sorc_approach=="no":
                         print_s("You walk past the sorceress and enter a steamy spa.\n")
@@ -264,10 +270,11 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                         spa_query=input_s(sample_sass(),player, "purple")
                     if spa_query=="yes":
                         player.mana=3
-                        input_s("You sit in the hottub and your mana is fully replenished to " + str(player.mana) + ".\n After your rejuvinating soak, you towel off and walk out the spa door and it locks behind you. Good thing you got dressed before walking out that door!", player)
+                        print_s("You sit in the hottub and your mana is fully replenished to " + str(player.mana) + ".")
+                        input_s("After your rejuvinating soak, you towel off and walk out the spa door and it locks behind you. Good thing you got dressed before walking out that door!", player)
                     elif spa_query=="no":
                         input_s("You walk right past the enticing hottub. Really?", player)
-                    print_s("You exit into a sumptuously decorated hallway. Your feet sinking into the plush carpet, you notice a door cracked to your left.")
+                    print_s("You exit into a luxuriously decorated hallway. Your feet sinking into the plush carpet, you notice a door cracked to your left.")
                 elif success==2:
                     walk_in(player)
                     if player.hp<=0:
@@ -286,7 +293,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             print_s("You come to the foot of a spiral staircase that circles upwards out of sight. Testing your physical fitness, you leap up eleven steps at a time. You slip through an archway and find yourself on a balcony.")
             shark_game(player)
             if player.hp<=0:
-                print_s("Really? You lost to a drunken " + animal.name + "\n")
+                print_s("Really? You lost to a drunken " + animal.name + ".\n")
                 break
             input_s("Slightly dazed from your latest encounter, you return to the spiral stairs and proceed cautiously upward. You look out of a window and realize you are approaching the top of the highest tower. Seeing the prison in the distance, your smoldering desire to confront the wizard bursts into flames.", player)
             wiz_puzzle=wizard_encounter.Wizard_encounter()
@@ -335,15 +342,19 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
         '''
                 print(final_message)
                 input_s("", player)
-
+                
+                player.level=3
+                player.hp=0
 
 
             else:
-                print_s("Simon shakes his head in disappointment.\n 'I can see you've learned nothing from this experience. I'm afraid there's only one place for sloppy coders in this universe.'")
+                print_s("Simon shakes his head in disappointment.\n")
+                input_s("'I can see you've learned nothing from this experience. I'm afraid there's only one place for sloppy coders in this universe.'")
                 player.level=1
+                break
                 
             player.level=3
-        player.hp=0
+       # player.hp=0
        
        
     gameover='''

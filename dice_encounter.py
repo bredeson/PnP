@@ -39,20 +39,20 @@ def dice_game(player):
 
     if decision.lower()=="blood":  
       if d_10 > 4:
-          print_s("\nWow, all those years playing street dice in the ghetto paid off, you gain +2 health points\n")
-          print_s("\nWell played my friend here take this [rope], I'm certain it'll come in handy\n", color="red")
+          print_s("\nWow, all those years playing street dice in the ghetto paid off, you gain +2 health points.\n")
+          print_s("\nWell played my friend here take this [rope], I'm certain it'll come in handy.\n", color="red")
           player.hp+=2
     
       elif d_10 <= 4:
-          print_s("\nShoot... you suck at this, the clown slaps you upside the head. You loose 1 health point\n the clown slopes off behind his trolley and leaves the way clear\n", color='purple')
+          print_s("\nShoot... you suck at this, the clown slaps you upside the head. You lose 1 health point.\n The clown slopes off behind his trolley and leaves the way clear.\n", color='purple', width=150)
           player.hp-=1
     
     elif decision.lower()=="power":
       if d_10 > 4:
-          print_s("\nWow, all those years playing street dice in the ghetto paid off, you gain +2 attack \n")
-          print_s("\nWell played my friend here take this [rope], I'm certain it'll come in handy\n", color="red")
+          print_s("\nWow, all those years playing street dice in the ghetto paid off, you gain +2 attack. \n")
+          print_s("\nWell played my friend here take this [rope], I'm certain it'll come in handy.\n", color="red")
           player.attack+=2
     
       elif d_10 <= 4:
-          print_s("\nShoot... you suck at this, the clown laughs in your face. You loose 1 attack point\n the clown slopes off behind his trolley and leaves the way clear\n", color='purple')
+          print_s("\nShoot... you suck at this, the clown laughs in your face. You lose 1 attack point.\n The clown slopes off behind his trolley and leaves the way clear.\n", color='purple', width=150)
           player.attack-=1
