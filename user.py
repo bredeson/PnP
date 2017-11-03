@@ -108,22 +108,27 @@ class Prisoner(object):
 	def combat(self,  monster = None):
 		while monster.hp > 0:
 			if self.hp <= 0:
-				input_s('You have died to a ' + monster.name, self, color = 'red')
+				print_s('You have died to a ' + monster.name, color = 'red')
+				time.sleep(1.5)
 				break
 			elif monster.hp > 0:
-				combat_query=input_s('[a]ttack, [r]isky attack, or [m]agic?\n', self)
+				combat_query=input_s('[a]ttack, [r]isky attack, or [m]agic?\n',self)
 				
 				if combat_query == 'a':
 					new_user_attack = random.randint(1,self.attack)
 					new_mon_attack = random.randint(1,monster.attack)
-					input_s(combatResponses.combatResponse_player(self.attack, new_user_attack) + ' ' + 'You deal ' + str(new_user_attack) + ' damage to ' + monster.name, self, color = 'red')
+					print_s(combatResponses.combatResponse_player(self.attack, new_user_attack) + ' ' + 'You deal ' + str(new_user_attack) + ' damage to ' + monster.name, color = 'red')
+					time.sleep(1.5)
 					monster.hp -= new_user_attack
 					if monster.hp > 0:
-						input_s('The ' + monster.name + ' has ' + str(monster.hp) + ' health remaining.', self)
+						print_s('The ' + monster.name + ' has ' + str(monster.hp) + ' health remaining.')
+						time.sleep(1.5)
 						self.hp -= new_mon_attack
-						input_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), self, color = 'red')
+						print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')
+						time.sleep(1.5)
 					else:
-						input_s('The ' + monster.name + ' is dead.\n', self)
+						print_s('The ' + monster.name + ' is dead.\n')
+						time.sleep(1.5)
 						break
 
 
@@ -134,37 +139,49 @@ class Prisoner(object):
 					new_user_attack = random.randint(min_damage,max_damage)
 					new_mon_attack = random.randint(1,monster.attack)
 					if chance > 10:
-						input_s(combatResponses.combatResponse_player(self.attack, new_user_attack) + ' '+ 'You deal ' + str(new_user_attack) + ' damage to ' + monster.name, self, color = 'red')
+						print_s(combatResponses.combatResponse_player(self.attack, new_user_attack) + ' '+ 'You deal ' + str(new_user_attack) + ' damage to ' + monster.name, color = 'red')
+						time.sleep(1.5)
 						monster.hp -= new_user_attack
 						if monster.hp > 0:
-							input_s('The ' + monster.name + ' has ' + str(monster.hp) + ' health remaining.', self)
+							print_s('The ' + monster.name + ' has ' + str(monster.hp) + ' health remaining.')
+							time.sleep(1.5)
 							self.hp -= new_mon_attack
-							input_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), self, color = 'red')
+							print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')
+							time.sleep(1.5)
 						else:
-							input_s('The ' + monster.name + ' is dead.\n', self)
+							print_s('The ' + monster.name + ' is dead.\n')
+							time.sleep(1.5)
 							break
 					else:
-						input_s(combatResponses.missResponse(), self, color = 'purple')
+						print_s(combatResponses.missResponse(), color = 'purple')
+						time.sleep(1.5)
 						self.hp -= new_mon_attack
-						input_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' +  monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), self, color = 'red')	
+						print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' +  monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')	
+						time.sleep(1.5)
 
 				if combat_query == 'm':
 					if self.mana > 0:
 						new_user_attack = self.attack
 						new_mon_attack = random.randint(1,monster.attack)
-						input_s(combatResponses.magicResponse() + str(new_user_attack) + ' damage.', self, color = 'red')
+						print_s(combatResponses.magicResponse() + str(new_user_attack) + ' damage.', color = 'red')
+						time.sleep(1.5)
 						monster.hp -= new_user_attack
 						self.mana -= 1
-						input_s('You have ' + str(self.mana) + ' mana left.', self)
+						print_s('You have ' + str(self.mana) + ' mana left.')
+						time.sleep(1.5)
 						if monster.hp > 0:
-							input_s('The ' + monster.name + ' has ' + str(monster.hp) + ' health remaining.', self)
+							print_s('The ' + monster.name + ' has ' + str(monster.hp) + ' health remaining.')
+							time.sleep(1.5)
 							self.hp -=new_mon_attack
-							input_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), self, color = 'red')							
+							print_s(combatResponses.combatResponse_monster(monster.attack, new_mon_attack) + ' ' + monster.name + ' does ' + str(new_mon_attack) + ' damage. Your health is now ' + str(self.hp), color = 'red')							
+							time.sleep(1.5)
 						else:
-							input_s('The ' + monster.name + ' is dead.\n', self)
+							print_s('The ' + monster.name + ' is dead.\n')
+							time.sleep(1.5)
 							break
 					else:
-						input_s('You have no mana left!', self, color = 'blue')
+						print_s('You have no mana left!', color = 'blue')
+						time.sleep(1.5)
 			else:
 				break
 		combatStatus(self)
