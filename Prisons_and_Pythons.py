@@ -4,7 +4,7 @@
 #import modules
 import user, os, sass, first_encounter, random, time, creatures, second_encounter, puzzles, mitchell_encounter, dice_encounter, wizard_encounter
 
-from textFormat import input_s, print_s
+from textFormat import input_s, print_s, input_ss
 from sass import sample_sass
 from beer_encounter import beer_encounter
 from attempt_climb import attempt_climb
@@ -69,13 +69,13 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
 
             decision_counter=1
             while decision_counter==1:
-                first_query=input_s("You walk down the hallway and see a set of stairs leading down into the dark. Do you go down the stairs? [yes] or [no]\n ", player)
+                first_query=input_ss("You walk down the hallway and see a set of stairs leading down into the dark. Do you go down the stairs? [yes] or [no]\n ", player)
                 if first_query=="no":
                     decision_counter=first_encounter.first_combat(player)
                 elif first_query=="yes":
                     decision_counter=0
-                else:
-                    print_s(sample_sass(), color='purple')
+#                else:
+#                    print_s(sample_sass(), color='purple')
             if player.hp<=0:
                 print_s("Why did you try to fight that hulking guard, you plonker? You're so dead.\n")
                 break
