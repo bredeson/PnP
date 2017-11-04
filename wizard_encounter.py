@@ -7,6 +7,12 @@
 # filename = wizard_encounter.py
 #===============================
 
+#=========================================
+# Final encouter modified from original
+# to be more user-friendly version free of
+# PFB specific references
+#=========================================
+
 #=====================
 #Required modules:
 # 1) random
@@ -41,16 +47,16 @@ wizard = creatures.Wizard()
 
 final_puzzle = {
 		'Part I':  {
-				'Question':'Bluejeans Desks is an anagram for which three mages? List them in alphabetical order!',
-				'Answer'  :'deb jessen lukas'
+				'Question':'Poor Bored Owl is an anagram for which question you were asked early in your journey?',
+				'Answer'  :'blood or power'
 		},
 		'Part II': {
-				'Question':'Eked Emeriti Mixing is an anagram of which three mages? List their first names, but in alphabetical order according to their last names.',
-				'Answer'  :'mike xengie demitri'
+				'Question':'Early on you encountered a cask of a delicious distillation. What grain was it comprised of?',
+				'Answer'  :'sorghum'
 		},
 		'Part III': {
-				'Question':'What is the name of the man who wrote the Wizard\'s and Sorceress\' favorite programming language?',
-				'Answer'  :'larry wall'
+				'Question':'Lads Sake Ninjas is an anagram for what phrase that is synonymous with the name of this game?',
+				'Answer'  :'snakes and jails'
 		}
 }
 
