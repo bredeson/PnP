@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-import user, textwrap
+import user, textwrap, re, sass
+
+#import textwrap, re, sass
 
 #==========================================
 #Custom print functions and status output
@@ -57,3 +59,30 @@ def input_s(text, user=None, color = '', recurse = False):
 
 	return(query)
 
+def input_ss(text, user=None, color = '', recurse = False, secrets=None):
+	if recurse is False:
+		text += '\n> '
+	if not color == '':
+		color_code = color_dict[color]
+		query= input(textwrap.fill(color_code + text + color_dict['end'], replace_whitespace = False, drop_whitespace = True, width = 95))
+	else:
+		query= input(textwrap.fill(text, replace_whitespace = False, drop_whitespace = True, width = 95))
+
+
+	allowed_commands=re.findall(r"\[([A-Za-z\s]+)\]", text)
+	allowed_commands.append(secrets)
+	allowed_and_s=allowed_commands.copy()
+	allowed_and_s.append("status")
+
+	while query not in allowed_commands:
+		while query=="status":
+			color_code = color_dict['green']
+			print(color_code + "\nName: {}\nLevel: {}\nHealth Points: {}\nDifficulty: {}\nAttack: {}\nMana: {}\nIntelligence: {}\n".format(user.name, user.level, printHealthBar(user.hp, user.hpmax), user.difficulty, user.attack, user.mana, user.intelligence) + color_dict['end'])
+			query=input_s(text, user, color = color, recurse = True)
+
+		while query not in allowed_and_s:
+			query=input_s(sass.sample_sass(), user, color='purple')
+
+	return(query)
+
+    
