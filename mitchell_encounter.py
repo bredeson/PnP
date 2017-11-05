@@ -2,15 +2,13 @@
 
 import user, creatures, random
 from sass import sample_sass
-from textFormat import input_s, print_s
+from textFormat import input_s, print_s, input_ss
 
 oys = creatures.Oyster()
 
 def oyster_encounter(player):
-	oyster_query=input_s("As you enter the sewers...an interesting smell looms in the air that makes your stomach rumble. A giant oyster lies the on the side, but who knows how long it has been there? Do you [eat] the oyster or [keep moving]?\n\n", player)
+	oyster_query=input_ss("As you enter the sewers...an interesting smell looms in the air that makes your stomach rumble. A giant oyster lies the on the side, but who knows how long it has been there? Do you [eat] the oyster or [keep moving]?\n\n", player)
 	print(oys.art())
-	while str(oyster_query) not in ["eat", "keep moving"]:
-		oyster_query=input_s(sample_sass(), player, color='purple')
 
 	if oyster_query=="eat":
 		oyster = random.randint(-5,5)
