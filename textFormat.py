@@ -2,8 +2,6 @@
 
 import user, textwrap, re, sass
 
-#import textwrap, re, sass
-
 #==========================================
 #Custom print functions and status output
 #==========================================

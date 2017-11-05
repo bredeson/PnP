@@ -74,8 +74,6 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     decision_counter=first_encounter.first_combat(player)
                 elif first_query=="yes":
                     decision_counter=0
-#                else:
-#                    print_s(sample_sass(), color='purple')
             if player.hp<=0:
                 print_s("Why did you try to fight that hulking guard, you plonker? You're so dead.\n")
                 break
@@ -89,7 +87,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             #Here you enter the sleeping guard scenario.
             decision_counter = 1
             while decision_counter == 1:
-                second_query=input_s("As your eyes begin to adjust to the low lighting, you notice a single guard slouched in a drunken stupor against a nearby wall. Do you [wake him up] or [attempt to creep] past him?\n", player)
+                second_query=input_ss("As your eyes begin to adjust to the low lighting, you notice a single guard slouched in a drunken stupor against a nearby wall. Do you [wake him up] or [attempt to creep] past him?\n", player)
                 if second_query == "attempt to creep":
                     decision_counter = second_encounter.second_combat(player)
                 elif second_query == "wake him up":
@@ -97,8 +95,6 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     print(opponent.art())
                     player.combat(opponent)
                     decision_counter = 2
-                else:
-                    print_s(sample_sass(), color='purple')
             if player.hp<=0:
                 print_s("Seriously? He was half asleep. You die in shame.\n")
                 break
@@ -108,10 +104,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                  elif decision_counter==2:
                     player.setAttack(2)
                     input_s("With an astounding display of physical prowess, you destroyed that sleepy guard. You take their pocket knife. \n", player)
-
-                 beer_query=input_s("You notice a trapdoor under a wooden cask in the corner. Looks like there's still some sorghum whiskey in it. Do you drink the whiskey? [yes] or [no]\n", player)
-                 while str(beer_query) not in ["yes", "no"]:
-                    beer_query=input_s(sample_sass(), player, color='purple')
+                 beer_query=input_ss("You notice a trapdoor under a wooden cask in the corner. Looks like there's still some sorghum whiskey in it. Do you drink the whiskey? [yes] or [no]\n", player)
                  if beer_query=="yes":
                     beer_encounter(player)
                     if player.hp<=0:
@@ -148,7 +141,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     else:
                         print_s("Slumping over the corpse of the defeated " + opponent.name + ", you notice a tiny golden key. Summoning all the strength you have left after that epic battle, you grab the key and hobble over to the trapdoor... \n")
                         fake_query=input_s("", player)
-                        print_s("To your relief the key fits the lock and the trapdoor opens with a little effort and you cautiously descend into the depths below.\n") 
+                        print_s("To your relief the key fits the lock. The trapdoor opens with a little effort and you cautiously descend into the depths below.\n") 
             
             mitchell_encounter.oyster_encounter(player)
             fake_query=input_s("", player)
@@ -159,9 +152,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             fake_query=input_s("", player)
             print_s("Without saying a word the clown throws some dice against the wall... it beckons at you and points at the dice...\n")
             
-            dice_querey = input_s("You wonder if this pennywise wannabe is packing some heat and will finish you off right here, right now, if you don't entertain it. Do you want to [roll] the dice and see what happens, or bust past him and make a [run] for it?\n", player)
-            while str(dice_querey) not in ["roll","run"]:
-                dice_querey=input_s(sample_sass(), player, color='purple')
+            dice_querey = input_ss("You wonder if this pennywise wannabe is packing some heat and will finish you off right here, right now, if you don't entertain it. Do you want to [roll] the dice and see what happens, or bust past him and make a [run] for it?\n", player)
             if dice_querey == "roll":
                 dice_encounter.dice_game(player)
                 fake_query=input_s("", player)           
@@ -173,15 +164,14 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             fake_query=input_s("", player)
             
             print_s("There is a huge python blocking your $PATH.\n It lunges at you, pinning you in a corner, you have to fight!\n What is your first move?\n\n", width=200)
-            decision_counter=1
             opponent = creatures.Python()
             print(opponent.art())
             player.combat(opponent)
             if player.hp<=0:
                 print_s("Sweet lord Monty is one tough python!\n")
                 break
-            elif decision_counter==2:
-                print_s("Hell yeeeah! I nailed that mofo. Maybe I was some bad ass Navy Seal or part of the SAS?\n")
+            else:
+                print_s("Hell yeeeah! You nailed that mofo. Maybe you were some bad ass Navy Seal or part of the SAS?\n")
                 player.setAttack(2)
             fake_query=input_s("", player)
             player.hp+=20
@@ -238,10 +228,10 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
 '''
             print(castle)
             zookeeper_encounter(player)
-
-            entry_query=input_s("You exit the menagerie and look around the courtyard. The outer wall is unscalable and the portcullis is down. There is a window two floors up the castle wall and a main entrance. Do you attempt to [climb] the wall or [walk] in the door?\n",player)
-            while entry_query not in ["climb", "walk", "rope"]:
-                entry_query=input_s(sample_sass(),player, "purple")
+            if player.hp<=0:
+                print_s("You don't seem to be very good with animals. The lion turns your hide into a fashionable rug to adorn his hearth.")
+                break
+            entry_query=input_ss("You exit the menagerie and look around the courtyard. The outer wall is unscalable and the portcullis is down. There is a window two floors up the castle wall and a main entrance. Do you attempt to [climb] the wall or [walk] in the door?\n", secrets="rope", user=player)
             if entry_query=="climb" or entry_query=="rope":
                 success=attempt_climb(player, entry_query)
                 if success==0:
@@ -251,9 +241,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     input_s("Light-footed as a prancercize instructor, you alight on the floor of a cozy room smelling of roses - what a relief after that sewer! You look around and see a sorceress perusing a perl manual at a nearby table.", player)
                     sorceress = creatures.Sorceress()
                     print(sorceress.art())
-                    sorc_approach=input_s("Do you approach the sorceress?[yes] or [no]\n", player)
-                    while sorc_approach not in ["yes", "no"]:
-                        sorc_approach=input_s(sample_sass(),player, "purple")
+                    sorc_approach=input_ss("Do you approach the sorceress?[yes] or [no]\n", player)
                     if sorc_approach=="yes":
                         print_s("'Hello young traveler!' she sings.")
                         input_s("'My name is Sofia. Sit with me and gain some perls of wisdom.'", player)
@@ -273,7 +261,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                         print_s("You sit in the hottub and your mana is fully replenished to " + str(player.mana) + ".")
                         input_s("After your rejuvinating soak, you towel off and walk out the spa door and it locks behind you. Good thing you got dressed before walking out that door!", player)
                     elif spa_query=="no":
-                        input_s("You walk right past the enticing hottub. Really?", player)
+                        input_s("You walk right past the enticing hottub. The feel of sewage caked to your pants is really starting to grow on you.", player)
                     print_s("You exit into a luxuriously decorated hallway. Your feet sinking into the plush carpet, you notice a door cracked to your left.")
                 elif success==2:
                     walk_in(player)
@@ -302,7 +290,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 input_s("You step through the door into a high-ceilinged room that looks very familiar. You approach an iMac and, your stomach fluttering, you enter the flash drive into the USB port.", player)
                 print_s("A message appears on the screen:")
                 input_s("'Welcome back " + player.name + "! Upload memory?", player, "blue")
-                input_s("And it all comes rushing back. You recall that fateful mistake - using your superuser powers to remove recursively the home directory of Simon and Sofia's cluster of servers. The years and years of data and code you somehow managed to delete from both local and remote repositories.", player)
+                input_s("And it all comes rushing back. You recall that fateful mistake - using your superuser powers to remove recursively all contents of the root directories of Simon and Sofia's cluster of servers. The years and years of data and code you somehow managed to delete from both local and remote repositories.", player)
                 print_s("A final message prints on the screen:")
                 input_s("'Your permissions have been restored.'", player, "blue")
                 
