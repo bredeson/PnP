@@ -228,10 +228,10 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
 '''
             print(castle)
             zookeeper_encounter(player)
-
-            entry_query=input_s("You exit the menagerie and look around the courtyard. The outer wall is unscalable and the portcullis is down. There is a window two floors up the castle wall and a main entrance. Do you attempt to [climb] the wall or [walk] in the door?\n",player)
-            while entry_query not in ["climb", "walk", "rope"]:
-                entry_query=input_s(sample_sass(),player, "purple")
+            if player.hp<=0:
+                print_s("You don't seem to be very good with animals. The lion turns your hide into a fashionable rug to adorn his hearth.")
+                break
+            entry_query=input_ss("You exit the menagerie and look around the courtyard. The outer wall is unscalable and the portcullis is down. There is a window two floors up the castle wall and a main entrance. Do you attempt to [climb] the wall or [walk] in the door?\n", secrets="rope", user=player)
             if entry_query=="climb" or entry_query=="rope":
                 success=attempt_climb(player, entry_query)
                 if success==0:
@@ -241,9 +241,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     input_s("Light-footed as a prancercize instructor, you alight on the floor of a cozy room smelling of roses - what a relief after that sewer! You look around and see a sorceress perusing a perl manual at a nearby table.", player)
                     sorceress = creatures.Sorceress()
                     print(sorceress.art())
-                    sorc_approach=input_s("Do you approach the sorceress?[yes] or [no]\n", player)
-                    while sorc_approach not in ["yes", "no"]:
-                        sorc_approach=input_s(sample_sass(),player, "purple")
+                    sorc_approach=input_ss("Do you approach the sorceress?[yes] or [no]\n", player)
                     if sorc_approach=="yes":
                         print_s("'Hello young traveler!' she sings.")
                         input_s("'My name is Sofia. Sit with me and gain some perls of wisdom.'", player)
@@ -263,7 +261,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                         print_s("You sit in the hottub and your mana is fully replenished to " + str(player.mana) + ".")
                         input_s("After your rejuvinating soak, you towel off and walk out the spa door and it locks behind you. Good thing you got dressed before walking out that door!", player)
                     elif spa_query=="no":
-                        input_s("You walk right past the enticing hottub. Really?", player)
+                        input_s("You walk right past the enticing hottub. The feel of sewage caked to your pants is really starting to grow on you.", player)
                     print_s("You exit into a luxuriously decorated hallway. Your feet sinking into the plush carpet, you notice a door cracked to your left.")
                 elif success==2:
                     walk_in(player)
@@ -292,7 +290,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 input_s("You step through the door into a high-ceilinged room that looks very familiar. You approach an iMac and, your stomach fluttering, you enter the flash drive into the USB port.", player)
                 print_s("A message appears on the screen:")
                 input_s("'Welcome back " + player.name + "! Upload memory?", player, "blue")
-                input_s("And it all comes rushing back. You recall that fateful mistake - using your superuser powers to remove recursively the home directory of Simon and Sofia's cluster of servers. The years and years of data and code you somehow managed to delete from both local and remote repositories.", player)
+                input_s("And it all comes rushing back. You recall that fateful mistake - using your superuser powers to remove recursively all contents of the root directories of Simon and Sofia's cluster of servers. The years and years of data and code you somehow managed to delete from both local and remote repositories.", player)
                 print_s("A final message prints on the screen:")
                 input_s("'Your permissions have been restored.'", player, "blue")
                 
