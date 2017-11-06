@@ -144,6 +144,9 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                         print_s("To your relief the key fits the lock. The trapdoor opens with a little effort and you cautiously descend into the depths below.\n") 
             
             mitchell_encounter.oyster_encounter(player)
+            if player.hp<=0:
+                print_s("Cursing your ill-founded love of seafood, you sink slowly into the mire, never to be seen again.\n")
+                break
             fake_query=input_s("", player)
             print_s("You continue down this dark, dank tunnel ignoring the fact you're wading knee deep through a prison sewer, you're pretty gross!")
             print_s("You can hear something splashing in the water, and can hear demented giggling in the darkness...\n")
