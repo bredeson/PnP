@@ -158,12 +158,15 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
             dice_querey = input_ss("You wonder if this pennywise wannabe is packing some heat and will finish you off right here, right now, if you don't entertain it. Do you want to [roll] the dice and see what happens, or bust past him and make a [run] for it?\n", player)
             if dice_querey == "roll":
                 dice_encounter.dice_game(player)
-                fake_query=input_s("", player)           
+                fake_query=input_s("", player)
+                if player.hp<=0:
+                    print_s("Sadly, your prior wounds were so severe that a blow to the head robs you of the little sense you had left. Jibbering incoherently, you totter down a nearby tunnel, trip over a bin, and fall headfirst into a whirling vortex of prison refuse.")
+                    break
             elif dice_querey == "run":
                 print_s("You push that son of a gun face down into the hotdog flavoured water and run for you life before it gets up.\n")
                 fake_query=input_s("", player)
             
-            print_s("You sigh heavily after that encounter, and wonder what the hell just happened. You continue down the tunnel wondering how you got into ths situation... What's that? you hear another unusual noise further ahead. It's a gutteral hiss that could only be one thing!\n")
+            print_s("You sigh heavily after that encounter, and wonder what the hell just happened. You continue down the tunnel wondering how you got into this situation... What's that? You hear another unusual noise further ahead. It's a gutteral hiss that could only be one thing!\n")
             fake_query=input_s("", player)
             
             print_s("There is a huge python blocking your $PATH.\n It lunges at you, pinning you in a corner, you have to fight!\n What is your first move?\n\n", width=200)
