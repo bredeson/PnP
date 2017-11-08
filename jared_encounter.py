@@ -4,8 +4,8 @@ import creatures, random, sass, time, puzzles
 from textFormat import print_s, input_s
 
 # Shit I need for testing?
-import user
-player = user.Prisoner(name = 'Jared', difficulty = 'easy') 
+#import user
+#player = user.Prisoner(name = 'Jared', difficulty = 'easy') 
 
 shark = creatures.Shark()
 
@@ -32,18 +32,18 @@ def shark_game(player):
 	elif decision == "go the long way":
 		print_s("Someone knows what they're doing! Good job!")
 		player.intelligence += 3
-		print_s("Now you have to double back to the stairs to find an alternative route and encounter the legendary, award winning Milwaukee's Best (Monster)")
+		input_s("Now you have to double back to the stairs to find an alternative route and encounter the legendary, award winning Milwaukee's Best (Monster)", player)
 		beer = creatures.Beer()
 		print(beer.art())
-		print_s("To get past this monster, you must fight one of his (somewhat drunken) creatures")
-		time.sleep(2)
+                time.sleep(2)
+		input_s("To get past this monster, you must fight one of his (somewhat drunken) creatures", player)
 		animal = creatures.Animals()
 		print(animal.art())
 		print_s("A wobbly " + animal.name + " stumbles down the stairs and attacks!\n")
 		player.combat(animal)
 	
 		if player.hp>0:
-			print_s("I hope you're proud of your self, defeating a drunken " + animal.name + ". But you get to pass on to your greatest challenge yet. \n")
+			print_s("I hope you're proud of yourself, defeating a drunken " + animal.name + ". But you get to pass on to your greatest challenge yet. \n")
 			fake_query=input_s("", player)
 		
 	elif decision == "riddle me":

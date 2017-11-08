@@ -41,7 +41,7 @@ def easter_egg(player):
 
     if decision == 'search':
        	print(shelf)
-        input_s("You begin scanning the bookshelf for something entertaining and/or educational. An ancient text, bound in thousands year old embossed centaur leather briefly catches your eye. It's title, 'Mastery of Python and complex systems', reminds you of an ancient teaching you once received. The effects of amnesia are taking their toll, and the memory fades.", player)
+        input_s("You begin scanning the bookshelf for something entertaining and/or educational. An ancient text, bound in thousand year old embossed centaur leather, briefly catches your eye. Its title, 'Mastery of Python and Complex Systems', reminds you of an ancient teaching you once received. The effects of amnesia are taking their toll, and the memory fades.", player)
         book_decision = input_s('You question your existence and past life before the prison. Before you break down into an existential crisis, you [leave] the room. Or do you?\n', player)
         while book_decision.lower() not in ['leave','read']:
             book_decision=input_s(sample_sass(), player, color = 'purple')
@@ -56,4 +56,4 @@ def easter_egg(player):
                 player.intelligence += 1
 
             else:
-                input_s('Unfortunately your mental capacity is restricted by inactivity from your time in the cell, and you do not solve the mysteries of the ancient texts. You leave the room', player)
+                input_s('Unfortunately your mental capacity is restricted by inactivity from your time in the cell, and you do not solve the mysteries of the ancient texts. You leave the room.', player)
