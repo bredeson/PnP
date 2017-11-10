@@ -35,7 +35,7 @@ def shark_game(player):
 		input_s("Now you have to double back to the stairs to find an alternative route and encounter the legendary, award winning Milwaukee's Best (Monster)", player)
 		beer = creatures.Beer()
 		print(beer.art())
-                time.sleep(2)
+		time.sleep(2)
 		input_s("To get past this monster, you must fight one of his (somewhat drunken) creatures", player)
 		animal = creatures.Animals()
 		print(animal.art())
