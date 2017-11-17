@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import creatures, random, sass, time, puzzles
-from textFormat import print_s, input_s
+from textFormat import print_s, input_s, input_ss
 
 # Shit I need for testing?
 #import user
@@ -15,10 +15,7 @@ def shark_game(player):
 	print(shark.art())
 	time.sleep(2)
 	print_s("The *clever* LandShark, having been on land for so long, has grown lungs and developed consumption (in addition to liver cirrhosis, for other reasons).")
-	decision = input_s("Do you [jump over the shark] and risk infection or [go the long way] on your quest to the wizard?", user = player)
-
-	while str(decision) not in ['jump over the shark', 'go the long way', 'riddle me']:
-		decision = input_s(sass.sample_sass(), user = player, color="purple")
+	decision = input_ss("Do you [jump over the shark] and risk infection or [go the long way] on your quest to the wizard?", secrets="riddle me", user = player)
 
 	if decision == "jump over the shark":
 		if dice > 3:
