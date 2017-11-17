@@ -259,9 +259,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                     elif sorc_approach=="no":
                         print_s("You walk past the sorceress and enter a steamy spa.\n")
                     
-                    spa_query=input_s("There is a bubbling hottub in the spa. Do you sit in it?[yes] or [no]\n", player)
-                    while spa_query not in ["yes", "no"]:
-                        spa_query=input_s(sample_sass(),player, "purple")
+                    spa_query=input_ss("There is a bubbling hottub in the spa. Do you sit in it?[yes] or [no]\n", player)
                     if spa_query=="yes":
                         player.mana=3
                         print_s("You sit in the hottub and your mana is fully replenished to " + str(player.mana) + ".")
@@ -279,9 +277,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                 if player.hp<=0:
                     print_s("You made it so far...but this is how you die.")                
                     break
-            easter_query=input_s("Do you open the door? [yes] or [no]\n", player)
-            while easter_query not in ["yes", "no"]:
-                easter_query=input_s(sample_sass(), player, "purple")
+            easter_query=input_ss("Do you open the door? [yes] or [no]\n", player)
             if easter_query=="yes":
                 easter_egg(player)
             print_s("You come to the foot of a spiral staircase that circles upwards out of sight. Testing your physical fitness, you leap up eleven steps at a time. You slip through an archway and find yourself on a balcony.")
@@ -368,7 +364,7 @@ while game_play==1:# the player enters the loop. they cannot escape the loop unt
                                                                                                                                 
     '''
     print(gameover)#print_s when you escape the second while loop.
-    play_again=input_s("Would you like to play again? [yes] or [no]")
+    play_again=input_ss("Would you like to play again? [yes] or [no]")
     if play_again=="no":
       game_play=0 #gets you out of the outermost while loop.
 
