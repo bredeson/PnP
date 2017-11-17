@@ -7,8 +7,6 @@ from textFormat import input_s, print_s, input_ss
 def attempt_climb(user, climb_query):
     success=0
     while user.hp>0 and success==0 and climb_query=="climb":
-#        while climb_query not in ["climb", "rope", "walk"]:
-#            climb_query=input_s(sample_sass(),user, "purple")
         success_rate=random.randrange(0,10)
         if success_rate<6:
             user.hp-=2
